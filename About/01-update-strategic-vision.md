@@ -1,9 +1,9 @@
 # Update Strategic Vision Pipeline
 
 **One-line description:** Update the numbered stages in the Strategic Vision section (Research Infrastructure, Workforce Development, Industry Services).
-**When you'd do this:** The lab's primary mission pillars evolve or new tags need to be added.
-**Difficulty:** Routine
-**Estimated time:** 10 minutes
+##**When you'd do this:** The lab's primary mission pillars evolve or new tags need to be added.
+##**Difficulty:** Routine
+##**Estimated time:** 10 minutes
 
 ## Files You'll Touch
 
