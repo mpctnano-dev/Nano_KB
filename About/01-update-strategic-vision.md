@@ -5,7 +5,11 @@
 ## 
 **When you'd do this:** The lab's primary mission pillars evolve or new tags need to be added.
 
-## **Difficulty:** Routine ## **Estimated time:** 10 minutes
+## 
+**Difficulty:** Routine 
+
+## 
+**Estimated time:** 10 minutes
 
 ## Files You'll Touch
 
