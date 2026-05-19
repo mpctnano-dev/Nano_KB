@@ -1,56 +1,90 @@
 # Add or Update Career Pathways
 
-**One-line description:** Add a new career pathway (or edit an existing one) in the interactive tree-view menu on the Career Pathways page.
-**When you'd do this:** A new degree program aligns with the lab, or the lab begins supporting a new professional track (e.g., "Quality Control Engineering").
-**Difficulty:** Moderate
-**Estimated time:** 20 minutes
+**Summary:** Add a new career pathway or edit an existing option within the interactive tree-view menu on the Career Pathways page.
 
-## Files You'll Touch
+**Trigger:** When a new academic degree program aligns with the laboratory's scope, or the lab begins supporting a new professional training track (such as "Quality Control Engineering").
+
+**Difficulty:** Moderate
+
+**Estimated Time:** 20 minutes
+
+---
+
+## Target Files
 
 | File | Purpose in this task |
 |---|---|
-| `CareerPathways.html` | The navigation tree and the content panels are both hardcoded here. |
+| `CareerPathways.html` | The main Career Pathways document where the navigation sidebar tree and the detail content panels are hardcoded. |
 
-## How the Page Works
-The Career Pathways page uses a "Tree View" layout. On the left is the navigation sidebar (`<div class="cp-tree">`). On the right is the content area containing multiple hidden panels (`<div class="cp-panel">`). 
+---
 
-When a user clicks a button in the sidebar (e.g., `data-target="new-path"`), the JavaScript hides all panels and reveals the panel with the matching ID (e.g., `id="new-path"`).
+## Architectural Concept
 
-## Steps: Adding a New Pathway
+The Career Pathways page uses an interactive "split-pane" layout.
+* **On the Left:** A tree navigation sidebar representing different educational or professional branches: `<div class="cp-tree">`.
+* **On the Right:** A dynamic content panel area where detailed cards reside: `<div class="cp-panel">`.
 
-### Part 1: Add the Sidebar Link
+When a visitor clicks a leaf button in the sidebar (tagged with a specific target attribute like `data-target="quality-control"`), the page's client-side JavaScript automatically hides all other detail panels and reveals the matching panel block containing the identical ID value (`id="quality-control"`).
 
-1. Open `CareerPathways.html`.
-2. Locate the navigation tree (`<div class="cp-tree">`).
-3. Decide which category it belongs under (e.g., Degree Pathways or Professional Development).
-4. Inside that category's `<div class="cp-tree-leaves">`, copy an existing button:
+---
+
+## Step-by-Step Instructions
+
+### Part 1: Add the Sidebar Navigation Leaf
+
+1. To get started, please open `CareerPathways.html` in your code editor.
+2. Please search for the sidebar container division tag with the class name `"cp-tree"`. Inside, you will find:
+   `<div class="cp-tree">`
+3. Identify the logical category under which the new pathway should be placed (for instance, the "Degree Pathways" or "Professional Development" lists).
+4. Inside that category's leaves container division tag (`<div class="cp-tree-leaves">`), copy an existing leaf button block and paste it inside:
    ```html
    <button class="cp-tree-leaf" data-target="ee-path">
        <div class="cp-leaf-dot"></div>
        Electrical Engineering
    </button>
    ```
-5. Paste it where you want it in the list.
-6. Change the text ("Electrical Engineering") to your new path name.
-7. Change the `data-target` to a unique, lowercase ID with no spaces (e.g., `data-target="quality-control"`).
+5. Customize your new leaf:
+   * **The Label Text:** Rewrite "Electrical Engineering" to reflect your new career path name.
+   * **The Data Target Hook:** Change the `data-target` attribute value to a unique, lowercase, hyphenated identifier:
+     `data-target="quality-control"`
 
-### Part 2: Create the Content Panel
+---
 
-1. Still in `CareerPathways.html`, scroll down past the sidebar to the `<div class="cp-content-body">` section.
-2. You will see several large blocks starting with `<div class="cp-panel" id="...">`.
-3. To ensure your new page looks correct, **copy an entire existing panel block** (from `<div class="cp-panel">` down to its closing `</div>`).
-4. Paste it at the bottom of the content container (but inside `<div class="cp-content-body">`).
-5. Change the `id` of your new block to perfectly match the `data-target` you created in Part 1:
-   ```html
-   <div class="cp-panel" id="quality-control">
-   ```
-6. Update the content inside your new panel:
-   *   Update the top title and description paragraph.
-   *   Update the 3 statistics cards at the top (`<div class="cp-stat-card">`).
-   *   Update the table rows (`<table class="cp-career-table">`).
+### Part 2: Create the Matching Detail Panel
 
-## Verifying It Worked
-*   Load `CareerPathways.html` locally.
-*   Click your new link in the left sidebar.
-*   Verify that your new content panel appears on the right without the page reloading.
-*   Click another link to ensure the active state properly switches away from your new panel.
+Now, we must create the detail panel that displays when your new sidebar leaf is clicked.
+
+1. Scroll down the document past the sidebar tree to locate the content body container division tag:
+   `<div class="cp-content-body">`
+2. You will see several large nested division blocks that represent individual details panels. They are set as hidden by default.
+3. Copy an entire existing panel block (starting from `<div class="cp-panel">` down to its closing `</div>`) and paste it at the bottom of the container, inside the `"cp-content-body"` wrapper.
+4. Update the container tag of your new panel so its ID attribute *exactly matches* the `data-target` value you defined on your leaf button in Part 1:
+   `<div class="cp-panel" id="quality-control">`
+5. Customize the content elements inside this panel block:
+   * **The Header Title & Summary:** Modify the main heading tag (`<h2>`) and description paragraph tag (`<p>`).
+   * **The Statistics Cards:** Update the statistics value highlights inside the stats card division tags (`<div class="cp-stat-card">`).
+   * **The Career Outcomes Table:** Update the career rows inside the outcomes table tag (`<table class="cp-career-table">`) to list matching job titles, median starting salaries, and typical hiring partners.
+
+---
+
+## Design Impact & Layout Solutions
+
+*   **The Design Discrepancy Risk:** Adding more than 8 pathways makes the sidebar navigation extremely long, overflowing off the bottom of the viewport on smaller screens.
+*   **Visual Impact:** Menu items cut off visually, preventing users from accessing lower tracks.
+*   **Recommended Solutions:**
+    *   **Scrollable Sidebar Panel:** Set the sidebar menu styling rules in CSS to support vertical scrolling with a hidden scrollbar (`max-height: 100vh; overflow-y: auto; scrollbar-width: none;`).
+    *   **Category Grouping:** If paths grow further, group career tracks into subcategories or use collapsible parent tabs to keep the sidebar compact.
+
+---
+
+## Let's Verify Your Changes
+
+1. Open `CareerPathways.html` to verify your changes. You can double-click the file to launch it directly in your web browser, or if you are using a code editor like VS Code, you can run a local preview extension (such as Live Server) to render and test the page in real-time.
+2. Click your new link in the left sidebar menu.
+3. Verify that the matching detail panel is instantly revealed on the right side of the screen without reloading the page.
+4. Click neighboring links to confirm that the active states toggle cleanly.
+
+---
+
+🔔 **Documentation Update Reminder:** Please make sure to update any How-To procedures or relevant documentation every time you make a change to the website and deploy it. This keeps our operational manual healthy and helpful for the entire team!
+*Last reviewed: May 19, 2026*
