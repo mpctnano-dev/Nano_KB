@@ -21,7 +21,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/NewsFilter_%231.png" alt="News category filter bar" /><br/>
+  <img src="../../md_file_images/NewsFilter_%231.png" alt="News category filter bar" /><br/>
   <em>Figure 1: The news category filter bar situated at the top of the News & Updates page, containing the active category buttons.</em>
 </p>
 
@@ -46,7 +46,7 @@
    `<div class="filter-group">`
 
    <p align="center">
-     <img src="../md_file_images/NewsFilter_%232.png" alt="Locating the filter-group in News.html" /><br/>
+     <img src="../../md_file_images/NewsFilter_%232.png" alt="Locating the filter-group in News.html" /><br/>
      <em>Figure 2: Locating the filter-group division container inside News.html where filter button elements are declared.</em>
    </p>
 
@@ -84,7 +84,7 @@ The client-side filtering script operates by matching the button's `data-tag` va
    `<div class="news-grid" id="newsGrid">`
 
    <p align="center">
-     <img src="../md_file_images/News_%233.png" alt="Locating the newsGrid container in News.html" /><br/>
+     <img src="../../md_file_images/News_%233.png" alt="Locating the newsGrid container in News.html" /><br/>
      <em>Figure 3: Locating the main newsGrid container element inside News.html where individual article cards are declared.</em>
    </p>
 
@@ -103,7 +103,7 @@ The client-side filtering script operates by matching the button's `data-tag` va
    ```
 
    <p align="center">
-     <img src="../md_file_images/NewsFilter_%233.png" alt="Modifying data-tags attribute in News.html" /><br/>
+     <img src="../../md_file_images/NewsFilter_%233.png" alt="Modifying data-tags attribute in News.html" /><br/>
      <em>Figure 4: Modifying the data-tags attribute of a news card inside News.html to associate it with the new category filter.</em>
    </p>
 
@@ -114,7 +114,7 @@ The client-side filtering script operates by matching the button's `data-tag` va
    `<span class="news-card__badge">Grants</span>`
 
    <p align="center">
-     <img src="../md_file_images/NewsFilter_%234.png" alt="Updating the news card badge markup" /><br/>
+     <img src="../../md_file_images/NewsFilter_%234.png" alt="Updating the news card badge markup" /><br/>
      <em>Figure 5: Updating the text content within the news-card__badge span inside the article card body to display the new category.</em>
    </p>
 
