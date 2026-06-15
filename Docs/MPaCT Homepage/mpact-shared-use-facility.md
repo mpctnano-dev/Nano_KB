@@ -7,6 +7,10 @@
 
 ## Page Overview
 
+<img src="../../md_file_images/mpact-shared-use-facility.png" alt="Open Access World-Class Tools section showing the heading, descriptive text about the shared-use facility, three highlight items (Open to All Researchers, Staff-Supported Operations, Maintained and Calibrated), and stacked lab photos on the right" />
+
+*The Open Access / Shared-Use Facility section — the stacked photo pair is on the right and the three highlight items with icons are on the left. This is what you edit when updating the access policy description or highlight items.*
+
 This section has two distinct editable areas:
 
 1. A **stacked image pair** — two overlapping photos positioned via CSS. The front photo sits on top; the back photo is offset behind and below it.

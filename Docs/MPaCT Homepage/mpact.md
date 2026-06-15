@@ -7,6 +7,10 @@
 
 ## What This Page Is
 
+<img src="../../md_file_images/mpact-hero.png" alt="MPaCT Lab page hero showing the dark lab background image, page title, subtitle, CTA buttons, and the stats panel with facility investment, instrument count, and facility size" />
+
+*The MPaCT.html hero — the full-viewport dark banner with the lab stats overlay. This is the first section visitors see.*
+
 `MPaCT.html` is the dedicated page for the MPaCT (Microelectronics Processing and Characterization Testing Lab) facility. It gives researchers, students, and industry partners a detailed overview of the lab — what it is, what it does, how it was built, and how to get access.
 
 The page loads three JavaScript files: `layout.js` (header/footer), `script.js` (shared site logic), and `mpact.js` (page-specific scroll animations). The `mpact.js` file drives the `ml-reveal` fade-in animations on every section. Do not remove `class="ml-reveal"` from any section wrapper — doing so will prevent that section from animating in when the user scrolls to it.

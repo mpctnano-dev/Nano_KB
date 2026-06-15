@@ -7,6 +7,10 @@
 
 ## Page Overview
 
+<img src="../../md_file_images/mpact-facility-buildout.png" alt="Building the Future section showing the floor plan blueprint image with the sq ft and instrument count badge overlaid in the corner, the section heading, and the spec rows for Facility Environment, Primary Users, and Industry Partners below" />
+
+*The Facility Buildout section — the floor plan image is on the left with the stat badge pinned to it. The key spec rows (Environment, Users, Partners) are below the heading on the right.*
+
 The Facility Buildout section has two distinct editable areas:
 
 1. A **floor plan image** with a stat badge overlaid in the corner — the badge floats on top of the image and contains two statistics.
