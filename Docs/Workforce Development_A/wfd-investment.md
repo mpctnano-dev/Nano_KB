@@ -7,6 +7,10 @@
 
 ## Section Overview
 
+<img src="../../md_file_images/wfd-investment.png" alt="NAU's Investment section showing the facility photo on the left with the $13M investment badge overlaid, and the four highlight cards plus pull quote on the right" />
+
+*The NAU Investment section — the photo with the $13M badge pinned over it on the left, and the four highlight cards on the right. The badge number and highlight cards are the most commonly updated elements here.*
+
 The Investment section is a two-column layout: a photo with a pinned overlay badge on the left, and a text block with four highlight cards and a pull quote on the right.
 
 The **image overlay badge** (showing `$13M`) is the most structurally non-obvious part of this section. It uses absolute CSS positioning and two specific class names — editing the number incorrectly or removing either div breaks the badge position.

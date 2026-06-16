@@ -7,6 +7,10 @@
 
 ## Section Overview
 
+<img src="../../md_file_images/wfd-pathways-ptap.png" alt="Semiconductor Workforce & Apprenticeship Pathways section showing the eyebrow label, section heading, the 2x2 pathway card grid, and the PTAP feature block below with the program description and CTA buttons" />
+
+*The Pathways & PTAP section — the 2×2 pathway card grid at the top and the highlighted PTAP callout block below it. Edit the pathway cards when updating training track descriptions; edit the PTAP block when updating the apprenticeship program details.*
+
 The Workforce Pathways section (`id="workforce"`) contains two parts in the same `<section>`:
 
 1. **Pathway cards** — a 2×2 grid of `.wfd-pathway-card` blocks describing training tracks
