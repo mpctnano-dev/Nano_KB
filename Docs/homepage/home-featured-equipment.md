@@ -7,6 +7,10 @@
 
 ## Page Overview
 
+<img src="../../md_file_images/homepage-featured-equipment.png" alt="Featured Equipment carousel on the homepage showing instrument cards" />
+
+*The Featured Equipment carousel — each card shows an instrument photo, name, category, and brief description. These cards are hardcoded in index.html, not pulled from a database.*
+
 The Featured Equipment section is a **manually maintained, hardcoded** horizontal carousel of instrument cards on the homepage. It is a curated preview — not a live feed from any database. Every card you see was placed there by hand in `index.html`.
 
 | Area | Search For (Ctrl+F) | What You Can Change |
