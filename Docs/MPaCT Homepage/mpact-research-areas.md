@@ -7,7 +7,7 @@
 
 ## Page Overview
 
-<img src="../md_file_images/mpact-research-areas.png" alt="Areas of Scientific Focus section showing the section heading and four numbered research entries (01 Thin Film Deposition, 02 Micro and Nanofabrication, 03 Materials Characterization, 04 Semiconductor Device Testing) each with a title, description, and instrument tags" />
+<img src="/md_file_images/mpact-research-areas.png" alt="Areas of Scientific Focus section showing the section heading and four numbered research entries (01 Thin Film Deposition, 02 Micro and Nanofabrication, 03 Materials Characterization, 04 Semiconductor Device Testing) each with a title, description, and instrument tags" />
 
 *The Areas of Scientific Focus section — four numbered research area entries. Each entry has a number, title, description, and instrument tags. This is what you edit when adding or updating a research area.*
 

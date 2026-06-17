@@ -157,6 +157,13 @@ nav:
   - Service Request:
       - How It Works: Service-Request/service-request-how-it-works.md
       - Field Lifecycle: Service-Request/service-request-field-lifecycle.md
+      - Email Rendering: Service-Request/service-request-email.md
+      - Field Type Reference: Service-Request/service-request-field-types.md
+  - General:
+      - Add a New Page: General/add-a-new-page.md
+      - Site Footer: General/update-footer.md
+      - Global Navigation: General/update-global-navigation.md
+      - Site-Wide Metadata: General/update-site-wide-metadata.md
   - Shared Components:
       - Hero Stats Panel: _shared-hero-stats-panel.md
   - Reference:

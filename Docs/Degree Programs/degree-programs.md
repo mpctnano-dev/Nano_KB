@@ -7,7 +7,7 @@
 
 ## What This Page Is
 
-<img src="../md_file_images/degree-programs-hero.png" alt="Degree Programs page hero showing the page title, subtitle, and stats panel with degree count, ABET accreditation, average salary, and PTAP hours" />
+<img src="/md_file_images/degree-programs-hero.png" alt="Degree Programs page hero showing the page title, subtitle, and stats panel with degree count, ABET accreditation, average salary, and PTAP hours" />
 
 *The Degree Programs hero — the cinematic banner with the stats panel overlay. The stats panel is the most commonly edited element on this section.*
 

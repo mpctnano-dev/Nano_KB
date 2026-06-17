@@ -7,7 +7,7 @@
 
 ## Page Overview
 
-<img src="../md_file_images/mpact-capability-cards.png" alt="What the Lab Does section showing the section heading, descriptive text on the right, and the 2x2 CORE CAPABILITIES grid with Metrology, Lithography, Deposition, and Characterization cards — each with a colored icon and instrument summary" />
+<img src="/md_file_images/mpact-capability-cards.png" alt="What the Lab Does section showing the section heading, descriptive text on the right, and the 2x2 CORE CAPABILITIES grid with Metrology, Lithography, Deposition, and Characterization cards — each with a colored icon and instrument summary" />
 
 *The "What the Lab Does" section — the 2×2 capability card grid is on the right. These are the four cards you edit when updating what the lab's core technical areas are.*
 

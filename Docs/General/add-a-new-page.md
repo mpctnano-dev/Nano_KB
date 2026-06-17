@@ -45,7 +45,7 @@ Do not create a blank HTML file from scratch. Duplicating an existing page prese
 1. In the repository root, choose a lean template such as `/services.html` or `/About_Us.html`.
    * Prefer **`/services.html`** for a simple content page (hero + sections, minimal page-specific JavaScript).
    * Use **`/About_Us.html`** when you need full SEO/Open Graph tags and the `<noscript>` navigation fallback.
-   * Avoid **`/PTAP.html`** or **`/CHIPS_Scholars_Program.html`** unless you are building a program-style page; those files carry large inline `<style>` blocks and program-specific scripts. For that workflow, see [09-clone-program-page.md](09-clone-program-page.md) and [../workforce/04-update-program-and-training-pages.md](../workforce/04-update-program-and-training-pages.md).
+   * Avoid **`/PTAP.html`** or **`/CHIPS_Scholars_Program.html`** unless you are building a program-style page; those files carry large inline `<style>` blocks and program-specific scripts. For that workflow, see [clone-program-page.md](clone-program-page.md) and [../Workforce/04-update-ptap-and-intel-chips-pages.md](../Workforce/04-update-ptap-and-intel-chips-pages.md).
 2. Duplicate the file in the root folder.
 3. Rename the copy. Use a URL-safe filename (lowercase and hyphens when possible, e.g. `industry-partners.html`). The live site also uses mixed conventions (`About_Us.html`, `Contact_Us.html`); stay consistent with nearby pages you link to.
 
@@ -53,7 +53,7 @@ Do not create a blank HTML file from scratch. Duplicating an existing page prese
 
 ### Part 2: Update `<head>` Metadata
 
-Update the `<head>` section so the browser tab, search engines, and social previews match the new page. For a full field-by-field checklist, see [05-update-site-wide-metadata-or-seo.md](05-update-site-wide-metadata-or-seo.md).
+Update the `<head>` section so the browser tab, search engines, and social previews match the new page. For a full field-by-field checklist, see [update-site-wide-metadata.md](update-site-wide-metadata.md).
 
 At minimum, change:
 
@@ -138,7 +138,7 @@ When adding custom CSS:
 
 ### Part 6: Register in Navigation (Optional)
 
-If the page should appear in the top navigation, follow [02-update-global-navigation.md](02-update-global-navigation.md) and add the link in `/includes/header.html`. Use the exact filename (including case) in `href` and `data-path` attributes so active-link highlighting in `layout.js` works correctly.
+If the page should appear in the top navigation, follow [update-global-navigation.md](update-global-navigation.md) and add the link in `/includes/header.html`. Use the exact filename (including case) in `href` and `data-path` attributes so active-link highlighting in `layout.js` works correctly.
 
 ---
 

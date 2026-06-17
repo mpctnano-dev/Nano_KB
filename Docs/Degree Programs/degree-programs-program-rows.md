@@ -7,7 +7,7 @@
 
 ## Page Overview
 
-<img src="../md_file_images/degree-programs-rows.png" alt="Bachelor's Degree Programs section showing the section heading and three horizontal program row cards — Computer Engineering, Computer Science, Electrical Engineering — each with a photo, degree type, description, feature tags, and a View Degree Details link" />
+<img src="/md_file_images/degree-programs-rows.png" alt="Bachelor's Degree Programs section showing the section heading and three horizontal program row cards — Computer Engineering, Computer Science, Electrical Engineering — each with a photo, degree type, description, feature tags, and a View Degree Details link" />
 
 *The Bachelor's Degree Programs section — each degree is a horizontal row with a photo on the left and content on the right. This is the section you edit when adding, removing, or updating a program row.*
 

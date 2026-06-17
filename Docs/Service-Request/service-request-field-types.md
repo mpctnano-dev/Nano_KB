@@ -315,8 +315,7 @@ appended after the loop as an HTML `<ul>` list (or plain dash if no files):
 $detailRows .= "<tr><td>Uploaded Files</td><td>$uploadedFilesDisplay</td></tr>";
 ```
 
-**Layer 5 (SharePoint):** Files go to a Drive folder (not the list). See
-[service-request-sharepoint.md](service-request-sharepoint.md).
+**Layer 5 (SharePoint):** Files go to a Drive folder (not the list). See the SharePoint integration guide (not yet documented in this knowledge base).
 
 > **Warning:** `$meta['uploadField']` must be the bare field name without `[]`. For printing,
 > `uploadField => 'files'` matches `name="files[]"` — PHP strips the `[]`. If you set
@@ -374,4 +373,4 @@ pickup deliveries.
 
 → Complete worked example: [service-request-field-lifecycle.md](service-request-field-lifecycle.md)
 → Email rendering details: [service-request-email.md](service-request-email.md)
-→ SharePoint column writes: [service-request-sharepoint.md](service-request-sharepoint.md)
+→ SharePoint column writes: see the SharePoint integration guide (not yet documented in this knowledge base)

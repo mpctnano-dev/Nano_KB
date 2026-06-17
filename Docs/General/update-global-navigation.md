@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/Global_nav.png" alt="Global navigation bar with brand, menu items, and Contact button" /><br/>
+  <img src="/md_file_images/Global_nav.png" alt="Global navigation bar with brand, menu items, and Contact button" /><br/>
   <em>Figure 1: Site-wide top navigation — Home icon, MPaCT Lab, Degree Programs, Workforce, News, About, and Contact CTA</em>
 </p>
 
@@ -29,7 +29,7 @@
 | `/CSS/style.css` | Nav bar, mega-menu, and mobile drawer styles (edit only if you are changing appearance, not link targets). |
 
 > [!NOTE]
-> **Client-side include architecture:** Each page includes `<div id="site-header"></div>` and loads `JS/layout.js` (root pages use `JS/layout.js`; pages in subfolders such as `/About_Equipment/` use `../JS/layout.js`). On load, `layout.js` runs `loadPart('site-header', '/includes/header.html', …)` and then `highlightActiveLink`, `initMobileMenu`, and `initAllDropdowns`. Editing `/includes/header.html` once updates navigation on every page that uses this layout. See [01-add-a-new-page.md](01-add-a-new-page.md) when adding a new page to the site.
+> **Client-side include architecture:** Each page includes `<div id="site-header"></div>` and loads `JS/layout.js` (root pages use `JS/layout.js`; pages in subfolders such as `/About_Equipment/` use `../JS/layout.js`). On load, `layout.js` runs `loadPart('site-header', '/includes/header.html', …)` and then `highlightActiveLink`, `initMobileMenu`, and `initAllDropdowns`. Editing `/includes/header.html` once updates navigation on every page that uses this layout. See [add-a-new-page.md](add-a-new-page.md) when adding a new page to the site.
 
 > [!IMPORTANT]
 > **Verify against your local codebase:** Class names, dropdown IDs, `href` targets, and hash anchors can change. Before editing, confirm selectors and filenames in your active copy of `/includes/header.html`, and confirm any `href="#…"` fragment matches a real `id` on the destination page.

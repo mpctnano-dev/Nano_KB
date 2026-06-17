@@ -7,7 +7,7 @@
 
 ## Page Overview
 
-<img src="../md_file_images/equipment-filter-bar.png" alt="Equipment Catalog filter bar showing the search box, category buttons (ALL, METROLOGY, FABRICATION etc.), location buttons, and the first row of instrument cards below" />
+<img src="/md_file_images/equipment-filter-bar.png" alt="Equipment Catalog filter bar showing the search box, category buttons (ALL, METROLOGY, FABRICATION etc.), location buttons, and the first row of instrument cards below" />
 
 *The filter bar and the top of the instrument grid — the search box, category buttons, and location buttons are all visible here. This is the section you edit when adding a new category or location filter.*
 

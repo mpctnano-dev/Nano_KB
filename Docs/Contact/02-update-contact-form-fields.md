@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/Contact_Form_Fields_%231.png" alt="Contact Us Form Fields Overview" /><br/>
+  <img src="/md_file_images/Contact_Form_Fields_%231.png" alt="Contact Us Form Fields Overview" /><br/>
   <em>Overview of the interactive inquiry gateway on the Contact Us portal</em>
 </p>
 
@@ -62,7 +62,7 @@ Choose **Case A** if you are updating a field shared by all inquiries, or **Case
    **Real code snippet:** `<div class="grid grid-2 gap-lg" style="margin-bottom: 25px;">`
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Fields_%232.png" alt="Locating the Common Fields Grid Container" /><br/>
+     <img src="/md_file_images/Contact_Form_Fields_%232.png" alt="Locating the Common Fields Grid Container" /><br/>
      <em>Locating the common fields grid container inside Contact_Us.html</em>
    </p>
 
@@ -103,7 +103,7 @@ Dynamic fields are stored as HTML string templates inside `/JS/script.js` and in
    **Real code snippet:** `const fieldData = {`
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Fields_%233.png" alt="Locating the fieldData Object in script.js" /><br/>
+     <img src="/md_file_images/Contact_Form_Fields_%233.png" alt="Locating the fieldData Object in script.js" /><br/>
      <em>Locating the fieldData object inside JS/script.js to declare dynamic fields</em>
    </p>
 
@@ -157,7 +157,7 @@ Because these fields are processed globally outside of the dynamic categories co
    ```
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Fields_%235.png" alt="Locating the Global Extraction Block in PHP" /><br/>
+     <img src="/md_file_images/Contact_Form_Fields_%235.png" alt="Locating the Global Extraction Block in PHP" /><br/>
      <em>Locating the global extraction and validation block inside FormSubmission.php</em>
    </p>
 
@@ -186,7 +186,7 @@ Unlike other forms in the codebase, `FormSubmission.php` uses a completely autom
    **Real code snippet:** `$categories = [`
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Fields_%234.png" alt="Locating the categories Array in PHP" /><br/>
+     <img src="/md_file_images/Contact_Form_Fields_%234.png" alt="Locating the categories Array in PHP" /><br/>
      <em>Locating the categories array configuration inside FormSubmission.php</em>
    </p>
 
@@ -236,7 +236,7 @@ To safely remove an existing field from the Contact Us form, choose the appropri
 3. Find the division element containing the target input and label (e.g. the phone field) and delete or comment out the block.
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Fields_%236.png" alt="Removing a Common Field from HTML" /><br/>
+     <img src="/md_file_images/Contact_Form_Fields_%236.png" alt="Removing a Common Field from HTML" /><br/>
      <em>Commenting out or deleting a common field block inside Contact_Us.html</em>
    </p>
 

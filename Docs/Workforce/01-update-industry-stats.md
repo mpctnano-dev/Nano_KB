@@ -30,7 +30,7 @@
 ### Part 1: Update the Hero Overview Stats
 
 <p align="center">
-  <img src="../md_file_images/Industry_Stats_%234.png" alt="Hero Overview Stats" /><br/>
+  <img src="/md_file_images/Industry_Stats_%234.png" alt="Hero Overview Stats" /><br/>
   <em>Figure 1: Hero Overview Stats visual layout in WorkForceDevelopment.html</em>
 </p>
 
@@ -93,7 +93,7 @@ Here is an example of the updated hero stats inside `WorkForceDevelopment.html`:
 ### Part 2: Update the Arizona Semiconductor Boom Cards
 
 <p align="center">
-  <img src="../md_file_images/Industry_Stats_%231.png" alt="Arizona Semiconductor Boom Cards" /><br/>
+  <img src="/md_file_images/Industry_Stats_%231.png" alt="Arizona Semiconductor Boom Cards" /><br/>
   <em>Figure 2: Arizona Semiconductor Boom Cards visual layout in WorkForceDevelopment.html</em>
 </p>
 

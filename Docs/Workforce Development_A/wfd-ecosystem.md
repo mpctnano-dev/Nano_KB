@@ -7,7 +7,7 @@
 
 ## Section Overview
 
-<img src="../md_file_images/wfd-ecosystem.png" alt="Arizona Ecosystem section showing the section heading and four company cards in a grid — each card has a company logo, an investment tag, a company name, and a short description" />
+<img src="/md_file_images/wfd-ecosystem.png" alt="Arizona Ecosystem section showing the section heading and four company cards in a grid — each card has a company logo, an investment tag, a company name, and a short description" />
 
 *The Arizona Ecosystem section — four company cards showing industry partners. Edit here when adding a new partner company or updating a logo, tag, or description.*
 

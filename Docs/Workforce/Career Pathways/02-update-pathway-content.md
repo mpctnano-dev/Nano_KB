@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../../md_file_images/Career_Pathways_%233.png" alt="Career Pathways panel with stats row and career outcomes table" /><br/>
+  <img src="/md_file_images/Career_Pathways_%233.png" alt="Career Pathways panel with stats row and career outcomes table" /><br/>
   <em>Figure 1: Pathway detail panel showing stat cards, overview text, and the career pathways salary table</em>
 </p>
 

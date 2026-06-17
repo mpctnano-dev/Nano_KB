@@ -194,5 +194,5 @@ script exits — attachments must be added before the script finishes.
 ---
 
 → For how specific field types differ: [service-request-field-types.md](service-request-field-types.md)
-→ For SharePoint column writes: [service-request-sharepoint.md](service-request-sharepoint.md)
-→ For email-related breakpoints: [service-request-breakpoints.md](service-request-breakpoints.md)
+→ For SharePoint column writes: see the SharePoint integration guide (not yet documented in this knowledge base)
+→ For email-related breakpoints: see the responsive breakpoints guide (not yet documented in this knowledge base)

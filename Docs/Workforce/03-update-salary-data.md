@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/Wf_Salary_%231.png" alt="Career Outcomes & Salary Table" /><br/>
+  <img src="/md_file_images/Wf_Salary_%231.png" alt="Career Outcomes & Salary Table" /><br/>
   <em>Figure 1: Career Outcomes & Salary Table visual layout in WorkForceDevelopment.html</em>
 </p>
 

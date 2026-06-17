@@ -171,7 +171,7 @@ pwd
 
 The output should show your project folder path.
 
-<img src="../md_file_images/mkdocs-vscode-terminal-pwd.png" alt="VS Code terminal showing pwd inside the project folder" />
+<img src="/md_file_images/mkdocs-vscode-terminal-pwd.png" alt="VS Code terminal showing pwd inside the project folder" />
 
 **In macOS Terminal:**
 
@@ -184,7 +184,7 @@ pwd
 
 Replace `/path/to/project-root` with the actual path on your machine. The `pwd` command confirms you are in the right place before running MkDocs commands.
 
-<img src="../md_file_images/mkdocs-macos-terminal-cd-pwd.png" alt="Terminal showing cd into the project folder and pwd confirmation" />
+<img src="/md_file_images/mkdocs-macos-terminal-cd-pwd.png" alt="Terminal showing cd into the project folder and pwd confirmation" />
 
 ## Running MkDocs Commands
 
@@ -198,9 +198,9 @@ mkdocs serve -a 127.0.0.1:8001
 
 After running this, MkDocs prints a local URL. Open that URL in a browser to view the docs site live. The preview updates automatically as you save files — you do not need to restart the command.
 
-<img src="../md_file_images/mkdocs-serve-local-preview-url.png" alt="Terminal showing mkdocs serve local preview URL" />
+<img src="/md_file_images/mkdocs-serve-local-preview-url.png" alt="Terminal showing mkdocs serve local preview URL" />
 
-<img src="../md_file_images/mkdocs-browser-preview-home.png" alt="Browser preview of the Website Docs home page" />
+<img src="/md_file_images/mkdocs-browser-preview-home.png" alt="Browser preview of the Website Docs home page" />
 
 Press `Ctrl + C` in the terminal to stop the preview.
 
@@ -218,7 +218,7 @@ mkdocs build --strict
 
 Use `--strict` before sharing the docs. It catches broken navigation links, missing files, and configuration mistakes that a normal build would silently ignore.
 
-<img src="../md_file_images/mkdocs-build-strict-success.png" alt="Terminal showing mkdocs build strict success output" />
+<img src="/md_file_images/mkdocs-build-strict-success.png" alt="Terminal showing mkdocs build strict success output" />
 
 **Reading build errors:**
 
@@ -228,7 +228,7 @@ If `mkdocs build --strict` fails, the terminal prints an error message that incl
 |---|---|---|
 | `Doc file not found` | A file listed in `nav:` does not exist | Create the file or correct the path in `mkdocs.yml` |
 | `Config value error` | The `mkdocs.yml` file has a YAML formatting mistake | Check indentation — use spaces, not tabs |
-| `File not found for 'img src'` | A screenshot path in a Markdown file is wrong | Check the image path depth (see How Screenshot Paths Work) |
+| `File not found for 'img src'` | A screenshot path in a Markdown file is wrong | Use a site-root path: `/md_file_images/your-screenshot.png` (see How Screenshot Paths Work) |
 
 Fix the issue, then run `mkdocs build --strict` again until it passes with no errors.
 
@@ -317,9 +317,27 @@ MkDocs Material replaces that marker with the generated tag list during the buil
 
 When you take a screenshot for a guide, copy the image file into `Docs/md_file_images/`. Then reference it in the Markdown file using an HTML image tag.
 
-The correct path depends on how deep the Markdown file is inside `Docs/`.
+**Always use a site-root path** (starting with `/`):
 
-MkDocs builds each Markdown file into a folder. For example:
+```html title="Recommended screenshot path (works on every page)"
+<img src="/md_file_images/your-screenshot.png" alt="Description" />
+```
+
+This works from any guide, no matter how deep the file sits inside `Docs/`.
+
+!!! note "Why not use ../ relative paths?"
+    MkDocs builds each Markdown file into its own folder with an `index.html`. For example, `Docs/About/01-update-strategic-vision.md` becomes `site/About/01-update-strategic-vision/index.html`.
+
+    The browser resolves image paths from that built page location — **not** from where the `.md` file sits in `Docs/`. A path like `../md_file_images/photo.png` points to the wrong folder (for example `site/About/md_file_images/`) and the image will not load when you run `mkdocs serve` or open the built site.
+
+    MkDocs also does not rewrite raw HTML `<img src="...">` tags the way it adjusts normal Markdown links, so relative paths in HTML image tags stay exactly as written.
+
+    Use `/md_file_images/...` instead. MkDocs copies the images to `site/md_file_images/` during the build, and the leading `/` always points to the site root.
+
+!!! note "Images may not show in VS Code or Cursor Markdown preview"
+    The built-in Markdown preview in VS Code or Cursor is **not** the same as the MkDocs site. It does not run a docs web server, so site-root paths like `/md_file_images/photo.png` will usually appear broken there.
+
+    That is expected. Use **`mkdocs serve -a 127.0.0.1:8001`** when you need to preview screenshots and page layout. The editor preview is still fine for editing text; rely on MkDocs for visual checks.
 
 ```text title="Source file"
 Docs/About/01-update-strategic-vision.md
@@ -331,17 +349,17 @@ builds into:
 site/About/01-update-strategic-vision/index.html
 ```
 
-That means the browser resolves image paths from inside `site/About/01-update-strategic-vision/`, not from where the Markdown file sits. To reach `site/md_file_images/` from there, you need to go up two levels:
+Both of these resolve correctly to `site/md_file_images/your-screenshot.png`:
 
-```html title="Correct path for a file one folder deep (e.g. Docs/About/)"
-<img src="../md_file_images/your-screenshot.png" alt="Description" />
+```html title="About page example"
+<img src="/md_file_images/your-screenshot.png" alt="Description" />
 ```
 
-```html title="Correct path for a file two folders deep (e.g. Docs/Workforce/Career Pathways/)"
-<img src="../../md_file_images/your-screenshot.png" alt="Description" />
+```html title="Career Pathways example (deeper folder — same path)"
+<img src="/md_file_images/your-screenshot.png" alt="Description" />
 ```
 
-The rule: **one `../` for each folder level between the file and `Docs/`**. A file in `Docs/About/` is one level deep, so use `../../`. A file in `Docs/Workforce/Career Pathways/` is two levels deep, so use `../../../`.
+After adding or changing screenshot paths, run `mkdocs serve -a 127.0.0.1:8001` and confirm the image loads in the browser before sharing the docs.
 
 ## Screenshot Filename Mistakes to Avoid
 
@@ -358,7 +376,7 @@ mkdocs-build-strict-success.png
     If an existing screenshot filename contains `#`, write it as `%23` in the image path. In a browser URL, a raw `#` starts a page fragment and stops the image from loading.
 
 ```html title="Correct — encoding # as %23"
-<img src="../md_file_images/Strategic_Vision_%231.png" alt="Strategic Vision step 1" />
+<img src="/md_file_images/Strategic_Vision_%231.png" alt="Strategic Vision step 1" />
 ```
 
 ## How Extra CSS Works
@@ -453,7 +471,7 @@ This guide explains how to change the homepage banner image and text.
 If the guide needs screenshots, copy the image files into `Docs/md_file_images/`. Then reference them in the guide:
 
 ```html title="Image tag for a file inside Docs/homepage/"
-<img src="../md_file_images/homepage-banner-step-1.png" alt="Homepage banner editor" />
+<img src="/md_file_images/homepage-banner-step-1.png" alt="Homepage banner editor" />
 ```
 
 ---
@@ -516,7 +534,7 @@ Use this checklist every time you add or update a guide.
 2. Create a new `.md` file in the matching `Docs/` subfolder. Name it with lowercase words and hyphens (e.g. `home-banner.md`).
 3. Add a front matter block at the top of the file with relevant tags.
 4. Write the guide content below the front matter block.
-5. Copy any screenshots into `Docs/md_file_images/` and reference them with the correct `../../` depth path.
+5. Copy any screenshots into `Docs/md_file_images/` and reference them with a site-root path: `/md_file_images/your-screenshot.png`.
 6. Open `mkdocs.yml` from the project root and add the new file under the correct `nav:` section using spaces for indentation.
 7. Run `mkdocs build --strict` from the project root. Read any error messages, fix the issues, and run again until it passes.
 8. Run `mkdocs serve -a 127.0.0.1:8001` and preview the site in a browser. Check that the new page appears in the menu and the content and images load correctly.

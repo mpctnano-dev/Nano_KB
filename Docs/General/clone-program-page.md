@@ -14,12 +14,12 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/wf_PTAP.png" alt="PTAP program page" /><br/>
+  <img src="/md_file_images/wf_PTAP.png" alt="PTAP program page" /><br/>
   <em>Figure 1: PTAP program page — master template for apprenticeship-style layouts</em>
 </p>
 
 <p align="center">
-  <img src="../md_file_images/Intel_chips.png" alt="Intel CHIPS Scholars program page" /><br/>
+  <img src="/md_file_images/Intel_chips.png" alt="Intel CHIPS Scholars program page" /><br/>
   <em>Figure 2: Intel CHIPS Scholars program page — cloned from the PTAP structure with a unique `intel-*` class namespace</em>
 </p>
 
@@ -63,7 +63,7 @@
 
 ### Part 2: Update SEO Metadata and Page Details
 
-Each program page owns its own `<head>` metadata. For field-by-field guidance and social-tag conventions, see [05-update-site-wide-metadata-or-seo.md](05-update-site-wide-metadata-or-seo.md).
+Each program page owns its own `<head>` metadata. For field-by-field guidance and social-tag conventions, see [update-site-wide-metadata.md](update-site-wide-metadata.md).
 
 1. Open your newly created program page in your code editor.
 2. Inside `<head>`, update the document title, meta description, and canonical URL to match the new program.
@@ -109,13 +109,13 @@ Cloning copies hundreds of class names tied to the source prefix (`ptap-*` or `i
 2. Keep new rules grouped and commented so future editors can find them alongside the existing `intel-*` section.
 
 > [!TIP]
-> **Keep watermarks compact:** When theming stat cards, keep bento watermark text short (e.g. `$15K`, `12`, `9+3`) to prevent overflow on tablet breakpoints. See [04-update-program-and-training-pages.md](../workforce/04-update-program-and-training-pages.md) for bento modifier reference.
+> **Keep watermarks compact:** When theming stat cards, keep bento watermark text short (e.g. `$15K`, `12`, `9+3`) to prevent overflow on tablet breakpoints. See [04-update-ptap-and-intel-chips-pages.md](../Workforce/04-update-ptap-and-intel-chips-pages.md) for bento modifier reference.
 
 ---
 
 ### Part 4: Swap Out Section Content
 
-After namespacing, replace placeholder copy, logos, and stats section by section. Full editing guidance for each block lives in [04-update-program-and-training-pages.md](../workforce/04-update-program-and-training-pages.md).
+After namespacing, replace placeholder copy, logos, and stats section by section. Full editing guidance for each block lives in [04-update-ptap-and-intel-chips-pages.md](../Workforce/04-update-ptap-and-intel-chips-pages.md).
 
 | Section | Container to locate | What to change |
 |---|---|---|
@@ -129,7 +129,7 @@ After namespacing, replace placeholder copy, logos, and stats section by section
 
 ### Part 5: Register the Page in Global Navigation
 
-Follow [02-update-global-navigation.md](02-update-global-navigation.md) to add the page to the site-wide menu. Program pages typically belong in the **Workforce** dropdown (`id="wfdDropdownItem"`) or **Degree Programs** dropdown (`id="degreeDropdownItem"`), depending on audience.
+Follow [update-global-navigation.md](update-global-navigation.md) to add the page to the site-wide menu. Program pages typically belong in the **Workforce** dropdown (`id="wfdDropdownItem"`) or **Degree Programs** dropdown (`id="degreeDropdownItem"`), depending on audience.
 
 1. Open `/includes/header.html`.
 2. Locate the appropriate `.nav-dropdown-grid` inside the target mega-menu.
@@ -178,7 +178,7 @@ Skip this part when cloning an apprenticeship-style page from `/PTAP.html`. When
 
 1. Keep the form element id `#scholarshipForm` and ensure every `<input>` / `<textarea>` `name` attribute matches the `$detailFields` array in `/IntelScholarshipSubmission.php`.
 2. Confirm the form `action` points to `/IntelScholarshipSubmission.php` and that `/JS/validation.js` is loaded before the page-scoped validation script at the bottom of `<body>`.
-3. For validation behavior, field limits, and mailer configuration details, see **Part 6** in [04-update-program-and-training-pages.md](../workforce/04-update-program-and-training-pages.md) and [08-update-php-mailer-config.md](08-update-php-mailer-config.md).
+3. For validation behavior, field limits, and mailer configuration details, see **Part 6** in [04-update-ptap-and-intel-chips-pages.md](../Workforce/04-update-ptap-and-intel-chips-pages.md) and the PHP mailer configuration guide (not yet documented in this knowledge base).
 
 ---
 

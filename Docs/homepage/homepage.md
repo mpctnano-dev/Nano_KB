@@ -7,7 +7,7 @@
 
 ## What This Page Is
 
-<img src="../md_file_images/homepage-hero.png" alt="NAU Nano homepage hero section" />
+<img src="/md_file_images/homepage-hero.png" alt="NAU Nano homepage hero section" />
 
 *The index.html hero — the first full-viewport section visitors see, with the headline, subtitle, and CTA buttons. The header and footer you see in the browser are injected separately by layout.js and are not part of this file.*
 

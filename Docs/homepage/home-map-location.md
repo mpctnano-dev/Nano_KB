@@ -7,7 +7,7 @@
 
 ## Page Overview
 
-<img src="../md_file_images/homepage-map-location.png" alt="Committed to Innovation section showing contact info and embedded Google Map" />
+<img src="/md_file_images/homepage-map-location.png" alt="Committed to Innovation section showing contact info and embedded Google Map" />
 
 *The Committed to Innovation section at the bottom of the homepage — contact info on the left and the embedded Google Maps iframe on the right. The map embed URL is the element most likely to need updating.*
 

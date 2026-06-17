@@ -7,7 +7,7 @@
 
 ## Page Overview
 
-<img src="../md_file_images/homepage-workforce-partners.png" alt="Workforce Development and Industry Partners section on the homepage" />
+<img src="/md_file_images/homepage-workforce-partners.png" alt="Workforce Development and Industry Partners section on the homepage" />
 
 *The Workforce Development & Industry Partners section — the partner logo cards are on the right side. Each card is hardcoded in index.html with a logo image and a partner-type label.*
 

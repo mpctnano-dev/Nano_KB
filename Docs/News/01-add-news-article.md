@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/News_%231.png" alt="News & Updates Page Overview" /><br/>
+  <img src="/md_file_images/News_%231.png" alt="News & Updates Page Overview" /><br/>
   <em>MPaCT News & Updates page visual layout and news card grid</em>
 </p>
 
@@ -43,7 +43,7 @@
    **Real code snippet:** `const ARTICLES = [`
 
    <p align="center">
-     <img src="../md_file_images/News_%232.png" alt="Locating the ARTICLES array inside JS/news.js" /><br/>
+     <img src="/md_file_images/News_%232.png" alt="Locating the ARTICLES array inside JS/news.js" /><br/>
      <em>Locating the main ARTICLES registry array definition inside JS/news.js</em>
    </p>
 
@@ -184,7 +184,7 @@ The overlay reader is capable of rendering specialized content blocks to break u
    **Real code snippet:** `<div class="news-grid" id="newsGrid">`
 
    <p align="center">
-     <img src="../md_file_images/News_%233.png" alt="Locating the newsGrid container in News.html" /><br/>
+     <img src="/md_file_images/News_%233.png" alt="Locating the newsGrid container in News.html" /><br/>
      <em>Locating the newsGrid container inside News.html</em>
    </p>
 

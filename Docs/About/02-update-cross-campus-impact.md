@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/Cross_Campus_Impact_%231.png" alt="Cross Campus Impact Section" /><br/>
+  <img src="/md_file_images/Cross_Campus_Impact_%231.png" alt="Cross Campus Impact Section" /><br/>
   <em>Visual overview of the Cross Campus Impact section on the About Us page</em>
 </p>
 
@@ -37,13 +37,13 @@
    **Real code snippet:** `<div class="affiliations-grid">`
 
    <p align="center">
-     <img src="../md_file_images/Cross_Campus_Impact_%232.png" alt="Locating the affiliations-grid Container" /><br/>
+     <img src="/md_file_images/Cross_Campus_Impact_%232.png" alt="Locating the affiliations-grid Container" /><br/>
      <em>Locating the affiliations-grid container division in the HTML source code</em>
    </p>
 3. Inside this container division tag, you will see a collection of nested division blocks representing individual affiliation cards.
 
    <p align="center">
-     <img src="../md_file_images/Cross_Campus_Impact_%233.png" alt="Nested Affiliation Cards" /><br/>
+     <img src="/md_file_images/Cross_Campus_Impact_%233.png" alt="Nested Affiliation Cards" /><br/>
      <em>Identifying the individual nested affiliation-card blocks</em>
    </p>
 
@@ -56,7 +56,7 @@
    **Real code snippet:** `<div class="affiliation-card about-reveal about-delay-2">`
 
    <p align="center">
-     <img src="../md_file_images/Cross_Campus_Impact_%234.png" alt="Individual Card Markup" /><br/>
+     <img src="/md_file_images/Cross_Campus_Impact_%234.png" alt="Individual Card Markup" /><br/>
      <em>Structure of an affiliation-card container with animation delay classes</em>
    </p>
 3. You can customize the elements inside this block using the guide table below:

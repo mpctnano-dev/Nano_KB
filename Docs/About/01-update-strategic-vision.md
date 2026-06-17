@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/Strategic_Vision_%231.png" alt="Strategic Vision Pipeline" /><br/>
+  <img src="/md_file_images/Strategic_Vision_%231.png" alt="Strategic Vision Pipeline" /><br/>
   <em>Strategic Vision Pipeline</em>
 </p>
 
@@ -37,13 +37,13 @@
    **Real code snippet:** `<div class="vision-pipeline">`
 
    <p align="center">
-     <img src="../md_file_images/Strategic_Vision_%232.png" alt="Locating the vision-pipeline Container" /><br/>
+     <img src="/md_file_images/Strategic_Vision_%232.png" alt="Locating the vision-pipeline Container" /><br/>
      <em>Locating the main vision-pipeline container class in About_Us.html</em>
    </p>
 3. Inside this container division, you will see nested division blocks representing individual pipeline stages.
 
    <p align="center">
-     <img src="../md_file_images/Strategic_Vision_%233.png" alt="Nested Pipeline Stages" /><br/>
+     <img src="/md_file_images/Strategic_Vision_%233.png" alt="Nested Pipeline Stages" /><br/>
      <em>Identifying individual nested pipeline-stage elements</em>
    </p>
 
@@ -56,7 +56,7 @@
    **Real code snippet:** `<div class="pipeline-stage about-reveal about-delay-2">`
 
    <p align="center">
-     <img src="../md_file_images/Strategic_Vision_%234.png" alt="Individual Stage Markup" /><br/>
+     <img src="/md_file_images/Strategic_Vision_%234.png" alt="Individual Stage Markup" /><br/>
      <em>Structure of a pipeline-stage container with animation delay classes</em>
    </p>
 3. You can customize the elements inside this block using the guide table below:

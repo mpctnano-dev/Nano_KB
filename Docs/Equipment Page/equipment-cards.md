@@ -7,7 +7,7 @@
 
 ## Page Overview
 
-<img src="../md_file_images/equipment-cards.png" alt="Equipment Catalog instrument cards showing category badges, equipment photos, location, description, and the About and Reserve buttons on each card" />
+<img src="/md_file_images/equipment-cards.png" alt="Equipment Catalog instrument cards showing category badges, equipment photos, location, description, and the About and Reserve buttons on each card" />
 
 *The instrument card grid — each card shows the category badge (e.g. FABRICATION), availability status, instrument name, photo, location, and action buttons. This is what you are editing when adding or changing a card.*
 

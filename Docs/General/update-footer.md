@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/Footer.png" alt="Site footer with CTA bar, brand column, three link columns, and bottom legal bar" /><br/>
+  <img src="/md_file_images/Footer.png" alt="Site footer with CTA bar, brand column, three link columns, and bottom legal bar" /><br/>
   <em>Figure 1: Global site footer — top CTA bar, brand block, Lab Access / Programs / Connect columns, meta line, and copyright bar</em>
 </p>
 

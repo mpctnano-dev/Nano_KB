@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../../md_file_images/Career_Pathways_%231.png" alt="Career Pathways Program Navigator sidebar" /><br/>
+  <img src="/md_file_images/Career_Pathways_%231.png" alt="Career Pathways Program Navigator sidebar" /><br/>
   <em>Figure 1: Program Navigator sidebar with Degree Programs and Professional Development categories</em>
 </p>
 
@@ -38,7 +38,7 @@ The Career Pathways page uses an interactive split-pane layout.
 When a visitor clicks a leaf button in the sidebar (tagged with `data-panel="[panelKey]"`), the page's client-side JavaScript hides all other detail panels and reveals the matching block whose `id` is `panel-[panelKey]` (for example, `data-panel="ce"` maps to `id="panel-ce"`).
 
 <p align="center">
-  <img src="../../md_file_images/Career_Pathways_%232.png" alt="Career Pathways Program Navigator with Computer Engineering panel selected" /><br/>
+  <img src="/md_file_images/Career_Pathways_%232.png" alt="Career Pathways Program Navigator with Computer Engineering panel selected" /><br/>
   <em>Figure 2: Selected pathway panel (Computer Engineering) with stats, overview, and career table</em>
 </p>
 

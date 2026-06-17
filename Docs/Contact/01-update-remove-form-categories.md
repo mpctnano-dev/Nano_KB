@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/Contact_Form_Categories_%231.png" alt="Contact Us Category Portal Overview" /><br/>
+  <img src="/md_file_images/Contact_Form_Categories_%231.png" alt="Contact Us Category Portal Overview" /><br/>
   <em>Overview of the interactive category selection cards on the Contact Us portal</em>
 </p>
 
@@ -54,7 +54,7 @@
    **Real code snippet:** `<div class="grid grid-4 gap-md" id="gatewayGrid">`
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Categories_%232.png" alt="Locating the gatewayGrid Container" /><br/>
+     <img src="/md_file_images/Contact_Form_Categories_%232.png" alt="Locating the gatewayGrid Container" /><br/>
      <em>Locating the main gatewayGrid container element in Contact_Us.html</em>
    </p>
 
@@ -100,7 +100,7 @@ Now, we must define the specific text inputs that slide into view when your card
    **Real code snippet:** `const fieldData = {`
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Categories_%233.png" alt="Locating the fieldData Object in script.js" /><br/>
+     <img src="/md_file_images/Contact_Form_Categories_%233.png" alt="Locating the fieldData Object in script.js" /><br/>
      <em>Locating the fieldData object inside JS/script.js to declare dynamic fields</em>
    </p>
 
@@ -135,7 +135,7 @@ Finally, we must tell the backend processor to validate these fields and map the
    **Real code snippet:** `$categories = [`
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Categories_%234.png" alt="Locating the categories array in PHP" /><br/>
+     <img src="/md_file_images/Contact_Form_Categories_%234.png" alt="Locating the categories array in PHP" /><br/>
      <em>Locating the categories array configuration in FormSubmission.php</em>
    </p>
 
@@ -174,7 +174,7 @@ To safely remove an inquiry category (such as `"sales"` / Vendor / Sales):
    `<div class="grid grid-4 gap-md" id="gatewayGrid">`
 
    <p align="center">
-     <img src="../md_file_images/Contact_Form_Categories_%232.png" alt="Locating the gatewayGrid Container" /><br/>
+     <img src="/md_file_images/Contact_Form_Categories_%232.png" alt="Locating the gatewayGrid Container" /><br/>
      <em>Locating the main gatewayGrid container element in Contact_Us.html</em>
    </p>
 
@@ -183,7 +183,7 @@ To safely remove an inquiry category (such as `"sales"` / Vendor / Sales):
 4. Delete or comment out the entire visual block.
 
 <p align="center">
-  <img src="../md_file_images/Contact_Form_Categories_%235.png" alt="Removing a Category block from HTML" /><br/>
+  <img src="/md_file_images/Contact_Form_Categories_%235.png" alt="Removing a Category block from HTML" /><br/>
   <em>Commenting out or deleting the target gateway-card division block inside Contact_Us.html</em>
 </p>
 

@@ -7,7 +7,7 @@
 
 ## What This Page Is
 
-<img src="../md_file_images/mpact-hero.png" alt="MPaCT Lab page hero showing the dark lab background image, page title, subtitle, CTA buttons, and the stats panel with facility investment, instrument count, and facility size" />
+<img src="/md_file_images/mpact-hero.png" alt="MPaCT Lab page hero showing the dark lab background image, page title, subtitle, CTA buttons, and the stats panel with facility investment, instrument count, and facility size" />
 
 *The MPaCT.html hero — the full-viewport dark banner with the lab stats overlay. This is the first section visitors see.*
 

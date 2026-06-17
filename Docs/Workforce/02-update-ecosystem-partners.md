@@ -14,7 +14,7 @@
 ## Visual Reference
 
 <p align="center">
-  <img src="../md_file_images/Wf_Ecosystem_%231.png" alt="Arizona's Semiconductor Ecosystem Section" /><br/>
+  <img src="/md_file_images/Wf_Ecosystem_%231.png" alt="Arizona's Semiconductor Ecosystem Section" /><br/>
   <em>Figure 1: Arizona's Semiconductor Ecosystem Section visual layout in WorkForceDevelopment.html</em>
 </p>
 
