@@ -27,6 +27,10 @@ Additionally, `CareerPathways.html` has a **salary range table** for each degree
 
 ## Section Overview
 
+<img src="../md_file_images/wfd-career-outcomes.png" alt="Career Outcomes section showing the salary table on the left listing median starting salaries for each degree, and the Job Growth card and credentials list on the right" />
+
+*The Career Outcomes section — the salary rows on the left and the national job growth figure on the right. This is the section most frequently updated when labor market data changes.*
+
 The Career Outcomes section has two columns:
 
 - **Left** — Salary table: one `.wfd-salary-row` per degree, showing median starting salary

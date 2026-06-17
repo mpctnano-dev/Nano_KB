@@ -1,161 +1,256 @@
+# Update PTAP and Intel CHIPS Program Pages
 
-# Program & Training Pages (PTAP / Intel CHIPS)
+**Summary:** Update highlights, bento grid metrics, partners, and curriculum lists for the Process Technician Apprenticeship Program (PTAP) and matching high-level training program pages like the Intel CHIPS page.
 
-**Summary:** Maintain hero metrics, partnership logo strips, interactive Bento Grid showcases, and the cohort application form on the PTAP (`/PTAP.html`) and Intel CHIPS Scholars (`/CHIPS_Scholars_Program.html`) program pages.
+**Trigger:** When a program curriculum changes, partnership lists are updated, or regional workforce stats require updating on the program page.
 
-**When to change:** When scholarship structures, curricula, or fab-partner details are updated, or when adjusting the registration form's validation behavior.
+**Difficulty:** Careful
 
-**Difficulty:** <span class="difficulty-stars" style="color:#E6A800">★★★★</span>
-
-**Estimated Time:** 20 minutes
-
----
-
-## Visual Reference
-
-<p align="center">
-  <img src="../md_file_images/wf_PTAP.png" alt="PTAP program page" /><br/>
-  <em>Figure 1: PTAP Program page layout</em>
-</p>
-
-<p align="center">
-  <img src="../md_file_images/Intel_chips.png" alt="Intel chips program page" /><br/>
-  <em>Figure 2: Intel CHIPS Scholars program page layout</em>
-</p>
-
+**Estimated Time:** 25 minutes
 
 ---
 
 ## Target Files
 
-| Path | Purpose in this task |
+| File | Purpose in this task |
 |---|---|
-| `/PTAP.html` | Main HTML document housing the Process Technician Apprenticeship Program structures, inline styles, and reveal animations. |
-| `/CHIPS_Scholars_Program.html` | Sister HTML page containing the funded Master's scholarship cohort details and dynamic application form. |
+| `PTAP.html` | The HTML document containing the structure and styles for the Process Technician Apprenticeship Program. |
+| `IntelCHIPS.html` (If cloned) | The sibling HTML document containing the structure and styles for the Intel CHIPS scholarship program. |
+
+---
+
+## Key Structural Components
+
+Both the PTAP and Intel CHIPS pages share an identical high-end visual design. When you look at these files, you will find several distinct visual sections that create a professional, responsive layout.
+
+> [!NOTE]
+> **SharePoint / OneNote Rendering Compatibility:**
+> Mermaid diagrams are supported natively by many modern editors (like VS Code), but when this documentation is hosted within standard SharePoint/OneNote web views, the raw Mermaid syntax might display as a plain code block instead of a graphic. 
+> 
+> To ensure maximum accessibility for everyone on the team, we have provided both the Mermaid diagram and a clean text-based flowchart below:
+
+```mermaid
+graph TD
+    A[Compact Hero & Quick Stats] --> B[Partnership Logo Strip]
+    B --> C[Program Overview & Shield Badge]
+    C --> D[Bento Grid Stat Cards]
+    D --> E[Coursework & Curricula Columns]
+    E --> F[How It Works Steps]
+    F --> G[Call-to-Action CTA Area]
+```
+
+**Layout Sequence Flowchart:**
+```text
+  ┌──────────────────────────────┐
+  │ Compact Hero & Quick Stats   │
+  └──────────────┬───────────────┘
+                 │
+                 ▼
+  ┌──────────────────────────────┐
+  │   Partnership Logo Strip     │
+  └──────────────┬───────────────┘
+                 │
+                 ▼
+  ┌──────────────────────────────┐
+  │  Program Overview & Shield   │
+  └──────────────┬───────────────┘
+                 │
+                 ▼
+  ┌──────────────────────────────┐
+  │    Bento Grid Stat Cards     │
+  └──────────────┬───────────────┘
+                 │
+                 ▼
+  ┌──────────────────────────────┐
+  │ Coursework & Curricula Lists │
+  └──────────────┬───────────────┘
+                 │
+                 ▼
+  ┌──────────────────────────────┐
+  │     How It Works Steps       │
+  └──────────────┬───────────────┘
+                 │
+                 ▼
+  ┌──────────────────────────────┐
+  │  Call-to-Action (CTA) Area   │
+  └──────────────────────────────┘
+```
+
+Let's walk through how to update each section safely.
 
 ---
 
 ## Step-by-Step Instructions
 
-### Part 1: Update the Hero Quick-Info Panel
+### Part 1: Update the Compact Hero & Quick Stats
 
-To update hero stipends, cohort sizes, or timeline stats, locate the quick-info panel container `<div class="ml-hero__panel">` at the top of either `/PTAP.html` or `/CHIPS_Scholars_Program.html` and modify the text within the `.ml-highlight__title` and `.ml-highlight__desc` elements.
+At the top of the file, you will find the hero section container. Inside this area is a gold-trimmed details card that lists key stats like program duration, credit hours, and credentials.
+
+1. Open `PTAP.html` (or `IntelCHIPS.html`).
+2. Scroll to the main content container and look for the section container tag (represented by a `<section>`) with the class names `"ml-hero"` and `"ml-hero--compact"`:
+   `<section class="ml-hero ml-hero--compact">`
+3. Inside this container, look for the quick-info division tag (represented by a `<div>`) with the class name `"ml-hero__panel"`:
+   `<div class="ml-hero__panel">`
+4. Locate the individual list items inside the unordered list (`<ul>`). You can update the text and figures inside these tags:
+   ```html
+   <li>
+       <i class="fas fa-calendar-alt"></i>
+       <div>
+           <span>Duration</span>
+           <strong>18 Months</strong> <!-- Update duration here -->
+       </div>
+   </li>
+   ```
 
 ---
 
-### Part 2: Update the Partnership Logos
+### Part 2: Update the Scrolling Partnership Strip
 
-To modify corporate or institutional sponsors, locate the partnership logos container (`.ptap-partners__logos` or `.intel-partners__logos`) and add or swap `<img>` tags. Always apply the class `ptap-partners__logo` or `intel-partners__logo` to ensure consistent height matching and hover opacity.
+Beneath the hero section is a smooth, scrolling strip showing logos of companies sponsoring or partnering with the program (such as TSMC, Intel, and Rio Salado).
+
+1. Look for the division tag with the class name `"ptap-partners"`:
+   `<div class="ptap-partners">`
+2. Inside, you will see a container division tag with the class name `"partners-track"`:
+   `<div class="partners-track">`
+3. To add or update a logo, insert an image tag (`<img>`) pointing to the brand's logo file inside `Images/`. Ensure you specify the height attribute directly so it scales cleanly with the other logos:
+   ```html
+   <img src="Images/intel_logo.png" alt="Intel" height="35">
+   ```
 
 ---
 
-### Part 3: Edit Bento Grid Highlights and Modifiers
+### Part 3: Edit Stats and Accent Colors inside the Bento Grid
 
-The center of both program pages features an interactive 12-column Bento Grid (`.ptap-bento__grid` or `.intel-bento__grid`) utilizing two distinct, reusable card styles. 
+The hallmark of the page is a modern, responsive Bento Grid (`.ptap-bento__grid`) that displays program statistics, highlights, and benefits. The grid uses two distinct card structures and flexible grid spanning rules to create its premium visual hierarchy.
 
-*   **Option A: Narrative Details Card** (Text-heavy card with an icon circle and top border accent):
+#### 1. Locate the Bento Grid Section
+1. To get started, please open `PTAP.html` (or `IntelCHIPS.html`) in your code editor.
+2. Please scroll down to the main section tag with the class name `"ptap-bento"`:
+   `<section class="ptap-bento">`
+3. Inside, you will locate the grid wrapper division tag:
+   `<div class="ptap-bento__grid">`
 
-    **Example Snippet (Option A: Detail Narrative Card Blueprint)**
+#### 2. Understanding Card Layouts & HTML Structures
+Inside the `.ptap-bento__grid` container, you will see a collection of card division tags (`<div class="ptap-bento__card">`). There are **two structural formats** you can use depending on the type of content you want to display:
+
+*   **Option A: Detail Narrative Card** (Used for text highlights with decorative accents and icons):
     ```html
     <div class="ptap-bento__card ptap-bento__card--wide ptap-reveal">
-        <div class="ptap-bento__accent ptap-bento__accent--[color]"></div>
-        <div class="ptap-bento__icon ptap-bento__icon--[color]">
-            <i class="[Font_Awesome_Class]"></i>
+        <!-- Top accent color strip (gold, blue, green, or cyan) -->
+        <div class="ptap-bento__accent ptap-bento__accent--gold"></div>
+        
+        <!-- Graphic font-awesome icon container -->
+        <div class="ptap-bento__icon ptap-bento__icon--gold">
+            <i class="fas fa-industry"></i>
         </div>
-        <h3>[Card_Heading_Text]</h3>
-        <p>[Card_Description_Narrative]</p>
+        
+        <!-- Content text -->
+        <h3>On-the-Job Training at TSMC Arizona</h3>
+        <p>Apprentices gain direct experience with semiconductor equipment...</p>
     </div>
     ```
-
-*   **Option B: Feature Stat Card** (Dynamic stat card with an oversized background watermark number):
-
-    **Example Snippet (Option B: Feature Stat Card Blueprint)**
+*   **Option B: Feature Stat Card** (Used for high-impact metric highlights with giant background numbers):
     ```html
-    <div class="ptap-bento__card ptap-bento__card--narrow ptap-bento__card--featured ptap-reveal [Reveal_Delay]">
-        <div class="ptap-bento__watermark">[Watermark_Text]</div>
-        <div class="ptap-bento__stat">[Stat_Number]<em>[Stat_Unit]</em></div>
-        <div class="ptap-bento__stat-label">[Stat_Label]</div>
+    <div class="ptap-bento__card ptap-bento__card--narrow ptap-bento__card--featured ptap-reveal">
+        <!-- Absolute-positioned giant watermark background text -->
+        <div class="ptap-bento__watermark">600</div>
+        
+        <!-- High-impact large metric -->
+        <div class="ptap-bento__stat">600<em>hrs</em></div>
+        
+        <!-- Description label -->
+        <div class="ptap-bento__stat-label">Coursework at NAU</div>
     </div>
     ```
 
-#### Configure Bento Layout Modifiers
-Customize the grid behavior and themes by modifying helper classes on the card containers:
+#### 3. Responsive Column Spanning Rules
+To build a creative "bento box" shape, each card has a modifier class that defines how many columns it spans in the 12-column desktop grid. You can adjust these classes to re-align tiles:
+*   `ptap-bento__card--wide`: Spans **8 columns** (ideal for detailed narrative blocks).
+*   `ptap-bento__card--narrow`: Spans **4 columns** (ideal for high-impact metric cards).
+*   `ptap-bento__card--third`: Spans **4 columns** (ideal for creating a balanced 3-column row, e.g. three cards in a row).
 
-| Modifying Target | CSS Utility / HTML Tag | Purpose |
-|---|---|---|
-| **Column Span (Desktop)** | `ptap-bento__card--wide`<br>`ptap-bento__card--narrow`<br>`ptap-bento__card--third` | Spans 8, 4, or 4 columns respectively within the 12-column desktop layout. |
-| **Accent & Icon Theme** | `ptap-bento__accent--[color]` | Sets the color scheme (glows/borders) for icons and top bars. Options: `gold`, `blue`, `green`, `cyan`. |
-| **Watermark Layer** | `<div class="ptap-bento__watermark">` | Renders a large background watermark. Keep it brief (e.g. `600`, `$15K`, `9+3`). |
-| **Staggered Animations** | `ptap-d1` to `ptap-d5` | Controls slide-in entrance delays on scroll. Apply to stagger row cards. |
-
----
-
-### Part 4: Modify the Coursework Curriculum List
-
-Curriculum course lists (`.ptap-coursework__list`) and research pillars (`.intel-focus__list`) utilize simple structural divisions inside their respective grid wrappers. To add, remove, or modify items, edit the `.ptap-coursework__item` or `.intel-focus__item` list children.
-
----
-
-### Part 5: Update the 'How It Works' Milestones
-
-Cohort milestone stages use a balanced grid track (`.ptap-pathway__steps`) connected via a horizontal progress line on desktop screen resolutions. When updating steps, maintain uniform paragraph word lengths within the `.ptap-pathway__step` elements to prevent uneven vertical expansion.
+#### 4. Customizing Color Accents & Themes
+The bento cards use CSS custom properties to manage hover glows and accent borders cleanly. If you wish to customize these variables or backgrounds (for example, to make a new card pop):
+1. Scroll to the `<style>` tag located inside the `<head>` section at the top of the file.
+2. Locate the CSS rules mapping to the accent class you are using:
+   ```css
+   .ptap-bento__card:hover {
+       background: rgba(255, 255, 255, 0.065);
+       border-color: rgba(255, 255, 255, 0.12);
+       transform: translateY(-3px);
+   }
+   ```
+3. To customize a specific card's glow color, look for the background gradient styles or variables and modify the HSL or hex values to align perfectly with your program's specific brand theme (such as NAU Gold, NAU Blue, or a corporate partner's brand color).
 
 ---
 
-### Part 6: Manage the Scholars Registration Form & Validation
+### Part 4: Modify the Coursework and Curricula Lists
 
-The registration booking form (`#scholarshipForm`) at the bottom of `/CHIPS_Scholars_Program.html` gathers prospective student records and posts submissions to `IntelScholarshipSubmission.php`.
+The curriculum section uses a elegant, two-column split layout. The left column lists the specific courses, while the right column shows a visually striking key outcomes card with a gold shield border.
 
-#### 1. Form Validation Integration (JavaScript)
-The form relies on the global validator `MPCT.Validation` (loaded from `JS/validation.js`) to enforce validation. A page-scoped script wireup runs when users interact with the page:
+1. Locate the division tag with the class name `"ptap-curriculum"`:
+   `<div class="ptap-curriculum">`
+2. **Left Column (Course List):** Inside the list container, look for the individual list items (`<li>`). You can update the course title, description, and icons:
+   ```html
+   <li class="curr-item">
+       <div class="curr-icon"><i class="fas fa-shield-alt"></i></div>
+       <div class="curr-content">
+           <h4>OSHA 30 Certification</h4>
+           <p>Rigorous safety protocols and workplace compliance standards essential for high-tech environments.</p>
+       </div>
+   </li>
+   ```
+3. **Right Column (Sidebar Note Card):** Look for the division card tag with the class name `"curr-note"`:
+   `<div class="curr-note">`
+   You can modify the background image, highlight descriptions, or change the bullet outcomes inside the unordered list (`<ul>`).
 
-*   **Invalid Outlining:** Every invalid input element is outlined using a consistent red outline via `MPCT.Validation.markInvalid(el)`.
-*   **Name Validation:** Triggers live input listening on fields marked with `data-name-field` to block numerical entries and emojis.
-*   **Email & Phone Verification:** Validates email strings with `MPCT.Validation.isEmail(v)` and enforces a masked telephone input format `(XXX) XXX-XXXX` requiring at least 7 digits.
-*   **Radio Group Selection:** Validates radio button groups (`degree_interest`) by highlighting the visible wrapper `.intel-register__radio-row` if no option is picked:
+---
 
-    **Real Code Snippet (Radio Group Selection Validation)**
-    ```javascript
-    var radios = form.querySelectorAll('input[name="degree_interest"]');
-    var picked = Array.prototype.some.call(radios, function (r) { return r.checked; });
-    if (!picked) {
-        var row = radios[0].closest('.intel-register__radio-row');
-        row.style.outline = '2px solid var(--nau-red, #c0392b)';
-    }
-    ```
-*   **Textarea Word Limits:** Integrates `data-max-words="500"` on notes textareas, dynamically updating a remaining word counter.
-*   **Synthetic Dispatching:** Dispatches a synthetic `'input'` event to input fields on form resets to clear remaining character warning tags.
+### Part 5: Update the "How It Works" Milestones
 
-#### 2. Server-Side Processing (PHP)
-Submissions are handled by `IntelScholarshipSubmission.php`, which performs several validation checks:
-1. Re-validates all fields server-side using `includes/validation.php` to align byte-for-byte with the client-side JavaScript rules.
-2. Formats a clear field-by-field email table.
-3. Utilizes PHPMailer to transmit two distinct messages:
-   * **Lab Notification:** Transmitted to the primary lab administrators and CC recipients.
-   * **Applicant Confirmation:** Transmitted back to the student acknowledging registration.
+The step-by-step program pathway uses a sequential line design.
+
+1. Locate the division tag with the class name `"pt-steps"`:
+   `<div class="pt-steps">`
+2. Each milestone is a division tag with the class name `"pt-step"`:
+   `<div class="pt-step">`
+3. Modify the step number, title, and instructional text inside the step block:
+   ```html
+   <div class="pt-step__badge">1</div>
+   <h4 class="pt-step__title">Online Application</h4>
+   <p class="pt-step__desc">Submit your application along with academic transcripts and brief personal statements.</p>
+   ```
+
+---
+
+### Part 6: Maintain the Scroll-Reveal Animation Script
+
+To keep the page feeling premium and alive, a scroll-reveal script is located at the very bottom of the document. This script uses an `IntersectionObserver` in JavaScript to animate cards into view as the user scrolls.
+
+* **Crucial Rule:** The script is hardcoded at the bottom of the HTML file. It automatically scans the page for any element that has the class name `"reveal-on-scroll"`.
+* **Action Required:** When adding new sections, cards, or bento elements that you want to animate, simply add the `"reveal-on-scroll"` class to their container tags. The bottom script will automatically detect them and trigger their fade-in animations as soon as they cross the browser threshold.
 
 ---
 
 ## Design Impact & Layout Solutions
 
-*   **The Design Discrepancy Risk:** Mismatched form input tags or target attributes between the HTML frontend and PHP mailer validation schemas will block scholarship submissions or cause email data losses.
-*   **Visual Impact:** Broken input styling, overlapping red error outlines, or misaligned bento layout blocks.
+*   **The Design Discrepancy Risk:** Bento grid blocks wrap unpredictably or distort on medium viewports (like tablets). Missing brand logo margins in the loop strip create jagged scrolling.
+*   **Visual Impact:** Bento tiles stretching to ugly proportions and logo blocks colliding.
 *   **Recommended Solutions:**
-    *   **Validate Names and Endpoints:** Always keep name attributes inside `<input>` fields completely aligned with the `$detailFields` array in `IntelScholarshipSubmission.php`.
-    *   **Keep Watermarks Compact:** Ensure background bento watermarks remain short (e.g. `$15K` or `12`) to prevent visual overflows on narrower tablet resolutions.
-    *   **Outline Reset Verification:** Verify that any dynamically set style outlines on custom radio rows are cleanly cleared when users change inputs.
+    *   **Bento Grid Sizing:** Use explicit grid fractional fits (`grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))`) to let tiles scale cleanly.
+    *   **Scrolling Marquee Protection:** Keep partnership loop images cropped inside uniform squares with generous margins.
+    *   **IntersectionObserver Fallback:** Ensure scroll-reveal animations fall back to immediate display if JavaScript is disabled on the client browser.
 
 ---
 
 ## Let's Verify Your Changes
 
-1. Open `/PTAP.html` and `/CHIPS_Scholars_Program.html` in your web browser.
-2. Scroll to the booking form at the bottom of the Scholars page, deliberately trigger an empty submit, and verify that the red outlines and error description box display as expected.
-3. Successfully complete and submit the form using dummy data, then verify that the success message clears and input states reset cleanly.
-4. If a local test mail server is running, check your inbox and verify that both the administrator notification and student confirmation emails are formatted and delivered.
+1. Load `PTAP.html` in your local web browser.
+2. Verify that the scrolling partnership logo strip flows smoothly across the page.
+3. Review the Bento Grid to ensure cards are aligned correctly, and check that the watermark numbers are positioned behind the text without obstructing readability.
+4. Scroll down the page and verify that all elements with the class `"reveal-on-scroll"` slide elegantly into view.
 
 ---
 
 🔔 **Documentation Update Reminder:** Please make sure to update any How-To procedures or relevant documentation every time you make a change to the website and deploy it. This keeps our operational manual healthy and helpful for the entire team!
-
-Last reviewed: May 28, 2026
+*Last reviewed: May 19, 2026*

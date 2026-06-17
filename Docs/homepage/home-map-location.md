@@ -7,6 +7,10 @@
 
 ## Page Overview
 
+<img src="../md_file_images/homepage-map-location.png" alt="Committed to Innovation section showing contact info and embedded Google Map" />
+
+*The Committed to Innovation section at the bottom of the homepage — contact info on the left and the embedded Google Maps iframe on the right. The map embed URL is the element most likely to need updating.*
+
 The "Committed to Innovation" section at the bottom of the homepage contains an embedded Google Maps iframe. The map shows a pinned location on campus. This is the only element in this section that requires non-obvious steps to update.
 
 | Area | Search For (Ctrl+F) | What You Can Change |

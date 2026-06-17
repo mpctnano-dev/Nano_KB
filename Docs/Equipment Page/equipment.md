@@ -7,6 +7,10 @@
 
 ## What This Page Is
 
+<img src="../md_file_images/equipment-hero.png" alt="Equipment Catalog page hero showing the page title and intro text above the search and filter bar" />
+
+*The hero section of Equipment.html — gives context on what the catalog page is before scrolling down to the instrument cards.*
+
 `Equipment.html` is the full instrument catalog for the MPaCT Lab. It displays all 35+ instruments as filterable cards, lets users switch between grid and list view, and links each card to a reservation form and a dedicated About page.
 
 This page has three interconnected systems that must stay in sync. Understanding how they relate is essential before editing anything:

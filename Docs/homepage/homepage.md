@@ -7,6 +7,10 @@
 
 ## What This Page Is
 
+<img src="../md_file_images/homepage-hero.png" alt="NAU Nano homepage hero section" />
+
+*The index.html hero — the first full-viewport section visitors see, with the headline, subtitle, and CTA buttons. The header and footer you see in the browser are injected separately by layout.js and are not part of this file.*
+
 `index.html` is the homepage of the NAU Nano website (https://nano.nau.edu). It is the first page most visitors land on and is divided into six visual sections. The header and footer are **not part of this file** — they are injected at load time from `includes/header.html` and `includes/footer.html` by `JS/layout.js`. Do not look for nav or footer content here.
 
 ---

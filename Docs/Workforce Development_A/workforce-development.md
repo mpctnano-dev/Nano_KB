@@ -7,6 +7,10 @@
 
 ## What This Page Is
 
+<img src="../md_file_images/wfd-hero.png" alt="Workforce Development page hero showing the full-viewport banner with the page title, subtitle, CTA buttons, and the stats panel with semiconductor industry figures" />
+
+*The WorkForceDevelopment.html hero — the full-width banner section visitors see first. The stats panel on the right shows the key industry figures that appear across the rest of the page.*
+
 `WorkForceDevelopment.html` covers NAU's semiconductor workforce pipeline — industry partnerships, apprenticeship pathways, the PTAP program, AZ market context, employer ecosystem, and career outcome data. It has seven distinct sections.
 
 One architectural pattern applies to every non-hero section on this page:

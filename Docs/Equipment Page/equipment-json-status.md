@@ -7,6 +7,10 @@
 
 ## What This System Is
 
+<img src="../md_file_images/equipment-json-status.png" alt="Equipment cards showing mixed availability status — some cards show Available in green, others show a date in orange (coming soon), highlighting the status dot and Reserve button differences controlled by equipment.json" />
+
+*Cards with different live statuses — notice the green Available dot vs the orange date label, and the active Reserve button vs the greyed-out Unavailable button. These states are set by equipment.json, not the HTML.*
+
 `equipment.json` is a data file at the project root that stores the live availability status for every instrument. When `Equipment.html` loads, `JS/Equipment_Status.js` fetches this file and rewrites the status dot and Reserve button on every matching card — **overriding whatever is in the HTML**.
 
 This means:

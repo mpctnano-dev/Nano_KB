@@ -7,6 +7,10 @@
 
 ## Page Overview
 
+<img src="../md_file_images/equipment-filter-bar.png" alt="Equipment Catalog filter bar showing the search box, category buttons (ALL, METROLOGY, FABRICATION etc.), location buttons, and the first row of instrument cards below" />
+
+*The filter bar and the top of the instrument grid — the search box, category buttons, and location buttons are all visible here. This is the section you edit when adding a new category or location filter.*
+
 The filter bar sits between the hero and the card grid. It has three functional areas:
 
 1. **Search box** — live text search, powered automatically by `JS/script.js`. No manual changes needed.

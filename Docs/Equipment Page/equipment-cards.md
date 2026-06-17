@@ -7,6 +7,10 @@
 
 ## Page Overview
 
+<img src="../md_file_images/equipment-cards.png" alt="Equipment Catalog instrument cards showing category badges, equipment photos, location, description, and the About and Reserve buttons on each card" />
+
+*The instrument card grid — each card shows the category badge (e.g. FABRICATION), availability status, instrument name, photo, location, and action buttons. This is what you are editing when adding or changing a card.*
+
 Every instrument on the catalog page is a `<div class="tech-card">` block inside `id="equipmentContainer"`. Cards display in a category-sorted order determined by an inline JavaScript array — not by their position in the HTML. You can paste a new card anywhere inside the container and the sort script will place it in the correct visual position automatically.
 
 | Area | Search For (Ctrl+F) | What You Can Change |

@@ -7,6 +7,10 @@
 
 ## Page Overview
 
+<img src="../md_file_images/homepage-academic-programs.png" alt="Integrated Education Paths academic programs carousel on the homepage" />
+
+*The Integrated Education Paths carousel — cards are paginated with left/right arrow buttons and dot indicators. Note that the total card count is hardcoded in script.js, so you must update that number whenever you add or remove a card.*
+
 The Integrated Education Paths section is a carousel of academic program cards. Cards are paginated — visitors click the left/right arrow buttons to move between pages of cards, and dots at the bottom track their position.
 
 The carousel has a **hidden dependency in JavaScript**: the total card count is hardcoded as the number `7` in `script.js`. If you add or remove a card without updating that number, the arrow buttons and pagination dots will not work correctly.

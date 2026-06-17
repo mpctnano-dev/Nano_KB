@@ -1,0 +1,165 @@
+# Site identity shown in the browser tab, header, search metadata, and generated HTML.
+site_name: NAU Nano Website Docs
+site_description: Maintenance documentation for the NAU Nano public website at nano.nau.edu.
+site_author: NAU Nano
+
+# MkDocs reads Markdown from this folder. Keep editable docs source here.
+docs_dir: Docs
+
+# Material gives us search, tabs, tags, code copy buttons, dark mode, and a clean docs layout.
+theme:
+  name: material
+  logo: assets/images/NAU.png
+  favicon: assets/images/NAU.png
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.footnote.tooltips
+    - content.tabs.link
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font: false
+
+# Search is the built-in site search. Tags creates the generated tag index.
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - tags
+
+# These Markdown extensions support admonitions, tables, code highlighting, tabs,
+# task lists, footnotes, Mermaid diagrams, and richer inline formatting.
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Custom docs-site CSS. This is for the MkDocs website, not the public nano.nau.edu CSS.
+extra_css:
+  - assets/stylesheets/extra.css
+
+# Hide the default generator text and keep social links empty until the team chooses them.
+extra:
+  generator: false
+  social: []
+
+copyright: Copyright &copy; 2026 Northern Arizona University.
+
+# Navigation labels appear in the docs menu. Paths are relative to Docs/.
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Overview: getting-started/index.md
+  - Home Page:
+      - Overview: homepage/homepage.md
+      - Academic Programs: homepage/home-academic-programs.md
+      - Featured Equipment: homepage/home-featured-equipment.md
+      - Map Location: homepage/home-map-location.md
+      - Workforce Partners: homepage/home-workforce-partners.md
+  - MPaCT Homepage:
+      - Overview: "MPaCT Homepage/mpact.md"
+      - Capability Cards: "MPaCT Homepage/mpact-capability-cards.md"
+      - Facility Buildout: "MPaCT Homepage/mpact-facility-buildout.md"
+      - Research Areas: "MPaCT Homepage/mpact-research-areas.md"
+      - Shared Use Facility: "MPaCT Homepage/mpact-shared-use-facility.md"
+  - Equipment:
+      - Overview: "Equipment Page/equipment.md"
+      - Equipment Cards: "Equipment Page/equipment-cards.md"
+      - Filter Bar and Sort Order: "Equipment Page/equipment-filter-bar.md"
+      - JSON Status System: "Equipment Page/equipment-json-status.md"
+  - Degree Programs:
+      - Overview: "Degree Programs/degree-programs.md"
+      - Program Rows: "Degree Programs/degree-programs-program-rows.md"
+      - Clone a Program Page: General/clone-program-page.md
+  - Workforce:
+      - Overview: "Workforce Development_A/workforce-development.md"
+      - Pathways and PTAP: "Workforce Development_A/wfd-pathways-ptap.md"
+      - Investment: "Workforce Development_A/wfd-investment.md"
+      - Ecosystem: "Workforce Development_A/wfd-ecosystem.md"
+      - Career Outcomes: "Workforce Development_A/wfd-career-outcomes.md"
+      - Maintenance Tasks:
+          - Industry Stats: Workforce/01-update-industry-stats.md
+          - Ecosystem Partners: Workforce/02-update-ecosystem-partners.md
+          - Salary Data: Workforce/03-update-salary-data.md
+          - PTAP and Intel CHIPS Pages: Workforce/04-update-ptap-and-intel-chips-pages.md
+          - Add or Update Career Pathway: "Workforce/Career Pathways/01-add-or-update-pathway.md"
+          - Update Pathway Content: "Workforce/Career Pathways/02-update-pathway-content.md"
+  - About:
+      - Strategic Vision: About/01-update-strategic-vision.md
+      - Cross Campus Impact: About/02-update-cross-campus-impact.md
+  - Contact:
+      - Form Categories: Contact/01-update-remove-form-categories.md
+      - Form Fields: Contact/02-update-contact-form-fields.md
+  - News:
+      - Add News Article: News/01-add-news-article.md
+      - News Filters: News/02-update-news-filters.md
+  - Service Request:
+      - How It Works: Service-Request/service-request-how-it-works.md
+      - Field Lifecycle: Service-Request/service-request-field-lifecycle.md
+  - Shared Components:
+      - Hero Stats Panel: _shared-hero-stats-panel.md
+  - Reference:
+      - Reference Overview: reference/index.md
+      - Tags: reference/tags.md
+      - MkDocs Manual Process: reference/mkdocs-manual-process.md

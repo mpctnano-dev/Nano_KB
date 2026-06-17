@@ -7,6 +7,10 @@
 
 ## Page Overview
 
+<img src="../md_file_images/mpact-research-areas.png" alt="Areas of Scientific Focus section showing the section heading and four numbered research entries (01 Thin Film Deposition, 02 Micro and Nanofabrication, 03 Materials Characterization, 04 Semiconductor Device Testing) each with a title, description, and instrument tags" />
+
+*The Areas of Scientific Focus section — four numbered research area entries. Each entry has a number, title, description, and instrument tags. This is what you edit when adding or updating a research area.*
+
 This section displays four numbered research area entries. Each entry has a two-digit number (`01`–`04`), a title, a description paragraph, and a row of instrument/method tags. The entries animate in from the left in a staggered sequence when the user scrolls to this section — this stagger is controlled by CSS delay classes on each card.
 
 | Area | Search For (Ctrl+F) | What You Can Change |
