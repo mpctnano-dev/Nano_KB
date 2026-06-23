@@ -1,0 +1,6 @@
+title: Reference
+nav:
+  - Reference Overview: index.md
+  - Tags: tags.md
+  - MkDocs Manual Process: mkdocs-manual-process.md
+  - ...

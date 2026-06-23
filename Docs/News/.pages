@@ -1,0 +1,5 @@
+title: News
+nav:
+  - Add News Article: 01-add-news-article.md
+  - News Filters: 02-update-news-filters.md
+  - ...

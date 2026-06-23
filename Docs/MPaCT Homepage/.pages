@@ -1,0 +1,8 @@
+title: MPaCT Homepage
+nav:
+  - Overview: mpact.md
+  - Capability Cards: mpact-capability-cards.md
+  - Facility Buildout: mpact-facility-buildout.md
+  - Research Areas: mpact-research-areas.md
+  - Shared Use Facility: mpact-shared-use-facility.md
+  - ...

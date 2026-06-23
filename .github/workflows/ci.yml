@@ -1,0 +1,45 @@
+name: Build and Deploy Docs
+
+on:
+  push:
+    branches:
+      - site_generation
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Check out the source repo
+      - uses: actions/checkout@v4
+
+      # 2. Set up Python
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # 3. Cache pip packages (refreshes weekly)
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: ~/.cache
+          restore-keys: |
+            mkdocs-material-
+
+      # 4. Install dependencies
+      - run: pip install -r requirements.txt
+
+      # 5. Build the site with strict checking
+      - run: mkdocs build --clean --strict
+
+      # 6. Deploy to the separate hosting repo
+      - name: Deploy to mpact-docs-site
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          external_repository: akhilkinnera/mpact-docs-site
+          publish_dir: ./site
+          publish_branch: main

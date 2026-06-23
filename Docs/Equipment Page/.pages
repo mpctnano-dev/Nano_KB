@@ -1,0 +1,7 @@
+title: Equipment
+nav:
+  - Overview: equipment.md
+  - Equipment Cards: equipment-cards.md
+  - Filter Bar and Sort Order: equipment-filter-bar.md
+  - JSON Status System: equipment-json-status.md
+  - ...

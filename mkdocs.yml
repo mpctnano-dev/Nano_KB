@@ -50,6 +50,7 @@ plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - tags
+  - awesome-pages
 
 # These Markdown extensions support admonitions, tables, code highlighting, tabs,
 # task lists, footnotes, Mermaid diagrams, and richer inline formatting.
@@ -106,60 +107,7 @@ extra:
 
 copyright: Copyright &copy; 2026 Northern Arizona University.
 
-# Navigation labels appear in the docs menu. Paths are relative to Docs/.
-nav:
-  - Home: index.md
-  - Getting Started:
-      - Overview: getting-started/index.md
-  - Home Page:
-      - Overview: homepage/homepage.md
-      - Academic Programs: homepage/home-academic-programs.md
-      - Featured Equipment: homepage/home-featured-equipment.md
-      - Map Location: homepage/home-map-location.md
-      - Workforce Partners: homepage/home-workforce-partners.md
-  - MPaCT Homepage:
-      - Overview: "MPaCT Homepage/mpact.md"
-      - Capability Cards: "MPaCT Homepage/mpact-capability-cards.md"
-      - Facility Buildout: "MPaCT Homepage/mpact-facility-buildout.md"
-      - Research Areas: "MPaCT Homepage/mpact-research-areas.md"
-      - Shared Use Facility: "MPaCT Homepage/mpact-shared-use-facility.md"
-  - Equipment:
-      - Overview: "Equipment Page/equipment.md"
-      - Equipment Cards: "Equipment Page/equipment-cards.md"
-      - Filter Bar and Sort Order: "Equipment Page/equipment-filter-bar.md"
-      - JSON Status System: "Equipment Page/equipment-json-status.md"
-  - Degree Programs:
-      - Overview: "Degree Programs/degree-programs.md"
-      - Program Rows: "Degree Programs/degree-programs-program-rows.md"
-      - Clone a Program Page: General/clone-program-page.md
-  - Workforce:
-      - Overview: "Workforce Development_A/workforce-development.md"
-      - Pathways and PTAP: "Workforce Development_A/wfd-pathways-ptap.md"
-      - Investment: "Workforce Development_A/wfd-investment.md"
-      - Ecosystem: "Workforce Development_A/wfd-ecosystem.md"
-      - Career Outcomes: "Workforce Development_A/wfd-career-outcomes.md"
-      - Maintenance Tasks:
-          - Industry Stats: Workforce/01-update-industry-stats.md
-          - Ecosystem Partners: Workforce/02-update-ecosystem-partners.md
-          - Salary Data: Workforce/03-update-salary-data.md
-          - PTAP and Intel CHIPS Pages: Workforce/04-update-ptap-and-intel-chips-pages.md
-          - Add or Update Career Pathway: "Workforce/Career Pathways/01-add-or-update-pathway.md"
-          - Update Pathway Content: "Workforce/Career Pathways/02-update-pathway-content.md"
-  - About:
-      - Strategic Vision: About/01-update-strategic-vision.md
-      - Cross Campus Impact: About/02-update-cross-campus-impact.md
-  - Contact:
-      - Form Categories: Contact/01-update-remove-form-categories.md
-      - Form Fields: Contact/02-update-contact-form-fields.md
-  - News:
-      - Add News Article: News/01-add-news-article.md
-      - News Filters: News/02-update-news-filters.md
-  - Service Request:
-      - How It Works: Service-Request/service-request-how-it-works.md
-      - Field Lifecycle: Service-Request/service-request-field-lifecycle.md
-  - Shared Components:
-      - Hero Stats Panel: _shared-hero-stats-panel.md
-  - Reference:
-      - Reference Overview: reference/index.md
-      - Tags: reference/tags.md
-      - MkDocs Manual Process: reference/mkdocs-manual-process.md
+# Navigation is managed by .pages files in each Docs/ subfolder.
+# See the awesome-pages plugin: https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+# To reorder pages, edit the .pages file in the relevant folder.
+# New .md files auto-appear in the nav — no need to edit this file.

@@ -1,0 +1,8 @@
+title: Home Page
+nav:
+  - Overview: homepage.md
+  - Academic Programs: home-academic-programs.md
+  - Featured Equipment: home-featured-equipment.md
+  - Map Location: home-map-location.md
+  - Workforce Partners: home-workforce-partners.md
+  - ...

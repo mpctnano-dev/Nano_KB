@@ -1,0 +1,15 @@
+nav:
+  - Home: index.md
+  - Getting Started: getting-started
+  - Home Page: homepage
+  - MPaCT Homepage: MPaCT Homepage
+  - Equipment: Equipment Page
+  - Degree Programs: Degree Programs
+  - Workforce: Workforce Development_A
+  - About: About
+  - Contact: Contact
+  - News: News
+  - Service Request: Service-Request
+  - Shared Components: _shared-hero-stats-panel.md
+  - Reference: reference
+  - ...

@@ -1,1 +1,5 @@
 .DS_Store
+site/
+MkDocs/
+.deploy_key
+.deploy_key.pub
