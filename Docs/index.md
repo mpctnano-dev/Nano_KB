@@ -18,6 +18,8 @@ Use it as a manual reference when editing page content, updating shared componen
 - [Degree Programs Guides](Degree%20Programs/degree-programs.md)
 - [Workforce Development Guides](Workforce%20Development_A/workforce-development.md)
 - [Service Request Guides](Service-Request/service-request-how-it-works.md)
+- [Security Guides](Security/01-add-security-checks-to-a-form.md)
+- [SEO and GEO Guides](SEO-GEO/01-update-robots-and-ai-crawlers.md)
 - [MkDocs Manual Process](reference/mkdocs-manual-process.md)
 
 ## Source and Output

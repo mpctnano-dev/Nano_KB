@@ -204,6 +204,10 @@ The associated JS definitions in `script.js` and PHP array mappings in `FormSubm
 
 ## Let's Verify Your Changes
 
+> [!NOTE]
+> **A local submit now has to pass the security checks.**
+> Turnstile test keys, the CSRF cookie, and a clear rate-limit window are required before the success message can appear. The test keys are in [Update Cloudflare Turnstile (CAPTCHA) Settings](../Security/02-update-turnstile-settings.md), Part 4. If the form stops with a red message, use [Troubleshoot Blocked Form Submissions](../Security/05-troubleshoot-blocked-submissions.md).
+
 1. Open `Contact_Us.html` to verify your changes. You can double-click the file to launch it directly in your web browser, or if you are using a code editor like VS Code, you can run a local preview extension (such as Live Server) to render and test the page in real-time.
 2. Click your new inquiry category card. Verify that the correct input fields slide dynamically into view.
 3. Fill out the form fields with test parameters and submit the form.

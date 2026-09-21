@@ -9,6 +9,8 @@ layer is misconfigured, data fails silently at that layer — no error appears t
 
 ---
 
+> **Note:** Before Layer 3, every submit runs the security guard chain: honeypot, CSRF token, Cloudflare Turnstile, then the rate limit. A reject there never reaches PHP field validation. That chain is documented in [Add Security Checks to a New Form](../Security/01-add-security-checks-to-a-form.md).
+
 ## The 5-Layer Lifecycle
 
 Every field in every form follows this path in order:

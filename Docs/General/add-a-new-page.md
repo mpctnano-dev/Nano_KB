@@ -34,6 +34,10 @@ Every standard site page follows the same runtime pattern:
 > [!IMPORTANT]
 > **Local preview requires a web server:** `layout.js` uses `fetch()`, which does not work on the `file://` protocol. Preview with Live Server (VS Code), another local HTTP server, or the deployed host.
 
+> [!TIP]
+> **A page with a form needs the security checks, and a new root page joins the sitemap.**
+> Copy the honeypot, Turnstile widget, CSRF scripts, and PHP guard chain from [Add Security Checks to a New Form](../Security/01-add-security-checks-to-a-form.md). A new root HTML page is picked up by the live sitemap; see [Add or Unlist a Page in the Sitemap](../SEO-GEO/02-update-sitemap.md) if it should stay off the list.
+
 ---
 
 ## Step-by-Step Instructions

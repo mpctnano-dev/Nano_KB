@@ -274,6 +274,10 @@ To safely remove an existing field from the Contact Us form, choose the appropri
 
 ## Let's Verify Your Changes
 
+> [!NOTE]
+> **A local submit now has to pass the security checks.**
+> Turnstile test keys, the CSRF cookie, and a clear rate-limit window are required before the success message can appear. The test keys are in [Update Cloudflare Turnstile (CAPTCHA) Settings](../Security/02-update-turnstile-settings.md), Part 4. If the form stops with a red message, use [Troubleshoot Blocked Form Submissions](../Security/05-troubleshoot-blocked-submissions.md).
+
 1. Open `Contact_Us.html` in your local environment browser.
 2. Click on the category card you updated. Verify that the new layout flows elegantly without any uneven grid wraps.
 3. Fill out the form completely, ensuring you input valid test details in your new field (or verifying that removed fields no longer appear), and submit the message.
