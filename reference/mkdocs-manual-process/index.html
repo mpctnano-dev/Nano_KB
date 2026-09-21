@@ -1972,6 +1972,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2060,6 +2064,62 @@
     
   
     Field Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request email
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-field-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request field types
   
 
     
@@ -2469,6 +2529,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2529,6 +2597,118 @@
     
   
     Clone a Program Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/add-a-new-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add a New Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-footer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Footer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-global-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Global Navigation Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-site-wide-metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Site-Wide Metadata or SEO
   
 
     
@@ -3298,7 +3478,7 @@
 <p><strong>In macOS Terminal:</strong></p>
 <p>Open Terminal, then move into the project root folder:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Terminal</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;/path/to/project-root&quot;</span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">"/path/to/project-root"</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">pwd</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Replace <code>/path/to/project-root</code> with the actual path on your machine. The <code>pwd</code> command confirms you are in the right place before running MkDocs commands.</p>
@@ -3432,9 +3612,9 @@
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Built page location</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a>site/About/01-update-strategic-vision/index.html
 </span></code></pre></div></td></tr></table></div>
 <p>That means the browser resolves image paths from inside <code>site/About/01-update-strategic-vision/</code>, not from where the Markdown file sits. To reach <code>site/md_file_images/</code> from there, you need to go up two levels:</p>
-<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Correct path for a file one folder deep (e.g. Docs/About/)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../../md_file_images/your-screenshot.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Description&quot;</span> <span class="p">/&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Correct path for a file one folder deep (e.g. Docs/About/)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"../../md_file_images/your-screenshot.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Description"</span> <span class="p">/&gt;</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Correct path for a file two folders deep (e.g. Docs/Workforce/Career Pathways/)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../../../md_file_images/your-screenshot.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Description&quot;</span> <span class="p">/&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Correct path for a file two folders deep (e.g. Docs/Workforce/Career Pathways/)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"../../../md_file_images/your-screenshot.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Description"</span> <span class="p">/&gt;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>The rule: <strong>one <code>../</code> for each folder level between the file and <code>Docs/</code></strong>. A file in <code>Docs/About/</code> is one level deep, so use <code>../../</code>. A file in <code>Docs/Workforce/Career Pathways/</code> is two levels deep, so use <code>../../../</code>.</p>
 <h2 id="screenshot-filename-mistakes-to-avoid">Screenshot Filename Mistakes to Avoid<a class="headerlink" href="#screenshot-filename-mistakes-to-avoid" title="Permanent link">&para;</a></h2>
@@ -3452,7 +3632,7 @@
 <p class="admonition-title">Avoid raw # in image URLs</p>
 <p>If an existing screenshot filename contains <code>#</code>, write it as <code>%23</code> in the image path. In a browser URL, a raw <code>#</code> starts a page fragment and stops the image from loading.</p>
 </div>
-<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Correct — encoding # as %23</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../../md_file_images/Strategic_Vision_%231.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Strategic Vision step 1&quot;</span> <span class="p">/&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Correct — encoding # as %23</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"../../md_file_images/Strategic_Vision_%231.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Strategic Vision step 1"</span> <span class="p">/&gt;</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="how-extra-css-works">How Extra CSS Works<a class="headerlink" href="#how-extra-css-works" title="Permanent link">&para;</a></h2>
 <p>The custom CSS file is:</p>
@@ -3563,7 +3743,7 @@
 <hr />
 <p><strong>Step 4 — Add screenshots</strong></p>
 <p>If the guide needs screenshots, copy the image files into <code>Docs/md_file_images/</code>. Then reference them in the guide:</p>
-<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Image tag for a file inside Docs/homepage/</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../../md_file_images/homepage-banner-step-1.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Homepage banner editor&quot;</span> <span class="p">/&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Image tag for a file inside Docs/homepage/</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"../../md_file_images/homepage-banner-step-1.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Homepage banner editor"</span> <span class="p">/&gt;</span>
 </span></code></pre></div></td></tr></table></div>
 <hr />
 <p><strong>Step 5 — Register the file in mkdocs.yml</strong></p>

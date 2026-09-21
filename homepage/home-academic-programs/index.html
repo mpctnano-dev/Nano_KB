@@ -2196,6 +2196,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2284,6 +2288,62 @@
     
   
     Field Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request email
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-field-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request field types
   
 
     
@@ -2476,6 +2536,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2536,6 +2604,118 @@
     
   
     Clone a Program Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/add-a-new-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add a New Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-footer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Footer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-global-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Global Navigation Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-site-wide-metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Site-Wide Metadata or SEO
   
 
     
@@ -3124,7 +3304,7 @@
 <h2 id="section-1-adding-a-new-program-card">SECTION 1 — Adding a New Program Card<a class="headerlink" href="#section-1-adding-a-new-program-card" title="Permanent link">&para;</a></h2>
 <h3 id="step-1-find-the-card-container">Step 1 — Find the card container<a class="headerlink" href="#step-1-find-the-card-container" title="Permanent link">&para;</a></h3>
 <p>In <code>index.html</code>, press <strong>Ctrl+F</strong> and search for:
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>id=&quot;eduCardsGrid&quot;
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>id="eduCardsGrid"
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="step-2-paste-the-card-template">Step 2 — Paste the card template<a class="headerlink" href="#step-2-paste-the-card-template" title="Permanent link">&para;</a></h3>
 <p>Copy the block below and paste it <strong>inside</strong> <code>#eduCardsGrid</code>, after the last <code>&lt;/div&gt;</code> of the last existing card wrapper and before the container's own closing <code>&lt;/div&gt;</code>.</p>
@@ -3154,28 +3334,28 @@
 <span class="normal"><a href="#__codelineno-1-24">24</a></span>
 <span class="normal"><a href="#__codelineno-1-25">25</a></span>
 <span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card-wrapper&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card-header blue&quot;</span><span class="p">&gt;</span>              <span class="cm">&lt;!-- ① header color: blue or gold --&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-semester&quot;</span><span class="p">&gt;</span>Fall 2026<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="cm">&lt;!-- ② auto-updated by JS — see Note --&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-duration&quot;</span><span class="p">&gt;</span>4 Years<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>   <span class="cm">&lt;!-- ③ program length --&gt;</span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card-wrapper"</span><span class="p">&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card"</span><span class="p">&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card-header blue"</span><span class="p">&gt;</span>              <span class="cm">&lt;!-- ① header color: blue or gold --&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-semester"</span><span class="p">&gt;</span>Fall 2026<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="cm">&lt;!-- ② auto-updated by JS — see Note --&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-duration"</span><span class="p">&gt;</span>4 Years<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>   <span class="cm">&lt;!-- ③ program length --&gt;</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card-body&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card-tag blue&quot;</span><span class="p">&gt;</span>Bachelor of Science<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- ④ degree tag --&gt;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>            <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card-title&quot;</span><span class="p">&gt;</span>Program Name<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>               <span class="cm">&lt;!-- ⑤ name --&gt;</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card-desc&quot;</span><span class="p">&gt;</span>Short description connecting this degree to the semiconductor or tech industry. Keep to 2–3 sentences.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- ⑥ --&gt;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card-topics&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card-body"</span><span class="p">&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card-tag blue"</span><span class="p">&gt;</span>Bachelor of Science<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- ④ degree tag --&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>            <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card-title"</span><span class="p">&gt;</span>Program Name<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>               <span class="cm">&lt;!-- ⑤ name --&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card-desc"</span><span class="p">&gt;</span>Short description connecting this degree to the semiconductor or tech industry. Keep to 2–3 sentences.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- ⑥ --&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card-topics"</span><span class="p">&gt;</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Topic One<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>    <span class="cm">&lt;!-- ⑦ course topics — 3 to 5 items --&gt;</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Topic Two<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Topic Three<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Topic Four<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a>            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;degree-programs.html#anchor&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edu-card-link&quot;</span><span class="p">&gt;</span>Explore Program  <span class="cm">&lt;!-- ⑧ link --&gt;</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>                <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;16&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;16&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 24 24&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>                    <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;currentColor&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">stroke-linecap</span><span class="o">=</span><span class="s">&quot;round&quot;</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a>                    <span class="na">stroke-linejoin</span><span class="o">=</span><span class="s">&quot;round&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>                    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;12&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;19&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;12&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">line</span><span class="p">&gt;</span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a>                    <span class="p">&lt;</span><span class="nt">polyline</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;12 5 19 12 12 19&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">polyline</span><span class="p">&gt;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a>            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"degree-programs.html#anchor"</span> <span class="na">class</span><span class="o">=</span><span class="s">"edu-card-link"</span><span class="p">&gt;</span>Explore Program  <span class="cm">&lt;!-- ⑧ link --&gt;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>                <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">"16"</span> <span class="na">height</span><span class="o">=</span><span class="s">"16"</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">"0 0 24 24"</span> <span class="na">fill</span><span class="o">=</span><span class="s">"none"</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>                    <span class="na">stroke</span><span class="o">=</span><span class="s">"currentColor"</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">"2"</span> <span class="na">stroke-linecap</span><span class="o">=</span><span class="s">"round"</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a>                    <span class="na">stroke-linejoin</span><span class="o">=</span><span class="s">"round"</span><span class="p">&gt;</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>                    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">"5"</span> <span class="na">y1</span><span class="o">=</span><span class="s">"12"</span> <span class="na">x2</span><span class="o">=</span><span class="s">"19"</span> <span class="na">y2</span><span class="o">=</span><span class="s">"12"</span><span class="p">&gt;&lt;/</span><span class="nt">line</span><span class="p">&gt;</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a>                    <span class="p">&lt;</span><span class="nt">polyline</span> <span class="na">points</span><span class="o">=</span><span class="s">"12 5 19 12 12 19"</span><span class="p">&gt;&lt;/</span><span class="nt">polyline</span><span class="p">&gt;</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>                <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a>            <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>

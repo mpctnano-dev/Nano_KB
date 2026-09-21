@@ -2213,6 +2213,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2301,6 +2305,62 @@
     
   
     Field Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request email
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-field-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request field types
   
 
     
@@ -2493,6 +2553,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2553,6 +2621,118 @@
     
   
     Clone a Program Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/add-a-new-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add a New Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-footer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Footer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-global-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Global Navigation Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-site-wide-metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Site-Wide Metadata or SEO
   
 
     
@@ -3156,20 +3336,20 @@
 <p>This is a three-part change. All three must be done or the feature will be broken in some way.</p>
 <h3 id="part-1-add-the-filter-button">Part 1 — Add the filter button<a class="headerlink" href="#part-1-add-the-filter-button" title="Permanent link">&para;</a></h3>
 <p>Search for:
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>class=&quot;filter-group&quot;
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>class="filter-group"
 </span></code></pre></div></td></tr></table></div>
 The first <code>filter-group</code> is the category row. Add your new button <strong>after the last existing category button</strong>, before the closing <code>&lt;/div&gt;</code>:</p>
 <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cm">&lt;!-- Add after the last category button inside the first class=&quot;filter-group&quot; --&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;filter-btn category-btn&quot;</span> <span class="na">data-filter</span><span class="o">=</span><span class="s">&quot;Deposition&quot;</span><span class="p">&gt;</span>Deposition<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cm">&lt;!-- Add after the last category button inside the first class="filter-group" --&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"filter-btn category-btn"</span> <span class="na">data-filter</span><span class="o">=</span><span class="s">"Deposition"</span><span class="p">&gt;</span>Deposition<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>The <code>data-filter</code> value must exactly match the <code>data-category</code> you will put on the cards (case-sensitive).</p>
 <h3 id="part-2-add-data-category-to-each-card-in-that-category">Part 2 — Add <code>data-category</code> to each card in that category<a class="headerlink" href="#part-2-add-data-category-to-each-card-in-that-category" title="Permanent link">&para;</a></h3>
 <p>On every card belonging to the new category, set:</p>
-<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;tech-card&quot;</span> <span class="na">data-category</span><span class="o">=</span><span class="s">&quot;Deposition&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"tech-card"</span> <span class="na">data-category</span><span class="o">=</span><span class="s">"Deposition"</span><span class="p">&gt;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>And update the badge to match:
-<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-purple&quot;</span><span class="p">&gt;</span>Deposition<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"badge badge-purple"</span><span class="p">&gt;</span>Deposition<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </span></code></pre></div></td></tr></table></div></p>
 <blockquote>
 <p><strong>Note:</strong> There is no badge class predefined for brand-new category names. Reuse one of the existing color classes (<code>badge-blue</code>, <code>badge-gold</code>, <code>badge-purple</code>, <code>badge-green</code>) that best represents the new category visually.</p>
@@ -3180,15 +3360,15 @@ The first <code>filter-group</code> is the category row. Add your new button <st
 </span></code></pre></div></td></tr></table></div></p>
 <p>You will find the inline script at the bottom of <code>Equipment.html</code>:</p>
 <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Fabrication&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Metrology&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mechatronics&#39;</span><span class="p">,</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">               </span><span class="s1">&#39;Electrical&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sample Prep&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Support Systems&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Educational&#39;</span><span class="p">];</span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Fabrication'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Metrology'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mechatronics'</span><span class="p">,</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">               </span><span class="s1">'Electrical'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sample Prep'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Support Systems'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Educational'</span><span class="p">];</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Insert your new category at the position where it should appear in the grid. Categories listed earlier appear higher on the page.</p>
 <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// Example: adding Deposition after Fabrication</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Fabrication&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Deposition&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Metrology&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mechatronics&#39;</span><span class="p">,</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">               </span><span class="s1">&#39;Electrical&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sample Prep&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Support Systems&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Educational&#39;</span><span class="p">];</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Fabrication'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Deposition'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Metrology'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mechatronics'</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">               </span><span class="s1">'Electrical'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sample Prep'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Support Systems'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Educational'</span><span class="p">];</span>
 </span></code></pre></div></td></tr></table></div>
 <blockquote>
 <p><strong>Please double-check:</strong> After making all three changes, reload the page, click the new filter button, and confirm only the correct cards appear. Then click "All" to confirm all cards return. A card that doesn't respond to the filter has a <code>data-category</code> that doesn't match <code>data-filter</code> exactly.</p>
@@ -3230,16 +3410,16 @@ The first <code>filter-group</code> is the category row. Add your new button <st
 <p>The location filter currently supports <code>"Flagstaff"</code> and <code>"NVC"</code>. To add a third location (e.g., a Tucson facility):</p>
 <h3 id="step-1-add-the-location-button">Step 1 — Add the location button<a class="headerlink" href="#step-1-add-the-location-button" title="Permanent link">&para;</a></h3>
 <p>Search for:
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>class=&quot;filter-group location-filter&quot;
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>class="filter-group location-filter"
 </span></code></pre></div></td></tr></table></div></p>
 <p>Add a new button inside this group after the last location button:</p>
-<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;filter-btn location-btn&quot;</span> <span class="na">data-location</span><span class="o">=</span><span class="s">&quot;Tucson&quot;</span><span class="p">&gt;</span>Tucson<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"filter-btn location-btn"</span> <span class="na">data-location</span><span class="o">=</span><span class="s">"Tucson"</span><span class="p">&gt;</span>Tucson<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="step-2-add-data-location-to-relevant-cards">Step 2 — Add <code>data-location</code> to relevant cards<a class="headerlink" href="#step-2-add-data-location-to-relevant-cards" title="Permanent link">&para;</a></h3>
-<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;tech-card&quot;</span> <span class="na">data-category</span><span class="o">=</span><span class="s">&quot;Metrology&quot;</span> <span class="na">data-location</span><span class="o">=</span><span class="s">&quot;Tucson&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"tech-card"</span> <span class="na">data-category</span><span class="o">=</span><span class="s">"Metrology"</span> <span class="na">data-location</span><span class="o">=</span><span class="s">"Tucson"</span><span class="p">&gt;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>For equipment at multiple locations including Tucson:
-<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;tech-card&quot;</span> <span class="na">data-category</span><span class="o">=</span><span class="s">&quot;Metrology&quot;</span> <span class="na">data-location</span><span class="o">=</span><span class="s">&quot;Flagstaff,Tucson&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"tech-card"</span> <span class="na">data-category</span><span class="o">=</span><span class="s">"Metrology"</span> <span class="na">data-location</span><span class="o">=</span><span class="s">"Flagstaff,Tucson"</span><span class="p">&gt;</span>
 </span></code></pre></div></td></tr></table></div></p>
 <blockquote>
 <p><strong>Note:</strong> Cards with no <code>data-location</code> attribute will be hidden by the Tucson filter — they only appear under "All". This applies to any new specific location filter, not just Tucson.</p>
@@ -3249,8 +3429,8 @@ The first <code>filter-group</code> is the category row. Add your new button <st
 <p>The card grid always renders in the order defined by the <code>const order = [...]</code> array, regardless of where cards appear in the HTML source.</p>
 <p><strong>Search for:</strong> <code>const order = [</code></p>
 <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Fabrication&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Metrology&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mechatronics&#39;</span><span class="p">,</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">               </span><span class="s1">&#39;Electrical&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sample Prep&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Support Systems&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Educational&#39;</span><span class="p">];</span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Fabrication'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Metrology'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mechatronics'</span><span class="p">,</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">               </span><span class="s1">'Electrical'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Sample Prep'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Support Systems'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Educational'</span><span class="p">];</span>
 </span></code></pre></div></td></tr></table></div>
 <p>To move a category earlier in the grid, move its string earlier in the array:</p>
 <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
@@ -3258,10 +3438,10 @@ The first <code>filter-group</code> is the category row. Add your new button <st
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
 <span class="normal"><a href="#__codelineno-12-4">4</a></span>
 <span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1">// Before: Metrology is second</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Fabrication&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Metrology&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">...];</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Fabrication'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Metrology'</span><span class="p">,</span><span class="w"> </span><span class="p">...];</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="c1">// After: Metrology is first</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Metrology&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Fabrication&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">...];</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Metrology'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Fabrication'</span><span class="p">,</span><span class="w"> </span><span class="p">...];</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Categories not listed in the array sort to the very end of the grid.</p>
 <blockquote>
