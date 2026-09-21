@@ -419,7 +419,7 @@ Call `ensureRendered` from `DOMContentLoaded`, as `/JS/booking.js` does around l
    Disallow: /ServiceRequestSubmission.php
    ```
 
-2. Add one line for the new handler in that same list, still inside the shared group. Do not insert a new `User-agent` line above it. A crawler with its own group would stop using these rules. The fuller crawler list is [Update robots.txt and AI Crawler Access](../SEO-GEO/01-update-robots-and-ai-crawlers.md).
+2. Add one line for the new handler in that same list, still inside the shared group. Do not insert a new `User-agent` line above it. A crawler with its own group would stop using these rules. The fuller crawler list is `Docs/SEO-GEO/01-update-robots-and-ai-crawlers.md`.
 
    `robots.txt` is public and only a request. Listing the handler advertises the path. That matches the three handlers already listed. It does not stop a person from POSTing. Do not deny `[NewHandler].php` in `/.htaccess`. `Require all denied` returns 403 to real visitors, and every submit fails. Use [Update Security Headers and Blocked Paths](06-update-security-headers.md) only for a file that must not be requested at all.
 

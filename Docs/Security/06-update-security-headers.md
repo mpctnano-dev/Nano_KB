@@ -64,7 +64,7 @@
 > [!NOTE]
 > **HSTS is set on production outside this repo.**
 > The comment on line 18 says HSTS is configured separately on production. Do not add a `Strict-Transport-Security` line in `/.htaccess`. If an audit asks to change HSTS, that is a question for the nano.nau.edu server administrator.
-> The rule `RewriteRule ^sitemap(_mpact)?\.xml$ sitemap.php [L]` on line 15 belongs to the sitemap. Leave it in place. To change that URL, follow [Add or Unlist a Page in the Sitemap](../SEO-GEO/02-update-sitemap.md). This page does not document that rule.
+> The rule `RewriteRule ^sitemap(_mpact)?\.xml$ sitemap.php [L]` on line 15 belongs to the sitemap. Leave it in place. To change that URL, follow `Docs/SEO-GEO/02-update-sitemap.md`. This page does not document that rule.
 
 > [!TIP]
 > **Hiding a whole folder instead of one filename?** Jump to [Part 3: Deny a whole folder](#part-3-deny-a-whole-folder).
@@ -184,7 +184,7 @@ The root file blocks that name twice. Keep both layers on the same filename.
 
    Replace `[NewHandler]` in both fences, including the brackets. If the filename contains a regular-expression character such as `+` or `?`, stop and ask for help before saving. A broken pattern returns HTTP 500 for the whole site. A pattern that simply fails to match leaves the file on the web.
 
-4. `robots.txt` is not protection. `/robots.txt` already contains `Disallow: /PHPMailer/`, which only asks polite crawlers to skip that folder. Anyone can still request the URL, and a `Disallow` line advertises the path. Hide the file with the pair above. To edit crawler rules, follow [Update robots.txt and AI Crawler Access](../SEO-GEO/01-update-robots-and-ai-crawlers.md).
+4. `robots.txt` is not protection. `/robots.txt` already contains `Disallow: /PHPMailer/`, which only asks polite crawlers to skip that folder. Anyone can still request the URL, and a `Disallow` line advertises the path. Hide the file with the pair above. To edit crawler rules, follow `Docs/SEO-GEO/01-update-robots-and-ai-crawlers.md`.
 5. To make a blocked file public again, remove both its `<Files>` block and its `RewriteRule`. Removing only one leaves the other in place, so the URL can stay 403. If the layer you leave is only the rewrite rule, and `mod_rewrite` is off, the file becomes public with no error. After either edit, check with `curl`. `403` means a layer is still blocking. `200` means the file is on the web.
 
 ---
@@ -228,8 +228,8 @@ Use this when the whole folder is private. `/data/` is the folder that already w
 * **Keep the pair together:** The `<Files>` name and the `RewriteRule` must name the same file. Updating only the rewrite line leaves the new file public when `mod_rewrite` is off. Updating only `<Files>` leaves the old rewrite rule in place, so the old name can stay 403.
 * **`<Files>` is the whole site:** From the root file it matches that basename in every folder. Blocking `index.html`, or any name a public page uses, hides every copy of that name.
 * **Do not add HSTS here:** Production sends `Strict-Transport-Security` from outside the repo. You will see it in `curl` output. It is not a fourth header to copy into `/.htaccess`.
-* **Leave line 15 alone:** The sitemap rewrite stays in this file so old sitemap URLs keep resolving. Change it only from [Add or Unlist a Page in the Sitemap](../SEO-GEO/02-update-sitemap.md).
-* **`robots.txt` does not enforce a block:** A `Disallow` line is a request to crawlers, and it publishes the path. The blocks on this page are what return 403. See [Update robots.txt and AI Crawler Access](../SEO-GEO/01-update-robots-and-ai-crawlers.md).
+* **Leave line 15 alone:** The sitemap rewrite stays in this file so old sitemap URLs keep resolving. Change it only from `Docs/SEO-GEO/02-update-sitemap.md`.
+* **`robots.txt` does not enforce a block:** A `Disallow` line is a request to crawlers, and it publishes the path. The blocks on this page are what return 403. See `Docs/SEO-GEO/01-update-robots-and-ai-crawlers.md`.
 * **New folder still 200:** Ask the nano.nau.edu server administrator about overrides. Do not "fix" it by weakening the root file.
 
 ---
