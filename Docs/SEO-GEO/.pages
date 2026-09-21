@@ -1,0 +1,9 @@
+title: SEO & GEO
+nav:
+  - robots.txt and AI Crawlers: 01-update-robots-and-ai-crawlers.md
+  - Sitemap: 02-update-sitemap.md
+  - Structured Data (JSON-LD): 03-update-equipment-structured-data.md
+  - Breadcrumbs and Related Instruments: 04-update-equipment-breadcrumbs.md
+  - llms.txt: 05-update-llms-txt.md
+  - Google Tag Manager: 06-update-analytics-tag.md
+  - ...
