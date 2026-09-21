@@ -4198,6 +4198,11 @@ For fields not registered in the <code>$map</code> array, the system automatical
 </ul>
 <hr />
 <h2 id="lets-verify-your-changes">Let's Verify Your Changes<a class="headerlink" href="#lets-verify-your-changes" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!NOTE]
+<strong>A local submit now has to pass the security checks.</strong>
+Turnstile test keys, the CSRF cookie, and a clear rate-limit window are required before the success message can appear. The test keys are in <a href="../../Security/02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 4. If the form stops with a red message, use <a href="../../Security/05-troubleshoot-blocked-submissions/">Troubleshoot Blocked Form Submissions</a>.</p>
+</blockquote>
 <ol>
 <li>Open <code>Contact_Us.html</code> in your local environment browser.</li>
 <li>Click on the category card you updated. Verify that the new layout flows elegantly without any uneven grid wraps.</li>

@@ -3762,6 +3762,9 @@
 <blockquote>
 <p>[!IMPORTANT]
 <strong>Local preview requires a web server:</strong> <code>layout.js</code> uses <code>fetch()</code>, which does not work on the <code>file://</code> protocol. Preview with Live Server (VS Code), another local HTTP server, or the deployed host.</p>
+<p>[!TIP]
+<strong>A page with a form needs the security checks, and a new root page joins the sitemap.</strong>
+Copy the honeypot, Turnstile widget, CSRF scripts, and PHP guard chain from <a href="../../Security/01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>. A new root HTML page is picked up by the live sitemap; see <a href="../../SEO-GEO/02-update-sitemap/">Add or Unlist a Page in the Sitemap</a> if it should stay off the list.</p>
 </blockquote>
 <hr />
 <h2 id="step-by-step-instructions">Step-by-Step Instructions<a class="headerlink" href="#step-by-step-instructions" title="Permanent link">&para;</a></h2>

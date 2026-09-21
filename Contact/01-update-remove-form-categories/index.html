@@ -3903,6 +3903,11 @@ The order of category keys inside the PHP <code>$categories</code> array does no
 </ul>
 <hr />
 <h2 id="lets-verify-your-changes">Let's Verify Your Changes<a class="headerlink" href="#lets-verify-your-changes" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!NOTE]
+<strong>A local submit now has to pass the security checks.</strong>
+Turnstile test keys, the CSRF cookie, and a clear rate-limit window are required before the success message can appear. The test keys are in <a href="../../Security/02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 4. If the form stops with a red message, use <a href="../../Security/05-troubleshoot-blocked-submissions/">Troubleshoot Blocked Form Submissions</a>.</p>
+</blockquote>
 <ol>
 <li>Open <code>Contact_Us.html</code> to verify your changes. You can double-click the file to launch it directly in your web browser, or if you are using a code editor like VS Code, you can run a local preview extension (such as Live Server) to render and test the page in real-time.</li>
 <li>Click your new inquiry category card. Verify that the correct input fields slide dynamically into view.</li>

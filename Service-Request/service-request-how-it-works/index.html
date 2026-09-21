@@ -3555,6 +3555,9 @@ and 3D Scanning — all backed by one PHP handler: <code>ServiceRequestSubmissio
 any of these forms, their data travels through five layers before it lands anywhere permanent. If any
 layer is misconfigured, data fails silently at that layer — no error appears to the user or in the browser console.</p>
 <hr />
+<blockquote>
+<p><strong>Note:</strong> Before Layer 3, every submit runs the security guard chain: honeypot, CSRF token, Cloudflare Turnstile, then the rate limit. A reject there never reaches PHP field validation. That chain is documented in <a href="../../Security/01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>.</p>
+</blockquote>
 <h2 id="the-5-layer-lifecycle">The 5-Layer Lifecycle<a class="headerlink" href="#the-5-layer-lifecycle" title="Permanent link">&para;</a></h2>
 <p>Every field in every form follows this path in order:</p>
 <table>
