@@ -1,0 +1,4613 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Maintenance documentation for the NAU Nano public website at nano.nau.edu.">
+      
+      
+        <meta name="author" content="NAU Nano">
+      
+      
+      
+        <link rel="prev" href="../04-update-rate-limits/">
+      
+      
+        <link rel="next" href="../06-update-security-headers/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/NAU.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Troubleshoot Blocked Submissions - NAU Nano Website Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#troubleshoot-blocked-form-submissions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NAU Nano Website Docs" class="md-header__button md-logo" aria-label="NAU Nano Website Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/NAU.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NAU Nano Website Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshoot Blocked Submissions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../homepage/homepage/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home Page
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MPaCT%20Homepage/mpact/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MPaCT Homepage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Equipment%20Page/equipment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Equipment
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Degree%20Programs/degree-programs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Degree Programs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Workforce%20Development_A/workforce-development/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Workforce
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../About/01-update-strategic-vision/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Contact/01-update-remove-form-categories/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contact
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../News/01-add-news-article/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  News
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Service-Request/service-request-how-it-works/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Service Request
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-add-security-checks-to-a-form/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../_shared-hero-stats-panel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Shared Components
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../General/clone-program-page/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  General
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Workforce/01-update-industry-stats/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Maintenance Tasks
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NAU Nano Website Docs" class="md-nav__button md-logo" aria-label="NAU Nano Website Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/NAU.png" alt="logo">
+
+    </a>
+    NAU Nano Website Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Page
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home Page
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/homepage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/home-academic-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academic Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/home-featured-equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Featured Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/home-map-location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map Location
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/home-workforce-partners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workforce Partners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPaCT Homepage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MPaCT Homepage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact-capability-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capability Cards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact-facility-buildout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facility Buildout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact-research-areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Areas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact-shared-use-facility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shared Use Facility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Equipment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Equipment%20Page/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Equipment%20Page/equipment-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment Cards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Equipment%20Page/equipment-filter-bar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filter Bar and Sort Order
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Equipment%20Page/equipment-json-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Status System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Degree Programs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Degree Programs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Degree%20Programs/degree-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Degree%20Programs/degree-programs-program-rows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Rows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workforce
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workforce
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/workforce-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/wfd-pathways-ptap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pathways and PTAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/wfd-investment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/wfd-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/wfd-career-outcomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Career Outcomes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/01-update-strategic-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategic Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/02-update-cross-campus-impact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross Campus Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contact
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contact/01-update-remove-form-categories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Form Categories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contact/02-update-contact-form-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Form Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    News
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../News/01-add-news-article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add News Article
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../News/02-update-news-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Request
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Service Request
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How It Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-field-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request email
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-field-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request field types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-add-security-checks-to-a-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Security Checks to a Form
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-update-turnstile-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turnstile (CAPTCHA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-update-csrf-protection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSRF Tokens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-update-rate-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot Blocked Submissions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot Blocked Submissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visual-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-read-the-exact-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Read the Exact Message
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Read the Exact Message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-client-side-read-the-message-before-any-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Client-Side: Read the Message Before Any Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-server-side-read-the-json-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Server-Side: Read the JSON Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-match-the-message-in-the-lookup-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Match the Message in the Lookup Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-check-the-server-error_log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Check the Server error_log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-apply-the-fix-from-the-linked-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Apply the Fix from the Linked Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-best-practices-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical best practices and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-verify-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Let's Verify Your Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-update-security-headers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Headers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_shared-hero-stats-panel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shared Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/mkdocs-manual-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Manual Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    General
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/clone-program-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clone a Program Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/add-a-new-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add a New Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-footer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Footer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-global-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Global Navigation Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-site-wide-metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Site-Wide Metadata or SEO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance Tasks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintenance Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/01-update-industry-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Industry Stats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/02-update-ecosystem-partners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem Partners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/03-update-salary-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Salary Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/04-update-ptap-and-intel-chips-pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PTAP and Intel CHIPS Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_5" id="__nav_16_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Career Pathways
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Career Pathways
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/Career%20Pathways/01-add-or-update-pathway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add or Update Career Pathway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/Career%20Pathways/02-update-pathway-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Pathway Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visual-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-read-the-exact-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Read the Exact Message
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Read the Exact Message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-client-side-read-the-message-before-any-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Client-Side: Read the Message Before Any Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-server-side-read-the-json-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Server-Side: Read the JSON Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-match-the-message-in-the-lookup-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Match the Message in the Lookup Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-check-the-server-error_log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Check the Server error_log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-apply-the-fix-from-the-linked-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Apply the Fix from the Linked Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-best-practices-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical best practices and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-verify-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Let's Verify Your Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="troubleshoot-blocked-form-submissions">Troubleshoot Blocked Form Submissions<a class="headerlink" href="#troubleshoot-blocked-form-submissions" title="Permanent link">&para;</a></h1>
+<p><strong>Summary:</strong> Match the exact red-box sentence on a blocked form to the browser check, PHP guard, or later mail step that produced it, across all four form pages.</p>
+<p><strong>When to change:</strong> When a visitor or a local test reports that a form will not submit.</p>
+<p><strong>Difficulty:</strong> <span class="difficulty-stars" style="color:#E6A800">★★★</span></p>
+<p><strong>Estimated Time:</strong> 15 minutes</p>
+<hr />
+<h2 id="visual-reference">Visual Reference<a class="headerlink" href="#visual-reference" title="Permanent link">&para;</a></h2>
+<p align="center">
+  <img src="../../md_file_images/security-blocked-submission.png" alt="Red feedback box asking the visitor to refresh and try again" /><br/>
+  <em>CSRF rejection on the Contact Us form</em>
+</p>
+
+<hr />
+<h2 id="target-files">Target Files<a class="headerlink" href="#target-files" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Purpose in this task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/includes/honeypot.php</code></td>
+<td>Rejects a filled <code>website</code> field. That reject logs nothing.</td>
+</tr>
+<tr>
+<td><code>/includes/csrf.php</code></td>
+<td><code>verifyCsrfToken()</code>. That reject logs nothing.</td>
+</tr>
+<tr>
+<td><code>/includes/turnstile.php</code></td>
+<td>The server Turnstile sentences, and the only Turnstile lines that reach <code>error_log</code>.</td>
+</tr>
+<tr>
+<td><code>/includes/rate_limit.php</code></td>
+<td>The two "Too many submissions…" sentences, <code>getClientIp()</code>, and the fail-open skip log. A normal block logs nothing.</td>
+</tr>
+<tr>
+<td><code>/includes/rate_limit/RateLimitStoreFactory.php</code></td>
+<td><code>MPCT rate limit store ready</code>, <code>init failed</code>, and <code>storage driver rejected</code>.</td>
+</tr>
+<tr>
+<td><code>/includes/rate_limit/JsonFileRateLimitStore.php</code></td>
+<td><code>describe()</code> shapes the <code>store ready</code> line (<code>json:</code> plus the folder).</td>
+</tr>
+<tr>
+<td><code>/JS/turnstile.js</code></td>
+<td><code>getBlockReason()</code>, shown before any request is sent.</td>
+</tr>
+<tr>
+<td><code>/includes/validation.php</code></td>
+<td><code>respond()</code> (always HTTP 200 JSON) and <code>publicFormErrorMessage()</code>, plus <code>MPCT uncaught error</code> and <code>MPCT fatal</code>.</td>
+</tr>
+<tr>
+<td><code>/Contact_Us.html</code></td>
+<td><code>#formFeedback</code>, directly above <code>#turnstile-contact</code>.</td>
+</tr>
+<tr>
+<td><code>/JS/script.js</code></td>
+<td>Contact Us submit: browser sentence, JSON <code>message</code>, and the network sentence.</td>
+</tr>
+<tr>
+<td><code>/ServiceRequest.html</code></td>
+<td>Three <code>.sr-form-feedback</code> strips and the inline submit script for printing, laser, and scanning.</td>
+</tr>
+<tr>
+<td><code>/Reserve_Equipment.html</code></td>
+<td><code>#formFeedback</code>, directly above <code>#turnstile-booking</code>.</td>
+</tr>
+<tr>
+<td><code>/JS/booking.js</code></td>
+<td>Booking submit, including the network sentence and the success text the visitor actually sees.</td>
+</tr>
+<tr>
+<td><code>/CHIPS_Scholars_Program.html</code></td>
+<td><code>#formFeedback</code> and the inline scholarship submit script.</td>
+</tr>
+<tr>
+<td><code>/FormSubmission.php</code></td>
+<td>Contact handler: the guard order, the mail-failure sentence, and the success sentence.</td>
+</tr>
+<tr>
+<td><code>/ServiceRequestSubmission.php</code></td>
+<td>Service-request handler. Same guard order.</td>
+</tr>
+<tr>
+<td><code>/EquipmentReservation.php</code></td>
+<td>Booking handler. Same guard order. The page does not show this file's success sentence.</td>
+</tr>
+<tr>
+<td><code>/IntelScholarshipSubmission.php</code></td>
+<td>Scholarship handler. Same guard order.</td>
+</tr>
+<tr>
+<td>Server <code>error_log</code> (not in the repo)</td>
+<td>With <code>php -S</code>, these lines print in the terminal running the server. On nano.nau.edu, ask the nano.nau.edu server administrator. Do not guess a path.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!WARNING]
+<strong>A rejected submit is HTTP 200, and several rejects log nothing.</strong>
+<code>respond()</code> does not send 403 or 500. If you only watch the status code, or you only read <code>error_log</code>, you will miss the block, and the miss is silent. The honeypot, the CSRF token check, a normal rate-limit block, a missing Turnstile token, and a missing Turnstile key write no log line. The red box, or the JSON <code>message</code>, is the evidence.</p>
+<p>[!IMPORTANT]
+<strong>Verify against your local codebase:</strong> The reject sentences in <code>/includes/honeypot.php</code>, <code>/includes/csrf.php</code>, <code>/includes/turnstile.php</code>, and <code>/includes/rate_limit.php</code>; <code>getBlockReason()</code> in <code>/JS/turnstile.js</code>; and the submit scripts in <code>/JS/script.js</code>, <code>/JS/booking.js</code>, <code>/ServiceRequest.html</code>, and <code>/CHIPS_Scholars_Program.html</code>. A one-word edit moves a row to the wrong cause, and the form still fails with no extra error.</p>
+<p>[!NOTE]
+<strong>The same four guards run, in the same order, in every handler.</strong>
+The order, the file, and the reject sentence for each step are listed on <a href="../01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>. This page is the lookup: match the sentence the visitor sees, then follow the Fix link. A sentence that names a field is field validation after the guards. It is not in the table below.</p>
+<p>[!TIP]
+<strong>The honeypot and CSRF sentences differ only by the words "refresh the page".</strong>
+<code>Please try again.</code> is the honeypot. <code>Please refresh the page and try again.</code> is the CSRF token. Browser autofill or a password manager can fill the hidden <code>website</code> field even with <code>autocomplete="off"</code> and <code>tabindex="-1"</code>, which causes a false honeypot block and logs nothing. Jump to <a href="#part-2-match-the-message-in-the-lookup-table">Part 2: Match the Message in the Lookup Table</a>.</p>
+</blockquote>
+<hr />
+<h2 id="step-by-step-instructions">Step-by-Step Instructions<a class="headerlink" href="#step-by-step-instructions" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="part-1-read-the-exact-message">Part 1: Read the Exact Message<a class="headerlink" href="#part-1-read-the-exact-message" title="Permanent link">&para;</a></h3>
+<p>The red box in the screenshot above is not a browser alert. It is a <code>bk-feedback bk-feedback--error</code> strip with <code>role="alert"</code>, placed above the Cloudflare Turnstile widget. On all four forms an error stays about 8 seconds and a success stays about 10 seconds, then the strip clears itself. Please copy the full sentence, including the period, or read it from the Network panel. If you wait, the page looks as if nothing happened, and that silence is easy to misread as a second bug.</p>
+<p>The four boxes are:</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Where the sentence appears</th>
+<th>Submit code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/Contact_Us.html</code></td>
+<td><code>#formFeedback</code> (line 182), above <code>#turnstile-contact</code></td>
+<td><code>/JS/script.js</code>, <code>setContactFeedback()</code> around line 1136, submit in <code>handleFormSubmit()</code></td>
+</tr>
+<tr>
+<td><code>/ServiceRequest.html</code></td>
+<td><code>.sr-form-feedback</code> inside each form (lines 1332, 1633, and 1917), above <code>#turnstile-printing</code>, <code>#turnstile-laser</code>, and <code>#turnstile-scanning</code></td>
+<td>Inline script, <code>showFeedbackMsg()</code> around line 2025</td>
+</tr>
+<tr>
+<td><code>/Reserve_Equipment.html</code></td>
+<td><code>#formFeedback</code> (line 613), above <code>#turnstile-booking</code></td>
+<td><code>/JS/booking.js</code>, <code>showFeedback()</code> around line 1175. A small icon is placed in front of every sentence.</td>
+</tr>
+<tr>
+<td><code>/CHIPS_Scholars_Program.html</code></td>
+<td><code>#formFeedback</code> (line 591), above <code>#turnstile-scholarship</code> (line 594)</td>
+<td>Inline <code>setFeedback()</code> around line 784</td>
+</tr>
+</tbody>
+</table>
+<h5 id="1-client-side-read-the-message-before-any-request">1. Client-Side: Read the Message Before Any Request<a class="headerlink" href="#1-client-side-read-the-message-before-any-request" title="Permanent link">&para;</a></h5>
+<ol>
+<li>To get started, please open the form page the visitor used, on a local HTTP server (not <code>file://</code>). Submit once and watch whether a POST leaves the browser.</li>
+<li>On Contact Us the strip sits directly above the widget:</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/Contact_Us.html</code> — feedback strip above the Turnstile container, lines 181–184)</strong>
+   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>                        <span class="cm">&lt;!-- Feedback Message --&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>                        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"formFeedback"</span> <span class="na">class</span><span class="o">=</span><span class="s">"bk-feedback"</span> <span class="na">role</span><span class="o">=</span><span class="s">"alert"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>                        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"turnstile-contact"</span> <span class="na">class</span><span class="o">=</span><span class="s">"mpct-turnstile"</span> <span class="na">style</span><span class="o">=</span><span class="s">"margin-bottom: 16px;"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>If Cloudflare Turnstile has no token yet, the submit script does not call <code>fetch</code>. <code>getBlockReason()</code> supplies the sentence:</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/JS/turnstile.js</code> — <code>getBlockReason()</code>, lines 150–161)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">getBlockReason</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span><span class="w"> </span><span class="nx">containerId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">getSiteKey</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s1">'Security check is not configured. Add your Turnstile site key to the server config.'</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">containerId</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">widgetErrors</span><span class="p">[</span><span class="nx">containerId</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s1">'Security check failed to load. Confirm your domain is allowed on your Turnstile widget, refresh, and try again.'</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">getToken</span><span class="p">(</span><span class="nx">form</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s1">'Please wait for the security check to finish (spinner above Submit).'</span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">''</span><span class="p">;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Contact Us shows that sentence, or a fallback when <code>getBlockReason()</code> returns an empty string:</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/JS/script.js</code> — browser block before <code>fetch</code>, lines 1181–1187)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MPCT</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="p">.</span><span class="nx">requireToken</span><span class="p">(</span><span class="nx">form</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">        </span><span class="nx">setContactFeedback</span><span class="p">(</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">            </span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="p">.</span><span class="nx">getBlockReason</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span><span class="w"> </span><span class="s1">'turnstile-contact'</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">'Please complete the security check.'</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">            </span><span class="s1">'error'</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>With the function above, a missing token returns "Please wait…", not an empty string, so the fallback does not run on that path. The other three forms use the same fallback and the same <code>requireToken()</code> test. Service Request picks the container from the form id (<code>turnstile-printing</code>, <code>turnstile-laser</code>, or <code>turnstile-scanning</code>) around lines 2665–2671. The scholarship form uses <code>turnstile-scholarship</code> around lines 955–960. Booking prefixes an icon:</p>
+<p><strong>Real Code Snippet (<code>/JS/booking.js</code> — browser block before <code>fetch</code>, lines 979–984)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MPCT</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="p">.</span><span class="nx">requireToken</span><span class="p">(</span><span class="nx">form</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">feedback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'formFeedback'</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">            </span><span class="nx">showFeedback</span><span class="p">(</span><span class="nx">feedback</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">                </span><span class="s1">'&lt;i class="fas fa-times-circle"&gt;&lt;/i&gt; '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="p">.</span><span class="nx">getBlockReason</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span><span class="w"> </span><span class="s1">'turnstile-booking'</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">'Please complete the security check.'</span><span class="p">));</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">        </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>No POST in the Network panel means the browser stopped here. Please match that sentence in Part 2. Do not look for an <code>error_log</code> line yet. Nothing was sent, so nothing was logged.</li>
+</ol>
+<h5 id="2-server-side-read-the-json-message">2. Server-Side: Read the JSON Message<a class="headerlink" href="#2-server-side-read-the-json-message" title="Permanent link">&para;</a></h5>
+<ol>
+<li>When a POST does leave the browser, every reject uses <code>respond()</code>. The status stays 200. The front end reads JSON <code>success</code> and <code>message</code>, not the status code.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/validation.php</code> — <code>respond()</code>, lines 48–59)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">function respond(bool $ok, string $msg): void</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="x">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="x">    if (!defined('MPCT_JSON_SENT')) {</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="x">        define('MPCT_JSON_SENT', true);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="x">    }</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="x">    if (ob_get_length()) {</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="x">        ob_clean();</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="x">    }</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="x">    header('Content-Type: application/json');</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="x">    echo json_encode(['success' =&gt; $ok, 'message' =&gt; $msg]);</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="x">    exit;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Example Snippet (what to read in the Network panel)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">'[Paste the exact red-box sentence]'</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// Status stays 200. Match this sentence to the lookup table.</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>The handler stops at the first check that fails. Later checks never run, and no email is sent.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/FormSubmission.php</code> — guard chain, lines 330–337)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">if ($_SERVER['REQUEST_METHOD'] !== 'POST') {</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="x">    respond(false, 'Invalid request method.');</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="x">}</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="x">rejectIfHoneypotFilled();</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="x">verifyCsrfToken();</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="x">verifyTurnstile();</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="x">checkRateLimits(getClientIp(), trim($_POST['email'] ?? ''));</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>The same calls, in the same order, are in <code>/ServiceRequestSubmission.php</code> (lines 501–511), <code>/EquipmentReservation.php</code> (lines 178–188), and <code>/IntelScholarshipSubmission.php</code> (lines 39–47). On the scholarship handler, <code>verifyTurnstile()</code> is on the line immediately after <code>verifyCsrfToken()</code>. The order does not change.
+3. Contact Us prints <code>result.message</code> when the JSON says <code>success</code> is false. A thrown error (no response, or a body that is not JSON) uses a fixed sentence instead:</p>
+<p><strong>Real Code Snippet (<code>/JS/script.js</code> — JSON message and network failure, lines 1216–1227)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">            </span><span class="nx">setContactFeedback</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">'An error occurred. Please try again.'</span><span class="p">,</span><span class="w"> </span><span class="s1">'error'</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MPCT</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">                </span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="s1">'turnstile-contact'</span><span class="p">);</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">        </span><span class="nx">setContactFeedback</span><span class="p">(</span><span class="s1">'Unable to connect to the server. Please try again later or email us directly.'</span><span class="p">,</span><span class="w"> </span><span class="s1">'error'</span><span class="p">);</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MPCT</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">            </span><span class="nx">MPCT</span><span class="p">.</span><span class="nx">Turnstile</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="s1">'turnstile-contact'</span><span class="p">);</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Form submission error:'</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>The other three pages do not share that network sentence. Please match the words on screen, not the page the visitor thinks they used.</li>
+</ol>
+<p>Service Request throws the JSON message when <code>success</code> is false, so a guard reject still shows the server sentence. The <code>catch</code> prefers <code>err.message</code>, which is why a dropped connection often shows the browser's own text (Chrome uses <code>Failed to fetch</code>) rather than the fallback:</p>
+<p><strong>Real Code Snippet (<code>/ServiceRequest.html</code> — failed JSON becomes an <code>Error</code>, lines 2694–2696)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">result</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">                            </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">'Unable to submit your request at this time.'</span><span class="p">);</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">                        </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/ServiceRequest.html</code> — network <code>catch</code>, lines 2711–2717)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="w">                    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">                        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Service request submission error:'</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">                        </span><span class="nx">showFeedbackMsg</span><span class="p">(</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">                            </span><span class="nx">feedbackEl</span><span class="p">,</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">                            </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">'Unable to connect to the server. Please try again later.'</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">                            </span><span class="s1">'bk-feedback--error'</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">                        </span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Booking always replaces a thrown error with its own sentence:</p>
+<p><strong>Real Code Snippet (<code>/JS/booking.js</code> — network <code>catch</code>, lines 1020–1022)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">            </span><span class="nx">showFeedback</span><span class="p">(</span><span class="nx">feedback</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">                </span><span class="s1">'&lt;i class="fas fa-times-circle"&gt;&lt;/i&gt; Network error. Please check your connection and try again.'</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>The scholarship form does the same with a different sentence:</p>
+<p><strong>Real Code Snippet (<code>/CHIPS_Scholars_Program.html</code> — network <code>catch</code>, lines 1011–1015)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">                    </span><span class="nx">setFeedback</span><span class="p">(</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">                        </span><span class="s1">'Unable to reach the server. Please try again later, or email mpct.nano@nau.edu.'</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">                        </span><span class="s1">'error'</span><span class="p">,</span><span class="w"> </span><span class="nx">FEEDBACK_PRIORITY</span><span class="p">.</span><span class="nx">server</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">                    </span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>If the sentence names a field ("Missing required field…", emoji, a word limit) or says <code>Invalid email address.</code>, the guards already passed. That is field validation inside the handler. Search that handler for the exact string, and fix the value. Please see <a href="../../Contact/02-update-contact-form-fields/">Update Contact Form Fields</a> and <a href="../../Service-Request/service-request-how-it-works/">How ServiceRequest.html Works</a>. Do not remove a guard to get past a field error. The form would accept bad posts and would not show a new error.</li>
+</ol>
+<hr />
+<h3 id="part-2-match-the-message-in-the-lookup-table">Part 2: Match the Message in the Lookup Table<a class="headerlink" href="#part-2-match-the-message-in-the-lookup-table" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Please search the first column for the full sentence, including the period. Do not stop on a shared opening such as "Unable to process your submission."</li>
+<li>The two easy-to-swap rows come from these two functions. Spaces alone do not trip the honeypot, because the value is trimmed.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/honeypot.php</code> — <code>rejectIfHoneypotFilled()</code>, lines 17–22)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">function rejectIfHoneypotFilled(): void</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">    if (trim($_POST['website'] ?? '') !== '') {</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="x">        respond(false, 'Unable to process your submission. Please try again.');</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">    }</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/includes/csrf.php</code> — <code>verifyCsrfToken()</code>, lines 78–90)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">function verifyCsrfToken(): void</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="x">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">    $cookie = (string) ($_COOKIE[MPCT_CSRF_COOKIE] ?? '');</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="x">    $posted = (string) ($_POST[MPCT_CSRF_FIELD] ?? '');</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="x">    if ($cookie === '' || $posted === '' || !csrfTokenLooksValid($cookie) || !csrfTokenLooksValid($posted)) {</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="x">        respond(false, 'Unable to process your submission. Please refresh the page and try again.');</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="x">    }</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="x">    if (!hash_equals($cookie, $posted)) {</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="x">        respond(false, 'Unable to process your submission. Please refresh the page and try again.');</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="x">    }</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Use this table. The Fix cell names the page to open. Come back to <a href="#part-4-apply-the-fix-from-the-linked-page">Part 4: Apply the Fix from the Linked Page</a> before you edit anything.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Message the visitor sees</th>
+<th>Layer</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Please wait for the security check to finish (spinner above Submit).</td>
+<td>Cloudflare Turnstile, browser</td>
+<td>The widget has no token yet. The same sentence appears when the container never rendered and no widget error was stored, so a wrong container <code>id</code> looks like "clicked too soon." No POST is sent.</td>
+<td>Wait until the spinner becomes a tick, and confirm <code>api.js</code> in the Network tab. If the widget never appears, follow <a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 1, and <a href="../01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>, Part 2.</td>
+</tr>
+<tr>
+<td>Security check is not configured. Add your Turnstile site key to the server config.</td>
+<td>Cloudflare Turnstile, browser</td>
+<td><code>MPCT_TURNSTILE_SITE_KEY</code> is missing or still <code>REPLACE_WITH_YOUR_SITE_KEY</code>. No POST is sent. Logs nothing.</td>
+<td><a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 2.</td>
+</tr>
+<tr>
+<td>Security check failed to load. Confirm your domain is allowed on your Turnstile widget, refresh, and try again.</td>
+<td>Cloudflare Turnstile, browser</td>
+<td>Any truthy <code>widgetErrors</code> value uses this one sentence: hostname not on the widget, <code>api.js</code> blocked, the 10 second <code>whenReady()</code> timeout, a render error, or an expired token (<code>expired</code>). No POST is sent.</td>
+<td><a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 3. If the widget had already passed and then expired, refresh and solve it again.</td>
+</tr>
+<tr>
+<td>Please complete the security check.</td>
+<td>Cloudflare Turnstile, server</td>
+<td>The POST reached <code>verifyTurnstile()</code> with an empty <code>cf-turnstile-response</code>. The four scripts also contain this sentence as the fallback when <code>getBlockReason()</code> returns an empty string. With the current function, a missing token returns the "Please wait…" sentence instead, so that fallback does not run. You see this sentence when the POST still goes out with an empty token, which happens if <code>JS/turnstile.js</code> did not load and the browser test was skipped. Logs nothing.</td>
+<td><a href="../01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>, Part 2. Confirm the five security script tags are present and in order.</td>
+</tr>
+<tr>
+<td>Security verification failed. Please try again.</td>
+<td>Cloudflare Turnstile, server</td>
+<td>Cloudflare <code>siteverify</code> rejected the token (expired, already used, or the site key and the secret are not from the same widget).</td>
+<td>Read <code>MPCT Turnstile siteverify failed:</code> in <a href="#part-3-check-the-server-error_log">Part 3: Check the Server error_log</a>, then <a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 2. Local dummy keys are Part 4 of that page. A dummy site key only works with its matching dummy secret.</td>
+</tr>
+<tr>
+<td>Security verification is not configured on the server. Please contact the site administrator.</td>
+<td>Cloudflare Turnstile, server</td>
+<td><code>TURNSTILE_SECRET_KEY</code> in <code>mpact_config.php</code> is missing, empty, or still <code>REPLACE_WITH_YOUR_SECRET_KEY</code>. Logs nothing.</td>
+<td><a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 2. The nano.nau.edu server administrator edits that file. It is not in the repo.</td>
+</tr>
+<tr>
+<td>Security verification is temporarily unavailable. Please try again in a moment.</td>
+<td>Cloudflare Turnstile, server</td>
+<td>PHP has no curl extension, or <code>https://challenges.cloudflare.com/turnstile/v0/siteverify</code> did not answer within 10 seconds.</td>
+<td>Ask the nano.nau.edu server administrator. The log line in Part 3 says which of the two it is.</td>
+</tr>
+<tr>
+<td>Unable to process your submission. Please refresh the page and try again.</td>
+<td>CSRF token</td>
+<td>The <code>csrf_token</code> cookie is missing, the posted field is missing, either value is not 64 hex characters, or the two values differ. The screenshot above is this sentence. Logs nothing. A passed widget only means the browser finished Turnstile. The server stopped at CSRF and never called Cloudflare.</td>
+<td><a href="../03-update-csrf-protection/">Update CSRF Token Protection</a>, Part 1 and Part 2.</td>
+</tr>
+<tr>
+<td>Unable to process your submission. Please try again.</td>
+<td>Honeypot</td>
+<td><code>website</code> was not empty after <code>trim</code>. Autofill can do this. Logs nothing. If the CSRF token is also wrong, you still see only this sentence, because the honeypot runs first.</td>
+<td>Clear the field in Part 4 of this page. The markup rules are <a href="../01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>, Part 1.</td>
+</tr>
+<tr>
+<td>Too many submissions from your network. Please try again later.</td>
+<td>Rate limit</td>
+<td>More than the IP limit (default 5) from this <code>REMOTE_ADDR</code> in the window (default 300 seconds), across all four forms. The slot is taken before field validation, so a rejected retry still counts. Campus Wi-Fi can share one address. A normal block logs nothing.</td>
+<td><a href="../04-update-rate-limits/">Update Rate Limits</a>, Part 3. If real visitors share one address, Part 1 of that page.</td>
+</tr>
+<tr>
+<td>Too many submissions for this email address. Please try again later.</td>
+<td>Rate limit</td>
+<td>More than the email limit (default 2) for this address in the same window. The address is lowercased. An invalid email does not use this counter. A normal block logs nothing.</td>
+<td><a href="../04-update-rate-limits/">Update Rate Limits</a>, Part 3.</td>
+</tr>
+<tr>
+<td>Invalid request method.</td>
+<td>POST check</td>
+<td>The handler URL was opened in the browser or called with GET. The four form scripts always POST, so this is usually raw JSON in the address bar, not the red box.</td>
+<td>Submit from the form page. A new client must POST, as in <a href="../01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>, Part 2.</td>
+</tr>
+<tr>
+<td>We were unable to process your submission at this time. Please try again later or email us directly at mpct.nano@nau.edu.</td>
+<td>After the guards</td>
+<td>An uncaught exception or a fatal error. The address is <code>LAB_EMAIL</code> when that constant is defined, and <code>mpct.nano@nau.edu</code> otherwise. A caught mail failure uses a different sentence. A SharePoint failure does not use this sentence.</td>
+<td><a href="#part-3-check-the-server-error_log">Part 3: Check the Server error_log</a>, for <code>MPCT uncaught error</code> or <code>MPCT fatal</code>. Ask the nano.nau.edu server administrator. Do not remove a guard.</td>
+</tr>
+<tr>
+<td>We were unable to send your inquiry at this time. Please try again or email us directly at mpct.nano@nau.edu.</td>
+<td>After the guards (mail)</td>
+<td>Contact Us (<code>MPCT Form Error</code>) or booking (<code>MPCT Booking Error</code>) caught a mail exception. The guards already passed. The address is <code>LAB_EMAIL</code> from <code>mpact_config.php</code>.</td>
+<td><a href="#part-3-check-the-server-error_log">Part 3: Check the Server error_log</a>. Ask the server administrator to check mail. Do not remove a guard.</td>
+</tr>
+<tr>
+<td>We were unable to send your request at this time. Please try again or email us directly at mpct.nano@nau.edu.</td>
+<td>After the guards (mail)</td>
+<td>Service Request. The log line is <code>MPCT Service Request Error</code>. The address is <code>LAB_EMAIL</code>.</td>
+<td><a href="#part-3-check-the-server-error_log">Part 3: Check the Server error_log</a>. Ask the server administrator to check mail.</td>
+</tr>
+<tr>
+<td>We were unable to submit your registration at this time. Please try again or email us directly at mpct.nano@nau.edu.</td>
+<td>After the guards (mail)</td>
+<td>CHIPS Scholars. The log line is <code>MPCT Intel Scholarship Form Error</code>. The address is <code>LAB_EMAIL</code>.</td>
+<td><a href="#part-3-check-the-server-error_log">Part 3: Check the Server error_log</a>. Ask the server administrator to check mail.</td>
+</tr>
+<tr>
+<td>Unable to connect to the server. Please try again later or email us directly.</td>
+<td>Browser, network</td>
+<td>Contact Us only. <code>fetch</code> threw, or the body was not JSON. This script ignores <code>err.message</code> and always shows this sentence.</td>
+<td>Open the page over HTTP from a running PHP server, not <code>file://</code>. <code>php -S</code> is enough for the form handlers. It does not read <code>.htaccess</code>, which this check does not need. Watch that terminal for a PHP fatal.</td>
+</tr>
+<tr>
+<td>Unable to connect to the server. Please try again later.</td>
+<td>Browser, network</td>
+<td>Service Request, and only when the caught error has an empty <code>message</code>. A dropped connection usually shows the browser text instead, such as <code>Failed to fetch</code>.</td>
+<td>Same HTTP-server check. Read the response body in the Network tab.</td>
+</tr>
+<tr>
+<td>Unable to submit your request at this time.</td>
+<td>Browser, fallback</td>
+<td>Service Request, when a response arrived, the HTTP status was not OK or <code>success</code> was false, and the JSON had no <code>message</code>. Guard rejects always include a message, so this row is rare.</td>
+<td>Read the raw response. If it has a <code>message</code>, use that row instead.</td>
+</tr>
+<tr>
+<td>Network error. Please check your connection and try again.</td>
+<td>Browser, network</td>
+<td>Reserve Equipment. Any thrown error uses this sentence. An icon sits in front of the words.</td>
+<td>Same HTTP-server check.</td>
+</tr>
+<tr>
+<td>Unable to reach the server. Please try again later, or email mpct.nano@nau.edu.</td>
+<td>Browser, network</td>
+<td>CHIPS Scholars. Any thrown error uses this sentence, not <code>err.message</code>.</td>
+<td>Same HTTP-server check.</td>
+</tr>
+<tr>
+<td>An error occurred. Please try again.</td>
+<td>Browser, fallback</td>
+<td>Contact Us, when <code>success</code> is false and the JSON has no <code>message</code>. <code>respond()</code> always sets a message, so this row means the body was not one of our rejects.</td>
+<td>Read the raw JSON in the Network tab.</td>
+</tr>
+<tr>
+<td>We could not submit your registration. Please try again.</td>
+<td>Browser, fallback</td>
+<td>CHIPS Scholars, in that same empty-message case.</td>
+<td>Read the raw JSON in the Network tab.</td>
+</tr>
+<tr>
+<td>Submission failed. Please try again or email mpct.nano@gmail.com.</td>
+<td>Browser, fallback</td>
+<td>Reserve Equipment, when <code>success</code> is false and the JSON has no <code>message</code>. This one sentence names <code>mpct.nano@gmail.com</code>, not <code>mpct.nano@nau.edu</code>. An icon sits in front of the words.</td>
+<td>Read the raw JSON. Do not change a guard to avoid the fallback.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>For either "Too many submissions…" row, both counters live here. Defaults are 5 per IP address and 2 per email address in 300 seconds, unless <code>mpact_config.php</code> defined <code>RATE_LIMIT_IP_MAX</code>, <code>RATE_LIMIT_EMAIL_MAX</code>, or <code>RATE_LIMIT_WINDOW_SEC</code> first.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit.php</code> — IP limit, then email limit, lines 44–63)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span>
+<span class="normal"><a href="#__codelineno-14-19">19</a></span>
+<span class="normal"><a href="#__codelineno-14-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">        processRateLimitKey(</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="x">            $store,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">            'ip:' . $ip,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="x">            (int) RATE_LIMIT_IP_MAX,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="x">            $windowSec,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">            $retentionDays,</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="x">            'Too many submissions from your network. Please try again later.'</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="x">        );</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="x">        $email = normalizeEmail($emailRaw);</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="x">        if ($email !== null) {</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="x">            processRateLimitKey(</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="x">                $store,</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="x">                'email:' . $email,</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="x">                (int) RATE_LIMIT_EMAIL_MAX,</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="x">                $windowSec,</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="x">                $retentionDays,</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="x">                'Too many submissions for this email address. Please try again later.'</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="x">            );</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="x">        }</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>The IP is only <code>REMOTE_ADDR</code>. Behind a proxy or CDN that the server does not unwrap, every visitor shares one address, and the default limit (5 submissions in 300 seconds) then applies to the whole site. Nothing in the red box names the proxy. Visitors only see "Too many submissions from your network. Please try again later."</p>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit.php</code> — <code>getClientIp()</code>, lines 16–19)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">function getClientIp(): string</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="x">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="x">    return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>For the honeypot row, the field is on the page but off-screen. You will not see it without DevTools. Please inspect <code>input[name="website"]</code>. The <code>id</code> differs per form (<code>website</code>, <code>website_printing</code>, <code>website_laser</code>, <code>website_scanning</code>, <code>website_booking</code>, <code>website_scholarship</code>). The <code>name</code> is always <code>website</code>.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/Contact_Us.html</code> — honeypot markup, lines 145–148)</strong>
+   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a>                        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"hp-field"</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a>                            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"website"</span><span class="p">&gt;</span>Website<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a>                            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">id</span><span class="o">=</span><span class="s">"website"</span> <span class="na">name</span><span class="o">=</span><span class="s">"website"</span> <span class="na">value</span><span class="o">=</span><span class="s">""</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">"off"</span><span class="p">&gt;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a>                        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/CSS/style.css</code> — <code>.hp-field</code> off-screen rule, lines 23279–23286)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span>
+<span class="normal"><a href="#__codelineno-17-7">7</a></span>
+<span class="normal"><a href="#__codelineno-17-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a>.hp-field {
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>    position: absolute;
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a>    left: -10000px;
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a>    top: auto;
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a>    width: 1px;
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a>    height: 1px;
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a>    overflow: hidden;
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a>}
+</span></code></pre></div></td></tr></table></div></p>
+<hr />
+<h3 id="part-3-check-the-server-error_log">Part 3: Check the Server error_log<a class="headerlink" href="#part-3-check-the-server-error_log" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Please do not guess a log path on nano.nau.edu. Ask the nano.nau.edu server administrator to search for <code>MPCT</code> at the time of the click. On your own machine, start the site with PHP's built-in server and leave that terminal visible. <code>error_log()</code> prints there. <code>php -S</code> does not read <code>.htaccess</code>, so this check says nothing about security headers or blocked paths. Those need Apache, and they are documented in <a href="../06-update-security-headers/">Update Security Headers and Blocked Paths</a>.</li>
+<li>Match the new line. A line that is not new for this click, such as <code>MPCT rate limit store ready</code> from earlier in the same PHP process, is not the block by itself.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Log line</th>
+<th>What it means</th>
+<th>Does the visitor get a red box?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MPCT Turnstile siteverify failed: curl extension is not available</code></td>
+<td>PHP curl is missing.</td>
+<td>Yes. "Security verification is temporarily unavailable. Please try again in a moment."</td>
+</tr>
+<tr>
+<td><code>MPCT Turnstile siteverify curl error: …</code></td>
+<td>The request to Cloudflare failed. The text after the colon is curl's error. Do not copy a token into a ticket.</td>
+<td>Yes. The same "temporarily unavailable" sentence.</td>
+</tr>
+<tr>
+<td><code>MPCT Turnstile siteverify failed: &lt;codes&gt;</code></td>
+<td><code>siteverify</code> returned <code>success</code> false. <code>&lt;codes&gt;</code> is Cloudflare's <code>error-codes</code> list, or <code>unknown</code>.</td>
+<td>Yes. "Security verification failed. Please try again."</td>
+</tr>
+<tr>
+<td><code>MPCT rate limit store ready: json:&lt;folder&gt;</code></td>
+<td>The JSON store opened. This is normal the first time this PHP process uses it.</td>
+<td>No.</td>
+</tr>
+<tr>
+<td><code>MPCT rate limit store init failed: …</code></td>
+<td>One storage folder failed. The factory tries the next candidate.</td>
+<td>Not by itself.</td>
+</tr>
+<tr>
+<td><code>MPCT rate limit storage driver rejected</code></td>
+<td><code>RATE_LIMIT_STORAGE</code> is not <code>json</code> or <code>sqlite</code>.</td>
+<td>The limiter then fails open (next row). The visitor is not blocked by the rate limit.</td>
+</tr>
+<tr>
+<td><code>MPCT rate limit skipped: … in &lt;file&gt;:&lt;line&gt;</code></td>
+<td>Storage threw, and the submission was allowed through. <code>validation.php</code> loads first, so this is the line you should see. The bare line <code>MPCT rate limit skipped</code> is only the fallback if that helper is missing.</td>
+<td>No. If the visitor was blocked, look at the red-box sentence instead.</td>
+</tr>
+<tr>
+<td><code>MPCT uncaught error: …</code></td>
+<td>An exception escaped the handler.</td>
+<td>Yes, when headers were not already sent: the <code>publicFormErrorMessage()</code> sentence.</td>
+</tr>
+<tr>
+<td><code>MPCT fatal: …</code></td>
+<td>A fatal error.</td>
+<td>Yes, the same generic sentence, when a response was not already sent.</td>
+</tr>
+<tr>
+<td><code>MPCT Form Error: …</code></td>
+<td>Contact Us mail failed after the guards.</td>
+<td>Yes. "We were unable to send your inquiry…"</td>
+</tr>
+<tr>
+<td><code>MPCT Booking Error: …</code></td>
+<td>Booking mail failed after the guards.</td>
+<td>Yes. The same inquiry sentence. The booking page shows <code>json.message</code>, so the visitor does see it.</td>
+</tr>
+<tr>
+<td><code>MPCT Service Request Error: …</code></td>
+<td>Service-request mail failed.</td>
+<td>Yes. "We were unable to send your request…"</td>
+</tr>
+<tr>
+<td><code>MPCT Intel Scholarship Form Error: …</code></td>
+<td>Scholarship mail failed.</td>
+<td>Yes. "We were unable to submit your registration…"</td>
+</tr>
+<tr>
+<td><code>MPCT SharePoint Inquiry Sync Error: …</code> (<code>/FormSubmission.php</code>, around line 839)</td>
+<td>SharePoint failed after success was already sent.</td>
+<td>No.</td>
+</tr>
+<tr>
+<td><code>MPCT SharePoint Booking Sync Error: …</code> (<code>/EquipmentReservation.php</code>, around line 886, and <code>/IntelScholarshipSubmission.php</code>, around line 538)</td>
+<td>Same, for booking or scholarship.</td>
+<td>No.</td>
+</tr>
+<tr>
+<td><code>MPCT SharePoint Service Sync Error: …</code> (<code>/ServiceRequestSubmission.php</code>, around line 1157)</td>
+<td>Same, for a service request.</td>
+<td>No.</td>
+</tr>
+<tr>
+<td><code>MPCT SharePoint alert email failed: …</code> (<code>/includes/sharepoint_alert.php</code>, around line 64)</td>
+<td>The lab alert about SharePoint could not be sent.</td>
+<td>No.</td>
+</tr>
+<tr>
+<td><code>MPCT Upload Warning: finfo_open unavailable — magic-byte MIME check skipped.</code> (<code>/ServiceRequestSubmission.php</code>, around line 426)</td>
+<td>A file-type helper was missing.</td>
+<td>Not this line alone.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>If no new <code>MPCT</code> line was written at that moment, the block was silent on purpose: honeypot, CSRF token, empty Turnstile token, Turnstile key not configured, or a normal rate-limit reject. Please trust the sentence in Part 2. An empty log does not mean the submit succeeded.</li>
+<li>The Turnstile lines in that table are the only <code>error_log</code> calls inside the guard. "Not configured" and "Please complete the security check." are not among them.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/turnstile.php</code> — <code>verifyTurnstile()</code>, lines 28–74)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span>
+<span class="normal"><a href="#__codelineno-18-16">16</a></span>
+<span class="normal"><a href="#__codelineno-18-17">17</a></span>
+<span class="normal"><a href="#__codelineno-18-18">18</a></span>
+<span class="normal"><a href="#__codelineno-18-19">19</a></span>
+<span class="normal"><a href="#__codelineno-18-20">20</a></span>
+<span class="normal"><a href="#__codelineno-18-21">21</a></span>
+<span class="normal"><a href="#__codelineno-18-22">22</a></span>
+<span class="normal"><a href="#__codelineno-18-23">23</a></span>
+<span class="normal"><a href="#__codelineno-18-24">24</a></span>
+<span class="normal"><a href="#__codelineno-18-25">25</a></span>
+<span class="normal"><a href="#__codelineno-18-26">26</a></span>
+<span class="normal"><a href="#__codelineno-18-27">27</a></span>
+<span class="normal"><a href="#__codelineno-18-28">28</a></span>
+<span class="normal"><a href="#__codelineno-18-29">29</a></span>
+<span class="normal"><a href="#__codelineno-18-30">30</a></span>
+<span class="normal"><a href="#__codelineno-18-31">31</a></span>
+<span class="normal"><a href="#__codelineno-18-32">32</a></span>
+<span class="normal"><a href="#__codelineno-18-33">33</a></span>
+<span class="normal"><a href="#__codelineno-18-34">34</a></span>
+<span class="normal"><a href="#__codelineno-18-35">35</a></span>
+<span class="normal"><a href="#__codelineno-18-36">36</a></span>
+<span class="normal"><a href="#__codelineno-18-37">37</a></span>
+<span class="normal"><a href="#__codelineno-18-38">38</a></span>
+<span class="normal"><a href="#__codelineno-18-39">39</a></span>
+<span class="normal"><a href="#__codelineno-18-40">40</a></span>
+<span class="normal"><a href="#__codelineno-18-41">41</a></span>
+<span class="normal"><a href="#__codelineno-18-42">42</a></span>
+<span class="normal"><a href="#__codelineno-18-43">43</a></span>
+<span class="normal"><a href="#__codelineno-18-44">44</a></span>
+<span class="normal"><a href="#__codelineno-18-45">45</a></span>
+<span class="normal"><a href="#__codelineno-18-46">46</a></span>
+<span class="normal"><a href="#__codelineno-18-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="x">function verifyTurnstile(): void</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="x">{</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="x">    if (!turnstileIsConfigured()) {</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="x">        respond(false, 'Security verification is not configured on the server. Please contact the site administrator.');</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="x">    }</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="x">    $token = trim($_POST['cf-turnstile-response'] ?? '');</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="x">    if ($token === '') {</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="x">        respond(false, 'Please complete the security check.');</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="x">    }</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="x">    $payload = http_build_query([</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="x">        'secret'   =&gt; TURNSTILE_SECRET_KEY,</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="x">        'response' =&gt; $token,</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="x">        'remoteip' =&gt; $_SERVER['REMOTE_ADDR'] ?? '',</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="x">    ]);</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17"></a>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18"></a><span class="x">    if (!function_exists('curl_init')) {</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19"></a><span class="x">        error_log('MPCT Turnstile siteverify failed: curl extension is not available');</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20"></a><span class="x">        respond(false, 'Security verification is temporarily unavailable. Please try again in a moment.');</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21"></a><span class="x">    }</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22"></a>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23"></a><span class="x">    $ch = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24"></a><span class="x">    curl_setopt_array($ch, [</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25"></a><span class="x">        CURLOPT_POST           =&gt; true,</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26"></a><span class="x">        CURLOPT_POSTFIELDS     =&gt; $payload,</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27"></a><span class="x">        CURLOPT_RETURNTRANSFER =&gt; true,</span>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28"></a><span class="x">        CURLOPT_TIMEOUT        =&gt; 10,</span>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29"></a><span class="x">        CURLOPT_SSL_VERIFYPEER =&gt; true,</span>
+</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30"></a><span class="x">    ]);</span>
+</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31"></a>
+</span><span id="__span-18-32"><a id="__codelineno-18-32" name="__codelineno-18-32"></a><span class="x">    $raw = curl_exec($ch);</span>
+</span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33"></a><span class="x">    $curlError = curl_error($ch);</span>
+</span><span id="__span-18-34"><a id="__codelineno-18-34" name="__codelineno-18-34"></a><span class="x">    curl_close($ch);</span>
+</span><span id="__span-18-35"><a id="__codelineno-18-35" name="__codelineno-18-35"></a>
+</span><span id="__span-18-36"><a id="__codelineno-18-36" name="__codelineno-18-36"></a><span class="x">    if ($raw === false) {</span>
+</span><span id="__span-18-37"><a id="__codelineno-18-37" name="__codelineno-18-37"></a><span class="x">        error_log('MPCT Turnstile siteverify curl error: ' . $curlError);</span>
+</span><span id="__span-18-38"><a id="__codelineno-18-38" name="__codelineno-18-38"></a><span class="x">        respond(false, 'Security verification is temporarily unavailable. Please try again in a moment.');</span>
+</span><span id="__span-18-39"><a id="__codelineno-18-39" name="__codelineno-18-39"></a><span class="x">    }</span>
+</span><span id="__span-18-40"><a id="__codelineno-18-40" name="__codelineno-18-40"></a>
+</span><span id="__span-18-41"><a id="__codelineno-18-41" name="__codelineno-18-41"></a><span class="x">    $result = json_decode($raw, true);</span>
+</span><span id="__span-18-42"><a id="__codelineno-18-42" name="__codelineno-18-42"></a><span class="x">    if (!is_array($result) || empty($result['success'])) {</span>
+</span><span id="__span-18-43"><a id="__codelineno-18-43" name="__codelineno-18-43"></a><span class="x">        $codes = isset($result['error-codes']) ? implode(', ', (array) $result['error-codes']) : 'unknown';</span>
+</span><span id="__span-18-44"><a id="__codelineno-18-44" name="__codelineno-18-44"></a><span class="x">        error_log('MPCT Turnstile siteverify failed: ' . $codes);</span>
+</span><span id="__span-18-45"><a id="__codelineno-18-45" name="__codelineno-18-45"></a><span class="x">        respond(false, 'Security verification failed. Please try again.');</span>
+</span><span id="__span-18-46"><a id="__codelineno-18-46" name="__codelineno-18-46"></a><span class="x">    }</span>
+</span><span id="__span-18-47"><a id="__codelineno-18-47" name="__codelineno-18-47"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Rate-limit storage logs look like this. <code>store ready</code> on a healthy submit is not a failure. <code>skipped</code> means the visitor was not rate-limited.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/RateLimitStoreFactory.php</code> — store open and init failure, lines 27–36)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="x">        foreach (self::candidates($driver, $baseDir, $tempDir) as $make) {</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="x">            try {</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="x">                self::$instance = $make();</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="x">                error_log('MPCT rate limit store ready: ' . self::$instance-&gt;describe());</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="x">                return self::$instance;</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="x">            } catch (Throwable $e) {</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="x">                $lastError = $e;</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="x">                error_log('MPCT rate limit store init failed: ' . $e-&gt;getMessage());</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="x">            }</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="x">        }</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/JsonFileRateLimitStore.php</code> — <code>describe()</code>, lines 131–134)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="x">    public function describe(): string</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="x">    {</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="x">        return 'json:' . $this-&gt;directory;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="x">    }</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/RateLimitStoreFactory.php</code> — rejected storage driver, lines 63–68)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="x">        if ($driver === 'sqlite' || $driver === '') {</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="x">            return $sqliteThenJson;</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="x">        }</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="x">        error_log('MPCT rate limit storage driver rejected');</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="x">        throw new RuntimeException('Unable to initialize rate limit storage.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit.php</code> — fail open, lines 68–74)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span>
+<span class="normal"><a href="#__codelineno-22-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="x">    } catch (Throwable $e) {</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="x">        if (function_exists('mpactLogInternalError')) {</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="x">            mpactLogInternalError('MPCT rate limit skipped', $e);</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="x">        } else {</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="x">            error_log('MPCT rate limit skipped');</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="x">        }</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="x">    }</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>The generic sentence and the mail sentences are what you see when the guards passed and a later step failed. SharePoint errors are not in this group: the visitor already has a success box.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/validation.php</code> — <code>publicFormErrorMessage()</code>, lines 101–106)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span>
+<span class="normal"><a href="#__codelineno-23-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="x">function publicFormErrorMessage(): string</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="x">{</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="x">    $email = defined('LAB_EMAIL') ? LAB_EMAIL : 'mpct.nano@nau.edu';</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="x">    return 'We were unable to process your submission at this time. Please try again later or email us directly at ' . $email . '.';</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/includes/validation.php</code> — uncaught error and fatal log, lines 123–139)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span>
+<span class="normal"><a href="#__codelineno-24-14">14</a></span>
+<span class="normal"><a href="#__codelineno-24-15">15</a></span>
+<span class="normal"><a href="#__codelineno-24-16">16</a></span>
+<span class="normal"><a href="#__codelineno-24-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="x">set_exception_handler(static function (Throwable $e): void {</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="x">    mpactLogInternalError('MPCT uncaught error', $e);</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="x">    mpactRespondWithoutInternals();</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="x">});</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="x">register_shutdown_function(static function (): void {</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="x">    $err = error_get_last();</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="x">    if ($err === null) {</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="x">        return;</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="x">    }</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="x">    $fatals = [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR];</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="x">    if (!in_array($err['type'], $fatals, true)) {</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="x">        return;</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="x">    }</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="x">    error_log('MPCT fatal: ' . $err['message']);</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="x">    mpactRespondWithoutInternals();</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="x">});</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/FormSubmission.php</code> — caught mail failure, lines 754–755)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="x">    error_log("MPCT Form Error: " . $e-&gt;getMessage());</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="x">    respond(false, 'We were unable to send your inquiry at this time. Please try again or email us directly at ' . LAB_EMAIL . '.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/EquipmentReservation.php</code> — caught mail failure, lines 789–790)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="x">    error_log("MPCT Booking Error: " . $e-&gt;getMessage());</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="x">    respond(false, 'We were unable to send your inquiry at this time. Please try again or email us directly at ' . LAB_EMAIL . '.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/ServiceRequestSubmission.php</code> — caught mail failure, lines 987–988)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
+<span class="normal"><a href="#__codelineno-27-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="x">    error_log('MPCT Service Request Error: ' . $e-&gt;getMessage());</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="x">    respond(false, 'We were unable to send your request at this time. Please try again or email us directly at ' . LAB_EMAIL . '.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/IntelScholarshipSubmission.php</code> — caught mail failure, lines 440–441)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="x">    error_log('MPCT Intel Scholarship Form Error: ' . $e-&gt;getMessage());</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="x">    respond(false, 'We were unable to submit your registration at this time. Please try again or email us directly at ' . LAB_EMAIL . '.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<hr />
+<h3 id="part-4-apply-the-fix-from-the-linked-page">Part 4: Apply the Fix from the Linked Page<a class="headerlink" href="#part-4-apply-the-fix-from-the-linked-page" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Please open the page named in the Fix cell and follow that Part. Do not comment out <code>rejectIfHoneypotFilled()</code>, <code>verifyCsrfToken()</code>, <code>verifyTurnstile()</code>, or <code>checkRateLimits()</code> to push one submission through. The form would still return HTTP 200, so the hole would not show up as an error. Every later visitor, and every bot, would skip that check. It fails silently for the lab.</li>
+<li>For a false honeypot block, open DevTools and find <code>input[name="website"]</code> inside <code>.hp-field</code>. If the value is not empty after trimming spaces, clear it and submit again. Please leave the field in the page. A private window is a fair retest when a password manager keeps filling it. If the next submit then says "refresh the page", that second sentence is the CSRF token. Fix that next. You could not see it while the honeypot was stopping the chain.</li>
+<li>For the CSRF sentence, reload the form so <code>csrf-token.php</code> runs, then submit from the form. To reproduce the screenshot on purpose, delete the <code>csrf_token</code> cookie in DevTools and submit again. You should see the same red box, still with HTTP 200, and still with no new honeypot or CSRF line in the log. The repair steps are <a href="../03-update-csrf-protection/">Update CSRF Token Protection</a>, Part 1 and Part 2.</li>
+<li>For a rate-limit sentence, wait out the 300 second window, or follow <a href="../04-update-rate-limits/">Update Rate Limits</a>, Part 3. Please raise a limit only when real visitors are blocked (Part 1 of that page), not to finish a single test.</li>
+<li>For a server-admin row, send the red-box sentence and the <code>MPCT</code> log line. Do not send the visitor's email address, IP address, CSRF token, or Turnstile token. Use <code>name@example.com</code> when a note needs an example. The public lab address, <code>mpct.nano@nau.edu</code>, is fine to name.</li>
+<li>When the fix is in place, please continue to <a href="#lets-verify-your-changes">Let's Verify Your Changes</a>.</li>
+</ol>
+<hr />
+<h2 id="technical-best-practices-and-validation">Technical best practices and validation<a class="headerlink" href="#technical-best-practices-and-validation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Never weaken a guard to clear one submission:</strong> Turning a check off, or catching its reject and continuing, lets the next bot through on every form that shares the handler. The page still returns HTTP 200, so the mistake does not announce itself. Fix the cause in the linked page instead.</li>
+<li><strong>Reproduce the block on a local server with Cloudflare's test keys:</strong> <a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 4, lists Cloudflare's published dummy keys. A dummy site key only works with its matching dummy secret (<a href="https://developers.cloudflare.com/turnstile/troubleshooting/testing/">Cloudflare Turnstile testing</a>). The red "For testing only" line in the screenshot above means those keys are loaded. If that line ever shows on nano.nau.edu, the test keys are in the production config. Tell the nano.nau.edu server administrator. Do not paste the key values into the ticket or into this repo. <code>php -S</code> runs the PHP guards and prints <code>error_log</code> in that terminal. It does not read <code>.htaccess</code>.</li>
+<li><strong>Keep visitor emails and IP addresses out of tickets:</strong> The rate-limit keys are <code>ip:</code> plus <code>REMOTE_ADDR</code>, and <code>email:</code> plus the lowercased address. Paste the red-box sentence and the <code>MPCT</code> log line. Leave out the address, the IP, the CSRF token, and the Turnstile token.</li>
+<li><strong>Trust the sentence, not the status code:</strong> Confirm in DevTools that the POST body is JSON <code>success: false</code> and that <code>message</code> matches the strip. The strip clears itself after about 8 seconds, so the Network panel is the copy that stays. A JSON parse error in the strip means the handler returned something that was not JSON. Read that raw body, and the <code>php -S</code> terminal, before you change a guard.</li>
+</ul>
+<hr />
+<h2 id="lets-verify-your-changes">Let's Verify Your Changes<a class="headerlink" href="#lets-verify-your-changes" title="Permanent link">&para;</a></h2>
+<ol>
+<li>After the fix, reload the form page on a local HTTP server so <code>csrf-token.php</code> sets a new cookie and Turnstile renders again. <code>php -S</code> is enough. It does not read <code>.htaccess</code>, and this check does not need Apache.</li>
+<li>Use Cloudflare's dummy test keys when you are not on production (<a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>, Part 4). Leave every <code>website</code> field empty. Submit once with valid test data, such as <code>name@example.com</code>.</li>
+<li>In the Network panel, the POST to the handler returns HTTP 200 and <code>"success": true</code>. A 200 with <code>"success": false</code> means the block is still there. Please return to Part 2 with that <code>message</code>.</li>
+<li>The green strip (<code>bk-feedback--success</code>) shows the success sentence for about 10 seconds. Contact Us also returns to the category gateway about 5 seconds after success, so read it promptly.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Sentence you should see</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/Contact_Us.html</code></td>
+<td>Your inquiry has been submitted successfully! You will receive a confirmation email shortly.</td>
+</tr>
+<tr>
+<td><code>/ServiceRequest.html</code></td>
+<td>Your service request has been submitted successfully. A confirmation email has been sent.</td>
+</tr>
+<tr>
+<td><code>/CHIPS_Scholars_Program.html</code></td>
+<td>Thanks! Your scholarship interest has been submitted. Watch your inbox for a confirmation email.</td>
+</tr>
+<tr>
+<td><code>/Reserve_Equipment.html</code></td>
+<td>Course request submitted! The lab team will contact you to discuss scheduling for your class. — or, outside educational mode — Booking request submitted! The lab team will contact you to confirm your session.</td>
+</tr>
+</tbody>
+</table>
+<p>The Contact Us, service-request, and scholarship sentences come from PHP:</p>
+<p><strong>Real Code Snippet (<code>/FormSubmission.php</code> — Contact Us success, lines 748–748)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="x">    respondAndContinue(true, 'Your inquiry has been submitted successfully! You will receive a confirmation email shortly.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/ServiceRequestSubmission.php</code> — service-request success, lines 985–985)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="x">    respondAndContinue(true, 'Your service request has been submitted successfully. A confirmation email has been sent.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/IntelScholarshipSubmission.php</code> — scholarship success, lines 437–437)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="x">    respond(true, 'Thanks! Your scholarship interest has been submitted. Watch your inbox for a confirmation email.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Booking's handler returns the same sentence as Contact Us, but <code>/JS/booking.js</code> does not show <code>json.message</code> on success. Please look for the two sentences in the table, not the PHP sentence. An icon sits in front of the words.</p>
+<p><strong>Real Code Snippet (<code>/EquipmentReservation.php</code> — booking success JSON the page does not show, lines 783–783)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="x">    respondAndContinue(true, 'Your inquiry has been submitted successfully! You will receive a confirmation email shortly.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/JS/booking.js</code> — success text the visitor sees, lines 1000–1004)</strong>
+   <div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
+<span class="normal"><a href="#__codelineno-33-2">2</a></span>
+<span class="normal"><a href="#__codelineno-33-3">3</a></span>
+<span class="normal"><a href="#__codelineno-33-4">4</a></span>
+<span class="normal"><a href="#__codelineno-33-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">json</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">isEducationalMode</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="w">                    </span><span class="o">?</span><span class="w"> </span><span class="s1">'&lt;i class="fas fa-check-circle"&gt;&lt;/i&gt; Course request submitted! The lab team will contact you to discuss scheduling for your class.'</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="w">                    </span><span class="o">:</span><span class="w"> </span><span class="s1">'&lt;i class="fas fa-check-circle"&gt;&lt;/i&gt; Booking request submitted! The lab team will contact you to confirm your session.'</span><span class="p">;</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="w">                </span><span class="nx">showFeedback</span><span class="p">(</span><span class="nx">feedback</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Confirm the lab message arrived at <code>mpct.nano@nau.edu</code> (the <code>LAB_EMAIL</code> inbox). On a local server without mail configured, the guards can pass and the strip then shows "We were unable to send your inquiry…", "We were unable to send your request…", or "We were unable to submit your registration…". That is a mail failure, not a security block. The matching <code>MPCT Form Error</code>, <code>MPCT Booking Error</code>, <code>MPCT Service Request Error</code>, or <code>MPCT Intel Scholarship Form Error</code> line is in the <code>php -S</code> terminal. Ask the nano.nau.edu server administrator to confirm the lab inbox on the server. Do not guess a mailbox path.</li>
+</ol>
+<hr />
+<p>🔔 <strong>Documentation Update Reminder:</strong> Please make sure to update any How-To procedures or relevant documentation every time you make a change to the website and deploy it. This keeps our operational manual healthy and helpful for the entire team!</p>
+<p><em>Last reviewed: September 21, 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-update-rate-limits/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Rate Limits">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Rate Limits
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-update-security-headers/" class="md-footer__link md-footer__link--next" aria-label="Next: Security Headers">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Security Headers
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Northern Arizona University.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

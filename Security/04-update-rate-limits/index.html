@@ -1,0 +1,4262 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Maintenance documentation for the NAU Nano public website at nano.nau.edu.">
+      
+      
+        <meta name="author" content="NAU Nano">
+      
+      
+      
+        <link rel="prev" href="../03-update-csrf-protection/">
+      
+      
+        <link rel="next" href="../05-troubleshoot-blocked-submissions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/NAU.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Rate Limits - NAU Nano Website Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#update-rate-limits" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NAU Nano Website Docs" class="md-header__button md-logo" aria-label="NAU Nano Website Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/NAU.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NAU Nano Website Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rate Limits
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../homepage/homepage/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home Page
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MPaCT%20Homepage/mpact/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MPaCT Homepage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Equipment%20Page/equipment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Equipment
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Degree%20Programs/degree-programs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Degree Programs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Workforce%20Development_A/workforce-development/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Workforce
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../About/01-update-strategic-vision/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Contact/01-update-remove-form-categories/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contact
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../News/01-add-news-article/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  News
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Service-Request/service-request-how-it-works/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Service Request
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-add-security-checks-to-a-form/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../_shared-hero-stats-panel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Shared Components
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../General/clone-program-page/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  General
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Workforce/01-update-industry-stats/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Maintenance Tasks
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NAU Nano Website Docs" class="md-nav__button md-logo" aria-label="NAU Nano Website Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/NAU.png" alt="logo">
+
+    </a>
+    NAU Nano Website Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Page
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home Page
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/homepage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/home-academic-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academic Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/home-featured-equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Featured Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/home-map-location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map Location
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homepage/home-workforce-partners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workforce Partners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPaCT Homepage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MPaCT Homepage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact-capability-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capability Cards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact-facility-buildout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facility Buildout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact-research-areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Areas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MPaCT%20Homepage/mpact-shared-use-facility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shared Use Facility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Equipment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Equipment%20Page/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Equipment%20Page/equipment-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment Cards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Equipment%20Page/equipment-filter-bar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filter Bar and Sort Order
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Equipment%20Page/equipment-json-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Status System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Degree Programs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Degree Programs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Degree%20Programs/degree-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Degree%20Programs/degree-programs-program-rows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Rows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workforce
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workforce
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/workforce-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/wfd-pathways-ptap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pathways and PTAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/wfd-investment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/wfd-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce%20Development_A/wfd-career-outcomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Career Outcomes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/01-update-strategic-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategic Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/02-update-cross-campus-impact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross Campus Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contact
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contact/01-update-remove-form-categories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Form Categories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contact/02-update-contact-form-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Form Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    News
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../News/01-add-news-article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add News Article
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../News/02-update-news-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Request
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Service Request
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How It Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-field-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request email
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Service-Request/service-request-field-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service request field types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-add-security-checks-to-a-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Security Checks to a Form
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-update-turnstile-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turnstile (CAPTCHA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-update-csrf-protection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSRF Tokens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limits
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visual-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-change-the-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Change the Thresholds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-set-up-the-storage-folder-on-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Set Up the Storage Folder on the Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-unblock-a-visitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Unblock a Visitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-read-the-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Read the Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-best-practices-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical best practices and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-verify-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Let's Verify Your Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-troubleshoot-blocked-submissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot Blocked Submissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-update-security-headers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Headers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_shared-hero-stats-panel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shared Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/mkdocs-manual-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Manual Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    General
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/clone-program-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clone a Program Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/add-a-new-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add a New Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-footer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Footer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-global-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Global Navigation Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/update-site-wide-metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Site-Wide Metadata or SEO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance Tasks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintenance Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/01-update-industry-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Industry Stats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/02-update-ecosystem-partners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem Partners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/03-update-salary-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Salary Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/04-update-ptap-and-intel-chips-pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PTAP and Intel CHIPS Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_5" id="__nav_16_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Career Pathways
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Career Pathways
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/Career%20Pathways/01-add-or-update-pathway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add or Update Career Pathway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Workforce/Career%20Pathways/02-update-pathway-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Pathway Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visual-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-change-the-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Change the Thresholds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-set-up-the-storage-folder-on-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Set Up the Storage Folder on the Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-unblock-a-visitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Unblock a Visitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-read-the-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Read the Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-best-practices-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical best practices and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-verify-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Let's Verify Your Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="update-rate-limits">Update Rate Limits<a class="headerlink" href="#update-rate-limits" title="Permanent link">&para;</a></h1>
+<p><strong>Summary:</strong> Change how many submissions one IP address or email address may send, and where those counters are stored, in the shared PHP rate limiter and in <code>mpact_config.php</code> on the server.</p>
+<p><strong>When to change:</strong> When real visitors report "Too many submissions…", spam gets through, or the server's storage folder changes.</p>
+<p><strong>Difficulty:</strong> <span class="difficulty-stars" style="color:#E6A800">★★★★</span></p>
+<p><strong>Estimated Time:</strong> 15 minutes, plus time with the server administrator</p>
+<hr />
+<h2 id="visual-reference">Visual Reference<a class="headerlink" href="#visual-reference" title="Permanent link">&para;</a></h2>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit_config.php</code> — defaults used only when the constant is still undefined, lines 23–40)</strong></p>
+<div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">if (!defined('RATE_LIMIT_IP_MAX')) {</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="x">    define('RATE_LIMIT_IP_MAX', 5);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="x">}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="x">if (!defined('RATE_LIMIT_EMAIL_MAX')) {</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="x">    define('RATE_LIMIT_EMAIL_MAX', 2);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="x">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="x">if (!defined('RATE_LIMIT_WINDOW_SEC')) {</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="x">    define('RATE_LIMIT_WINDOW_SEC', 300);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="x">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="x">if (!defined('RATE_LIMIT_RETENTION_DAYS')) {</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="x">    define('RATE_LIMIT_RETENTION_DAYS', 7);</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="x">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="x">if (!defined('RATE_LIMIT_STORAGE')) {</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="x">    define('RATE_LIMIT_STORAGE', 'json');</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="x">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="x">if (!defined('RATE_LIMIT_DATA_DIR')) {</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="x">    define('RATE_LIMIT_DATA_DIR', dirname(__DIR__) . '/data/rate-limits');</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><em>Each default applies only when <code>mpact_config.php</code> has not already defined the constant, so server overrides belong in <code>mpact_config.php</code>.</em></p>
+<hr />
+<h2 id="target-files">Target Files<a class="headerlink" href="#target-files" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Purpose in this task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/includes/rate_limit_config.php</code></td>
+<td>Default <code>RATE_LIMIT_*</code> constants. Each one is set only when it is still undefined.</td>
+</tr>
+<tr>
+<td><code>/mpact_config.php</code></td>
+<td>Server-only overrides. Gitignored, and not in the repo. The nano.nau.edu server administrator edits this file.</td>
+</tr>
+<tr>
+<td><code>/includes/rate_limit.php</code></td>
+<td><code>getClientIp()</code>, <code>normalizeEmail()</code>, <code>checkRateLimits()</code>, and the fail-open catch.</td>
+</tr>
+<tr>
+<td><code>/includes/rate_limit/RateLimitStoreInterface.php</code></td>
+<td><code>RateLimitDecision::next()</code>, which decides a fixed window.</td>
+</tr>
+<tr>
+<td><code>/includes/rate_limit/RateLimitStoreFactory.php</code></td>
+<td>Picks the JSON directory or the temp fallback, and writes the store log lines.</td>
+</tr>
+<tr>
+<td><code>/includes/rate_limit/JsonFileRateLimitStore.php</code></td>
+<td><code>flock</code>-locked JSON files named with <code>sha256</code> of the key, under a <code>json</code> subdirectory.</td>
+</tr>
+<tr>
+<td><code>/includes/rate_limit/SqliteRateLimitStore.php</code></td>
+<td>Alternate store. It is not opened when <code>RATE_LIMIT_STORAGE</code> is <code>json</code>.</td>
+</tr>
+<tr>
+<td><code>/includes/validation.php</code></td>
+<td><code>respond()</code> (HTTP 200 JSON) and <code>mpactLogInternalError()</code>, which formats the skipped log line.</td>
+</tr>
+<tr>
+<td><code>/FormSubmission.php</code></td>
+<td>Contact Us handler. Rate-limit call at line 337, before field checks.</td>
+</tr>
+<tr>
+<td><code>/ServiceRequestSubmission.php</code></td>
+<td>Printing, laser, and scanning handler. Rate-limit call at line 511.</td>
+</tr>
+<tr>
+<td><code>/EquipmentReservation.php</code></td>
+<td>Reserve Equipment handler. Rate-limit call at line 188.</td>
+</tr>
+<tr>
+<td><code>/IntelScholarshipSubmission.php</code></td>
+<td>CHIPS Scholars handler. Rate-limit call at line 47.</td>
+</tr>
+<tr>
+<td><code>/data/.htaccess</code></td>
+<td>Denies web access to <code>/data/</code>, including the counter files.</td>
+</tr>
+<tr>
+<td><code>/data/rate-limits/.gitkeep</code></td>
+<td>Empty placeholder so git keeps the storage directory.</td>
+</tr>
+<tr>
+<td><code>/.gitignore</code></td>
+<td>Line 11 ignores <code>mpact_config.php</code>. Lines 13–15 ignore counter files and keep <code>.gitkeep</code>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!NOTE]
+<strong>How counting works</strong>
+Each submission that reaches <code>checkRateLimits()</code> can use two keys, <code>ip:</code> plus the address and <code>email:</code> plus the lowercased address, in one fixed window (<code>RATE_LIMIT_WINDOW_SEC</code>, 300 seconds by default). The window is not per form. <code>/FormSubmission.php</code> (line 337), <code>/ServiceRequestSubmission.php</code> (line 511), <code>/EquipmentReservation.php</code> (line 188), and <code>/IntelScholarshipSubmission.php</code> (line 47) call the same function, so Contact Us, the three Service Request forms, Reserve Equipment, and the CHIPS Scholars form share both counts. The call sits after the honeypot, the CSRF token check, and Cloudflare Turnstile, and before <code>requireFields()</code>, so a slot is used before field validation. Those earlier rejects do not use a slot. A storage error is caught and the submission is allowed through (fail open). About 1 request in 100 (<code>mt_rand(1, 100) === 1</code>) deletes records whose <code>last_seen</code> is older than <code>RATE_LIMIT_RETENTION_DAYS</code> (7 days unless you override it). That roll runs only after both keys allow the request. The visitor sees one of these exact sentences: <code>Too many submissions from your network. Please try again later.</code> or <code>Too many submissions for this email address. Please try again later.</code> The full guard order is in <a href="../01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>.</p>
+<p>[!WARNING]
+<strong><code>getClientIp()</code> reads only <code>REMOTE_ADDR</code>. Behind an unwrapped proxy, the whole site shares one cap, and nothing is logged.</strong>
+<code>getClientIp()</code> returns <code>$_SERVER['REMOTE_ADDR']</code>, or <code>0.0.0.0</code> when that value is missing. It does not read <code>X-Forwarded-For</code>, <code>X-Real-IP</code>, <code>CF-Connecting-IP</code>, or any other forwarded header. If the site sits behind a proxy or CDN that the server does not unwrap, every visitor shares one address, so the limit becomes 5 per 5 minutes for the whole site (the defaults <code>RATE_LIMIT_IP_MAX</code> 5 and <code>RATE_LIMIT_WINDOW_SEC</code> 300). If <code>REMOTE_ADDR</code> is missing, every such request shares the key <code>ip:0.0.0.0</code>, and that same site-wide cap applies. No log line says that this happened. Visitors only see "Too many submissions from your network. Please try again later." Do not point this function at a client-supplied header. A sender could then choose a new address on every request, the cap would never hold, and that would also write nothing to the log.</p>
+<p>[!IMPORTANT]
+<strong>Verify against your local codebase:</strong> Before you change a number, confirm the six <code>RATE_LIMIT_*</code> defaults in <code>/includes/rate_limit_config.php</code> (lines 23–40), the <code>checkRateLimits(getClientIp(), trim($_POST['email'] ?? ''))</code> call in all four handlers, <code>hash('sha256', $key)</code> in <code>/includes/rate_limit/JsonFileRateLimitStore.php</code> (line 189), and that <code>/.gitignore</code> still ignores <code>data/rate-limits/*</code> while keeping <code>data/rate-limits/.gitkeep</code>. <code>mpact_config.php</code> is not in the repo.</p>
+<p>[!TIP]
+<strong>A visitor is already blocked?</strong> Jump to <a href="#part-3-unblock-a-visitor">Part 3: Unblock a Visitor</a>. To match the sentence on screen to a layer, use <a href="../05-troubleshoot-blocked-submissions/">Troubleshoot Blocked Form Submissions</a>.</p>
+</blockquote>
+<hr />
+<h2 id="step-by-step-instructions">Step-by-Step Instructions<a class="headerlink" href="#step-by-step-instructions" title="Permanent link">&para;</a></h2>
+<p>Please change thresholds in <code>mpact_config.php</code> on the server. The PHP files below show how a number is counted. You should not need to edit them for a normal cap change. The guard chain those files sit in is <a href="../01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>.</p>
+<hr />
+<h3 id="part-1-change-the-thresholds">Part 1: Change the Thresholds<a class="headerlink" href="#part-1-change-the-thresholds" title="Permanent link">&para;</a></h3>
+<ol>
+<li>To get started, please open <code>/includes/rate_limit.php</code> and find <code>getClientIp()</code>.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit.php</code> — client address used for the IP cap, lines 16–19)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="x">function getClientIp(): string</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="x">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="x">    return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Please leave this function as it is. The warning above is the failure mode: one shared address, and no log line. Replacing <code>REMOTE_ADDR</code> with a forwarded header in this file would let a client pick the bucket, and that bypass would also be silent.</p>
+<ol>
+<li>Please read <code>checkRateLimits()</code> before you change a number. This function is the whole policy: two keys, fail open, and a 1-in-100 cleanup.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit.php</code> — IP key, email key, cleanup, and fail-open catch, lines 31–75)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span>
+<span class="normal"><a href="#__codelineno-2-38">38</a></span>
+<span class="normal"><a href="#__codelineno-2-39">39</a></span>
+<span class="normal"><a href="#__codelineno-2-40">40</a></span>
+<span class="normal"><a href="#__codelineno-2-41">41</a></span>
+<span class="normal"><a href="#__codelineno-2-42">42</a></span>
+<span class="normal"><a href="#__codelineno-2-43">43</a></span>
+<span class="normal"><a href="#__codelineno-2-44">44</a></span>
+<span class="normal"><a href="#__codelineno-2-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">function checkRateLimits(string $ip, string $emailRaw): void</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="x">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="x">    $windowSec = (int) RATE_LIMIT_WINDOW_SEC;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="x">    $retentionDays = (int) RATE_LIMIT_RETENTION_DAYS;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="x">    // Fail open. A storage fault must never cost us a genuine enquiry from a</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="x">    // prospective student or research partner — losing those is worse than</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="x">    // letting spam through until someone reads the log. A real reject is not</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="x">    // affected: processRateLimitKey() calls respond(), which exits before</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="x">    // this catch can see it.</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="x">    try {</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="x">        $store = RateLimitStoreFactory::create();</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="x">        processRateLimitKey(</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="x">            $store,</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="x">            'ip:' . $ip,</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="x">            (int) RATE_LIMIT_IP_MAX,</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="x">            $windowSec,</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="x">            $retentionDays,</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="x">            'Too many submissions from your network. Please try again later.'</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="x">        );</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="x">        $email = normalizeEmail($emailRaw);</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="x">        if ($email !== null) {</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="x">            processRateLimitKey(</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="x">                $store,</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="x">                'email:' . $email,</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="x">                (int) RATE_LIMIT_EMAIL_MAX,</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="x">                $windowSec,</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="x">                $retentionDays,</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="x">                'Too many submissions for this email address. Please try again later.'</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="x">            );</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="x">        }</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34"></a>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="x">        if (mt_rand(1, 100) === 1) {</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="x">            $store-&gt;cleanupExpired($retentionDays);</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="x">        }</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="x">    } catch (Throwable $e) {</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="x">        if (function_exists('mpactLogInternalError')) {</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="x">            mpactLogInternalError('MPCT rate limit skipped', $e);</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="x">        } else {</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="x">            error_log('MPCT rate limit skipped');</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="x">        }</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44"></a><span class="x">    }</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>A few rules fall straight out of that function. Each one fails quietly if you miss it:</p>
+<ul>
+<li>The IP key is always counted. The email key is counted only when <code>normalizeEmail()</code> returns an address. An empty or invalid email does not get an email file. There is no log line and no visitor message for that skip. Only the IP cap applies.</li>
+<li>The IP key is counted first. When the email key is over its cap, <code>respond()</code> exits, but this request's IP slot was already used. Further retries of the same email still walk toward the IP cap. The sentence on screen then changes from the email message to the network message. Neither reject writes a rate-limit line to <code>error_log</code>.</li>
+<li>A normal reject calls <code>respond()</code> in <code>/includes/validation.php</code> (lines 48–59). The browser gets HTTP 200 and JSON <code>{"success":false,"message":"…"}</code>, then the script exits. Checking only the HTTP status looks like success. Read the JSON <code>success</code> field. The <code>catch</code> does not run for this reject, which is what the comment on lines 36–40 says.</li>
+<li>A thrown storage error is fail open. The visitor is not told that the cap was skipped. The submission continues into field validation and can still be emailed. The log line in Part 4 is the only signal.</li>
+<li>
+<p><code>mt_rand(1, 100) === 1</code> runs only after both keys have allowed the request. It deletes files whose <code>last_seen</code> is older than the retention period. It does not end a block that is still inside the 300 second window, and a rejected request never reaches it.</p>
+</li>
+<li>
+<p>The window is fixed, not sliding. Please open <code>RateLimitDecision::next()</code> in <code>/includes/rate_limit/RateLimitStoreInterface.php</code>.</p>
+</li>
+</ul>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/RateLimitStoreInterface.php</code> — retention reset, fixed window, and reject inside <code>RateLimitDecision::next()</code>, lines 40–70)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="x">        if ($record !== null) {</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="x">            $retentionCutoff = $now - ($retentionDays * 86400);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="x">            if ($record['last_seen'] &lt; $retentionCutoff) {</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="x">                $record = null;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="x">            }</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="x">        }</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="x">        if ($record === null) {</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="x">            return [</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="x">                'count' =&gt; 1,</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="x">                'window_start' =&gt; $now,</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="x">                'last_seen' =&gt; $now,</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="x">            ];</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="x">        }</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="x">        if (($now - $record['window_start']) &gt;= $windowSec) {</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="x">            return [</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="x">                'count' =&gt; 1,</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="x">                'window_start' =&gt; $now,</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="x">                'last_seen' =&gt; $now,</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="x">            ];</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="x">        }</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="x">        if ($record['count'] &gt;= $max) {</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="x">            return null;</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="x">        }</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="x">        $record['count']++;</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="x">        $record['last_seen'] = $now;</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="x">        return $record;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><code>window_start</code> stays on the first allowed hit. A new count of 1 starts only when <code>now - window_start</code> has reached <code>RATE_LIMIT_WINDOW_SEC</code>. A reject returns <code>null</code> and does not move <code>window_start</code> or <code>last_seen</code>. In the JSON store, that <code>null</code> is not written (<code>JsonFileRateLimitStore.php</code>, lines 36–39), so rejected clicks do not extend the block. Waiting means waiting from the first counted submission in the current window, not from the latest click, and not for 7 days. Seven days is retention: how long an idle file is kept, and when an old <code>last_seen</code> is treated as "no record."</p>
+<p>The max is not stored in the file. The next request compares <code>count</code> with the constants loaded for that request. Raising a max unblocks on the next submit without deleting a file. Lowering a max can block on the next submit when <code>count</code> is already at the new max. You do not edit the JSON to change the cap. With the defaults, the third submission for one email is rejected (<code>count</code> is already 2), and the sixth submission for one IP is rejected (<code>count</code> is already 5).</p>
+<ol>
+<li>Please confirm the call sits in front of field validation. If it is moved below <code>requireFields()</code>, invalid posts stop using a slot. A script can then hammer the handler without spending the cap, and nothing is logged to say the call moved.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/FormSubmission.php</code> — rate limit after the other guards and before <code>requireFields()</code>, lines 330–342)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">if ($_SERVER['REQUEST_METHOD'] !== 'POST') {</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="x">    respond(false, 'Invalid request method.');</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="x">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="x">rejectIfHoneypotFilled();</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="x">verifyCsrfToken();</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="x">verifyTurnstile();</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="x">checkRateLimits(getClientIp(), trim($_POST['email'] ?? ''));</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="x">// Name, email, and category are required for every form type.</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="x">// Category tells us which form was submitted; without it we can't</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="x">// look up the right fields or build a meaningful email.</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="x">requireFields(['first_name', 'last_name', 'email', 'category']);</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>The same <code>checkRateLimits(getClientIp(), trim($_POST['email'] ?? ''));</code> line is in <code>/ServiceRequestSubmission.php</code> at line 511, <code>/EquipmentReservation.php</code> at line 188, and <code>/IntelScholarshipSubmission.php</code> at line 47. Field checks start after that line in each file. A request rejected for a missing field has already used a slot. A request rejected by the honeypot, the CSRF token check, or Cloudflare Turnstile never reaches the line, so it does not.</p>
+<ol>
+<li>Please open <code>normalizeEmail()</code> when you need to see which addresses share one file.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit.php</code> — lowercase and email-shape check before the email key is counted, lines 21–29)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span>
+<span class="normal"><a href="#__codelineno-5-8">8</a></span>
+<span class="normal"><a href="#__codelineno-5-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">function normalizeEmail(string $email): ?string</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="x">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="x">    $email = strtolower(trim($email));</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="x">    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="x">        return null;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="x">    }</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="x">    return $email;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><code>Name@Example.com</code> and <code>name@example.com</code> are one key. An address that fails <code>FILTER_VALIDATE_EMAIL</code> is not a key. When you test, use a normal address such as <code>name@example.com</code>. A blank or one-word value never creates an email record, and the third submit will not show the email sentence. That miss is silent.</p>
+<ol>
+<li>Put the new numbers in <code>mpact_config.php</code> on the server, not in the defaults file. Every handler loads <code>mpact_config.php</code> first (<code>/FormSubmission.php</code> line 56, <code>/ServiceRequestSubmission.php</code> line 44, <code>/EquipmentReservation.php</code> line 36, <code>/IntelScholarshipSubmission.php</code> line 28). <code>/includes/rate_limit.php</code> then loads <code>rate_limit_config.php</code>. A constant that already exists is left alone. Changing the <code>5</code> or the <code>2</code> inside <code>rate_limit_config.php</code> does nothing when <code>mpact_config.php</code> already defined that constant. There is no error and no log line. The site keeps the server value.</li>
+</ol>
+<p>The file is not in the repository. <code>/.gitignore</code> line 11 ignores the name <code>mpact_config.php</code>. Please ask the nano.nau.edu server administrator to edit the copy on the server. Do not commit the file, and do not paste it into a ticket. It also holds the Turnstile keys. Use the placeholders below.</p>
+<ol>
+<li>Add only the constants you want to change. A constant you leave undefined keeps the default from the Visual Reference.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>What to Change</th>
+<th>Description</th>
+<th>Options / Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td><code>RATE_LIMIT_IP_MAX</code></td>
+<td>Allowed submissions for one IP address in the current window. The next one is rejected. Counted even when the email is missing or later field checks fail.</td>
+<td>Default <code>5</code>. <code>define('RATE_LIMIT_IP_MAX', [number]);</code></td>
+</tr>
+<tr>
+<td>②</td>
+<td><code>RATE_LIMIT_EMAIL_MAX</code></td>
+<td>Allowed submissions for one valid email in that same window, across all four handlers. The next one is rejected. Empty or invalid emails are not counted.</td>
+<td>Default <code>2</code>. <code>define('RATE_LIMIT_EMAIL_MAX', [number]);</code></td>
+</tr>
+<tr>
+<td>③</td>
+<td><code>RATE_LIMIT_WINDOW_SEC</code></td>
+<td>Fixed window length in seconds, measured from <code>window_start</code> (the first allowed hit), not from the latest hit.</td>
+<td>Default <code>300</code> (5 minutes). <code>define('RATE_LIMIT_WINDOW_SEC', [seconds]);</code></td>
+</tr>
+<tr>
+<td>④</td>
+<td><code>RATE_LIMIT_RETENTION_DAYS</code></td>
+<td>How long a file may sit after <code>last_seen</code> before it is treated as empty and, about 1 request in 100, deleted. Not the block timer.</td>
+<td>Default <code>7</code>. <code>define('RATE_LIMIT_RETENTION_DAYS', [days]);</code></td>
+</tr>
+<tr>
+<td>⑤</td>
+<td><code>RATE_LIMIT_STORAGE</code></td>
+<td>Which store the factory opens.</td>
+<td>Default <code>json</code>. Leave it as <code>json</code>. See Technical best practices.</td>
+</tr>
+<tr>
+<td>⑥</td>
+<td><code>RATE_LIMIT_DATA_DIR</code></td>
+<td>Folder whose <code>json</code> subdirectory holds the counter files.</td>
+<td>Default, from <code>/includes/rate_limit_config.php</code>: <code>dirname(__DIR__) . '/data/rate-limits'</code>. In <code>/mpact_config.php</code> use <code>__DIR__ . '/data/rate-limits'</code>, because that file is in the site root. Copying <code>dirname(__DIR__)</code> into the server file points above the site and fails silently: the factory still starts, then falls back to the temp folder.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Snippet (server overrides in mpact_config.php)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">// Add to the existing mpact_config.php on the server. Do not replace the file.</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="x">// Handlers load this file before /includes/rate_limit_config.php.</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="x">// A constant you do not define here keeps the default.</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="x">define('RATE_LIMIT_IP_MAX', [number]); // change this number</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="x">define('RATE_LIMIT_EMAIL_MAX', [number]); // change this number</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="x">define('RATE_LIMIT_WINDOW_SEC', [seconds]); // change this number</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Please leave every Turnstile constant that is already in the file. The new numbers are read on the next request, because each request loads <code>mpact_config.php</code> again. Existing record files are not rewritten. If the old cap is still in effect after a save, ask the server administrator whether PHP is still running the previous copy of the file.</p>
+<hr />
+<h3 id="part-2-set-up-the-storage-folder-on-the-server">Part 2: Set Up the Storage Folder on the Server<a class="headerlink" href="#part-2-set-up-the-storage-folder-on-the-server" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Please open <code>/includes/rate_limit/RateLimitStoreFactory.php</code>. You should not need to edit it. You do need the path it will actually write.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/RateLimitStoreFactory.php</code> — configured directory, temp fallback, and store log lines, lines 16–38)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">        $baseDir = defined('RATE_LIMIT_DATA_DIR')</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="x">            ? RATE_LIMIT_DATA_DIR</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="x">            : dirname(__DIR__, 2) . '/data/rate-limits';</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="x">        $driver = defined('RATE_LIMIT_STORAGE')</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="x">            ? strtolower((string) RATE_LIMIT_STORAGE)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="x">            : strtolower((string) (getenv('RATE_LIMIT_STORAGE') ?: 'sqlite'));</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="x">        $tempDir = rtrim(sys_get_temp_dir(), '/\\') . '/mpct-rate-limits';</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="x">        $lastError = null;</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="x">        foreach (self::candidates($driver, $baseDir, $tempDir) as $make) {</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="x">            try {</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="x">                self::$instance = $make();</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="x">                error_log('MPCT rate limit store ready: ' . self::$instance-&gt;describe());</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="x">                return self::$instance;</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="x">            } catch (Throwable $e) {</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="x">                $lastError = $e;</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="x">                error_log('MPCT rate limit store init failed: ' . $e-&gt;getMessage());</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="x">            }</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="x">        }</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="x">        throw $lastError ?? new RuntimeException('Unable to initialize rate limit storage.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/RateLimitStoreFactory.php</code> — JSON candidates, then the sqlite list and the rejected-driver log, lines 49–68)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">        $sqliteThenJson = [</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="x">            static fn () =&gt; new SqliteRateLimitStore($baseDir . '/rate_limits.sqlite'),</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="x">            static fn () =&gt; new JsonFileRateLimitStore($baseDir . '/json'),</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="x">            static fn () =&gt; new SqliteRateLimitStore($tempDir . '/rate_limits.sqlite'),</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="x">            static fn () =&gt; new JsonFileRateLimitStore($tempDir . '/json'),</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="x">        ];</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="x">        if ($driver === 'json') {</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="x">            return [</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="x">                static fn () =&gt; new JsonFileRateLimitStore($baseDir . '/json'),</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="x">                static fn () =&gt; new JsonFileRateLimitStore($tempDir . '/json'),</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="x">            ];</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="x">        }</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="x">        if ($driver === 'sqlite' || $driver === '') {</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="x">            return $sqliteThenJson;</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="x">        }</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="x">        error_log('MPCT rate limit storage driver rejected');</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="x">        throw new RuntimeException('Unable to initialize rate limit storage.');</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>With <code>RATE_LIMIT_STORAGE</code> set to <code>json</code>, the factory tries two directories and does not open SQLite:</p>
+<ul>
+<li><code>[RATE_LIMIT_DATA_DIR]/json</code>, which by default is the site-root folder <code>data/rate-limits/json</code></li>
+<li>then <code>sys_get_temp_dir()</code> plus <code>/mpct-rate-limits/json</code></li>
+</ul>
+<p><code>JsonFileRateLimitStore</code> creates that directory with mode <code>0775</code> when the parent can be written (lines 12–13 of <code>/includes/rate_limit/JsonFileRateLimitStore.php</code>). The nano.nau.edu server administrator has to make <code>data/rate-limits/</code> writable by the account PHP-FPM runs as. If that account cannot create <code>data/rate-limits/json</code>, the first candidate throws <code>Unable to create rate limit storage directory</code>. The factory logs <code>MPCT rate limit store init failed: Unable to create rate limit storage directory</code> and opens the temp directory instead. Counting still works there. The comment at the top of <code>/includes/rate_limit_config.php</code> says those temp counters reset whenever PHP restarts. The factory has no line that deletes the temp folder on startup, so do not use a PHP restart as a way to clear a block, and do not leave production on the temp folder. Please do not copy server account or group names out of that config comment into a ticket or into this manual.</p>
+<p>Part 4 shows how to tell the two folders apart. A <code>store ready</code> path ending in <code>data/rate-limits/json</code> is the configured folder. A path containing <code>mpct-rate-limits</code> is the temp fallback. If you only look in the repository tree, a temp fallback looks like "no file was written." The browser does not say so: submits still succeed until the cap is hit, and the files are simply somewhere else.</p>
+<p>If both directories fail, the <code>throw</code> after the loop is caught by <code>checkRateLimits()</code>, and the submission is allowed. Spam is not blocked. The visitor sees no rate-limit sentence. Only the log shows it.</p>
+<ol>
+<li>Please keep <code>/data/.htaccess</code>. It denies web access to the whole <code>data</code> folder, including the counter files.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/data/.htaccess</code> — deny web access to runtime data, lines 1–2)</strong>
+   <div class="language-apache highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c"># Deny direct HTTP access to rate-limit storage and other runtime data.</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>denied
+</span></code></pre></div></td></tr></table></div></p>
+<p>The filename is a hash, but the JSON body still contains the plain key (<code>email:…</code> or <code>ip:…</code>). If this file is removed, anyone who can request that path can download the address. That is not a silent code path: the file is served. Please leave both lines in place. A syntax error here makes Apache return HTTP 500 for paths under <code>/data/</code>. It does not, by itself, return 500 for the rest of the site.</p>
+<p>PHP's built-in server (<code>php -S</code>) does not read <code>.htaccess</code>, so it cannot prove this rule. On Apache (production, staging, or a local Apache such as XAMPP), the check in Let's Verify should return HTTP 403.</p>
+<ol>
+<li>Please keep the empty placeholder and the ignore rules.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/.gitignore</code> — counter files stay out of git, lines 13–15)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a># Rate limit runtime data (SQLite DB / JSON counters — never commit)
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>data/rate-limits/*
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>!data/rate-limits/.gitkeep
+</span></code></pre></div></td></tr></table></div></p>
+<p><code>/data/rate-limits/.gitkeep</code> is an empty file so git keeps the directory. Those three lines keep <code>json/*.json</code> and any SQLite file out of a normal <code>git add</code>. Do not <code>git add -f</code> them. The JSON body contains the visitor's email address or IP address, and committing one publishes it. Deleting <code>.gitkeep</code> drops the placeholder from the repo the next time git sees an empty folder. PHP recreates the folder at runtime only when it has permission to. Please leave both the placeholder and the ignore rules. <code>mpact_config.php</code> stays ignored as well (line 11).</p>
+<hr />
+<h3 id="part-3-unblock-a-visitor">Part 3: Unblock a Visitor<a class="headerlink" href="#part-3-unblock-a-visitor" title="Permanent link">&para;</a></h3>
+<ol>
+<li>You can wait out the fixed window, or you can delete that visitor's record file. Please do not wait <code>RATE_LIMIT_RETENTION_DAYS</code> (7 by default). Retention is how long an idle file is kept. The block ends when <code>window_start</code> is at least <code>RATE_LIMIT_WINDOW_SEC</code> seconds ago (300 by default), because the next request then starts a new count at 1. Rejected attempts do not push <code>window_start</code> forward.</li>
+</ol>
+<p>Raising the matching max in <code>mpact_config.php</code> also clears the block on the next request, without deleting the file, because the max is not stored in the record. Lowering it can block someone who was previously under the old cap, for the rest of that same window.</p>
+<ol>
+<li>To delete one record, hash the key the same way the store names the file.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/JsonFileRateLimitStore.php</code> — record filename is <code>sha256</code> of the key, lines 187–190)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="x">    private function pathForKey(string $key): string</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="x">    {</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="x">        return $this-&gt;directory . '/' . hash('sha256', $key) . '.json';</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="x">    }</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><code>hash()</code> returns lowercase hex, so the filename is 64 lowercase hex characters plus <code>.json</code>. The directory is the one in the <code>store ready</code> log: <code>data/rate-limits/json/</code> when the configured folder is in use, or the <code>mpct-rate-limits/json</code> temp directory when it is not. Deleting a file in the other directory does nothing. The visitor stays blocked, and there is no error. Please read the log first (Part 4).</p>
+<p>Lowercase the email before you hash it. <code>normalizeEmail()</code> has already lowercased the stored key. For an IP, do not lowercase the address and do not add a port. The key is <code>ip:</code> plus the address exactly as <code>REMOTE_ADDR</code> had it.</p>
+<p><strong>Example Snippet (hash a rate-limit key)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>php -r "echo hash('sha256', 'email:[name@example.com]');"
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>php -r "echo hash('sha256', 'ip:[address]');"
+</span></code></pre></div></td></tr></table></div></p>
+<p>Replace <code>[name@example.com]</code>, including the square brackets, with the lowercased address. Replace <code>[address]</code> with the exact <code>REMOTE_ADDR</code> string, with no port and no second <code>ip:</code> prefix. Do not leave the brackets in the string you hash. For the local test in Let's Verify, the email string inside the quotes is <code>email:name@example.com</code>. Run the one-liner on the server (PowerShell accepts the same quoting), then delete only that filename from the <code>json</code> directory the log named. Never paste a real visitor email or IP into a ticket, a chat, or this manual. Do not copy the JSON body out either. The file stores the plain key on purpose:</p>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/JsonFileRateLimitStore.php</code> — JSON body keeps the plain key, lines 142–147)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">        $encoded = json_encode([</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="x">            'key' =&gt; $key,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">            'count' =&gt; (int) $record['count'],</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="x">            'window_start' =&gt; (int) $record['window_start'],</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="x">            'last_seen' =&gt; (int) $record['last_seen'],</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="x">        ], JSON_PRETTY_PRINT);</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Please do not hand-edit <code>count</code> to unblock someone. If the file is truncated or missing <code>count</code>, <code>window_start</code>, or <code>last_seen</code>, the next submission is treated as a new record and the file is rewritten.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/JsonFileRateLimitStore.php</code> — a corrupt record is treated as empty, lines 172–178)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">        // A truncated or corrupt file is treated as "no record" so the next</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="x">        // write repairs it. Throwing here would lock that email or IP out</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">        // permanently, with no way back short of deleting the file by hand.</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="x">        $data = json_decode($raw, true);</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="x">        if (!is_array($data) || !isset($data['count'], $data['window_start'], $data['last_seen'])) {</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">            return null;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="x">        }</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Editing the file by hand can unblock by accident and can also throw away a real count. Deleting the file is the step that matches the code. A hash of the wrong string (an uppercase email, a missing <code>email:</code> prefix, or <code>email:</code> when you meant <code>ip:</code>) deletes nothing useful, and the block remains. That miss is silent.</p>
+<ol>
+<li>The email file and the IP file are separate. Deleting the email file does not reset the IP file. After several retries, the IP cap can be the one still blocking, and the visitor still sees "Too many submissions from your network. Please try again later." Hash both keys when you need both cleared. In any notes, keep using <code>[name@example.com]</code> and <code>[address]</code>. Compute the real hashes only on the server, and do not paste them back into this page.</li>
+</ol>
+<hr />
+<h3 id="part-4-read-the-logs">Part 4: Read the Logs<a class="headerlink" href="#part-4-read-the-logs" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Please read the PHP error log when you need the folder name or a storage failure. A normal cap hit is not logged. The visitor's JSON message is the only output, and the HTTP status stays 200. If you wait for an error line before you believe the block, you will think the cap is broken. It is not. It is quiet on purpose.</li>
+</ol>
+<p>On the server, use the PHP log the nano.nau.edu server administrator already collects. Locally, the Let's Verify steps start <code>php -S</code> from the site root. <code>error_log()</code> lines from that run appear in the terminal where the server is running, unless <code>php.ini</code> points <code>error_log</code> at a file. <code>php -S</code> does not read <code>.htaccess</code>, so that terminal will not show whether <code>/data/</code> is denied. It will show the rate-limit lines, because those come from PHP.</p>
+<ol>
+<li>These are the exact strings. The factory writes the first three. <code>checkRateLimits()</code> writes the last one, through <code>mpactLogInternalError()</code> when that function exists.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/JsonFileRateLimitStore.php</code> — text appended after <code>MPCT rate limit store ready:</code>, lines 131–134)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">    public function describe(): string</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="x">    {</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="x">        return 'json:' . $this-&gt;directory;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="x">    }</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Real Code Snippet (<code>/includes/validation.php</code> — shape of <code>MPCT rate limit skipped</code> when the helper is loaded, lines 108–111)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="x">function mpactLogInternalError(string $label, Throwable $e): void</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="x">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="x">    error_log($label . ': ' . $e-&gt;getMessage() . ' in ' . basename($e-&gt;getFile()) . ':' . $e-&gt;getLine());</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>The ready line is <code>MPCT rate limit store ready:</code> plus <code>describe()</code>. For this store that is <code>json:</code> immediately followed by the directory, with no space. A configured folder ends in <code>data/rate-limits/json</code>. A temp fallback contains <code>mpct-rate-limits</code>. <code>create()</code> keeps the store in a static property (<code>/includes/rate_limit/RateLimitStoreFactory.php</code>, lines 8–14) and logs the ready line only the first time that PHP process builds it. Later requests in the same process, including a request that is then rejected for being over the cap, do not log ready again. There is not a second line that says "blocked."</p>
+<table>
+<thead>
+<tr>
+<th>Log text</th>
+<th>When it is written</th>
+<th>What you miss if you skip it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MPCT rate limit store ready: json:&lt;directory&gt;</code></td>
+<td>The store opened (factory line 30 plus <code>describe()</code>).</td>
+<td>If <code>&lt;directory&gt;</code> is not the folder you are watching, you will look at an empty directory and think nothing was counted. The cap is still enforced in the other folder. That confusion is silent in the browser.</td>
+</tr>
+<tr>
+<td><code>MPCT rate limit store init failed: &lt;message&gt;</code></td>
+<td>A candidate threw (factory line 34). JSON creation fails with <code>Unable to create rate limit storage directory</code>.</td>
+<td>The preferred folder was skipped. A following ready line that contains <code>mpct-rate-limits</code> means you are on the temp fallback.</td>
+</tr>
+<tr>
+<td><code>MPCT rate limit storage driver rejected</code></td>
+<td><code>RATE_LIMIT_STORAGE</code> is not <code>json</code>, not <code>sqlite</code>, and not an empty string (factory line 67). No extra words on this line.</td>
+<td>The limiter then fails open. Submissions are allowed. The visitor sees no rate-limit error.</td>
+</tr>
+<tr>
+<td><code>MPCT rate limit skipped: &lt;message&gt; in &lt;file&gt;:&lt;line&gt;</code></td>
+<td>The catch in <code>checkRateLimits()</code> ran, and <code>mpactLogInternalError()</code> was loaded. All four handlers load <code>/includes/validation.php</code> first, so this is the line you should expect.</td>
+<td>Storage failed and the form was allowed through. Spam is not blocked until someone reads this line. The visitor is not told.</td>
+</tr>
+<tr>
+<td><code>MPCT rate limit skipped</code></td>
+<td>The same catch, only when <code>mpactLogInternalError</code> is missing (rate_limit.php lines 71–72).</td>
+<td>You should not see the bare sentence on these handlers. If you do, <code>validation.php</code> did not load, and the other guards are not loaded either.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Honeypot and CSRF rejects also log nothing. Cloudflare Turnstile failures log under different prefixes (<code>MPCT Turnstile siteverify…</code>), which <a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a> covers. If the visitor sees "Too many submissions…" and the log shows only <code>store ready</code>, the cap is what stopped them. Match the full sentence in <a href="../05-troubleshoot-blocked-submissions/">Troubleshoot Blocked Form Submissions</a>.</li>
+</ol>
+<hr />
+<h2 id="technical-best-practices-and-validation">Technical best practices and validation<a class="headerlink" href="#technical-best-practices-and-validation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Keep <code>RATE_LIMIT_STORAGE</code> set to <code>json</code>.</strong> The default (lines 35–36 of <code>/includes/rate_limit_config.php</code>) is <code>json</code>. The header comment at lines 8–11 says JSON is the supported production mode because nano.nau.edu ships SQLite 3.7.17, which that comment says is older than the UPSERT syntax the driver needs:</li>
+</ul>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit_config.php</code> — comment that still calls JSON the supported mode, lines 8–11)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="x"> * Storage is 'json' — plain files guarded by flock. The SQLite driver is</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="x"> * kept as a fallback, but nano.nau.edu ships SQLite 3.7.17, which is older</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="x"> * than the UPSERT syntax the driver needs, so JSON is the supported mode</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="x"> * in production.</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>The SQLite class does not send UPSERT. It uses <code>INSERT OR REPLACE</code>, and its own comment says <code>ON CONFLICT … DO UPDATE</code> is a syntax error on SQLite 3.7.17:</p>
+<p><strong>Real Code Snippet (<code>/includes/rate_limit/SqliteRateLimitStore.php</code> — <code>INSERT OR REPLACE</code> instead of UPSERT, lines 73–79)</strong>
+   <div class="language-php highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span>
+<span class="normal"><a href="#__codelineno-18-6">6</a></span>
+<span class="normal"><a href="#__codelineno-18-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="x">        // INSERT OR REPLACE, not ON CONFLICT ... DO UPDATE: UPSERT needs</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="x">        // SQLite 3.24+ and nano.nau.edu ships 3.7.17, where it is a syntax</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="x">        // error. Every column is written here, so the two are equivalent.</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="x">        $stmt = $this-&gt;pdo-&gt;prepare(</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="x">            'INSERT OR REPLACE INTO rate_limits (rate_key, count, window_start, last_seen)</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="x">             VALUES (:rate_key, :count, :window_start, :last_seen)'</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="x">        );</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Leave the constant as <code>json</code> anyway. In the <code>json</code> branch the factory never opens SQLite. The only fallback is the temp JSON directory. Switching the constant to <code>sqlite</code> uses the other candidate list (a SQLite file first). That is not the path these defaults are written for, and this page does not cover running it. The version 3.7.17 is what those two comments state. An unrecognized value logs <code>MPCT rate limit storage driver rejected</code> and then fails open: submissions go through, and the visitor is not told. Deleting the <code>RATE_LIMIT_STORAGE</code> define is also a silent change of driver. If the constant is missing, factory lines 20–22 use the <code>RATE_LIMIT_STORAGE</code> environment variable, or <code>sqlite</code> when that variable is unset. Do not delete the define.</p>
+<ul>
+<li>
+<p><strong>On a shared network, raise the IP limit before the email limit.</strong> Campus Wi-Fi and VPNs put many visitors behind one <code>REMOTE_ADDR</code>. They share <code>RATE_LIMIT_IP_MAX</code> (5 per 300 seconds with the defaults). One group can spend that cap before any single person has sent two forms. They all see "Too many submissions from your network. Please try again later." Nothing is logged to separate "one shared address" from "one person sent five." Raising <code>RATE_LIMIT_EMAIL_MAX</code> does not help them. Raise <code>RATE_LIMIT_IP_MAX</code> first. The email cap is still what stops one address from posting through all four handlers. That window is shared on purpose.</p>
+</li>
+<li>
+<p><strong>Leave the fail-open catch in place.</strong> The comment in <code>checkRateLimits()</code> (lines 36–40) says a storage fault must not drop a genuine enquiry. The catch allows the submission and logs <code>MPCT rate limit skipped…</code>. If you remove the catch, a permissions mistake on the storage folder throws on every submission. The exception handler in <code>/includes/validation.php</code> (lines 123–126) logs <code>MPCT uncaught error:</code> and the visitor sees <code>publicFormErrorMessage()</code> (lines 101–106), not a rate-limit sentence. Fix the folder (Part 2) instead of removing the catch.</p>
+</li>
+</ul>
+<hr />
+<h2 id="lets-verify-your-changes">Let's Verify Your Changes<a class="headerlink" href="#lets-verify-your-changes" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>A local submit has to get past Cloudflare Turnstile and the CSRF token check before the cap is involved. Please use Turnstile test keys, Part 4 of <a href="../02-update-turnstile-settings/">Update Cloudflare Turnstile (CAPTCHA) Settings</a>. Without a passing token the handler stops first. You will see a Turnstile sentence, no counter file, and it will look as if the email cap did nothing. The order of those checks is in <a href="../01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>. If the sentence is one you do not expect, use <a href="../05-troubleshoot-blocked-submissions/">Troubleshoot Blocked Form Submissions</a>.</p>
+</li>
+<li>
+<p>From the site root (the folder that contains <code>FormSubmission.php</code>), start PHP's built-in server and leave the terminal visible:</p>
+</li>
+</ol>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a>php -S 127.0.0.1:8080
+</span></code></pre></div></td></tr></table></div>
+<p><code>error_log()</code> lines print in that terminal unless <code>php.ini</code> sends <code>error_log</code> to a file. This server does not read <code>.htaccess</code>. Do not use it to judge the <code>/data/</code> deny rule.</p>
+<ol>
+<li>
+<p>Open <code>http://127.0.0.1:8080/Contact_Us.html</code>. Pick a category, fill the required fields, and use the email <code>name@example.com</code>. Submit twice, inside 5 minutes. Both requests must get past Turnstile and the CSRF token check. They may still fail later with a mail error if mail is not set up on your machine. That is all right: the slot is used before mail is sent. Do not use a real person's email address.</p>
+</li>
+<li>
+<p>In the <code>php -S</code> terminal, find <code>MPCT rate limit store ready: json:</code>. If the path ends with <code>data/rate-limits/json</code>, the configured folder is in use. If the path contains <code>mpct-rate-limits</code>, you are on the temp fallback, and an earlier line should read <code>MPCT rate limit store init failed:</code>. Look in the directory named on the ready line. After the first allowed submit, a <code>.json</code> file with a 64-character lowercase hex name should be there. Do not paste the file into a ticket. Its <code>key</code> field is the email address.</p>
+</li>
+<li>
+<p>Submit a third time with the same email, still inside 5 minutes, and before you have sent five requests from this IP. In the browser's Network panel, open <code>FormSubmission.php</code>. The status is HTTP 200, not 429. The body is <code>{"success":false,"message":"Too many submissions for this email address. Please try again later."}</code>. The terminal does not add a skipped line or a rejected line for this hit. Do not expect a second <code>store ready</code> line. That line is written once per PHP process, on the first request that opens the store. Stop at three. A later request from the same IP can switch the sentence to "Too many submissions from your network. Please try again later.", because each email reject still counted toward the IP cap. If the body is a different sentence, stop and use <a href="../05-troubleshoot-blocked-submissions/">Troubleshoot Blocked Form Submissions</a>.</p>
+</li>
+<li>
+<p>Either wait until 300 seconds after the first counted submit (the window starts at <code>window_start</code>, not at the third click), or delete the email file with the Part 3 one-liner, using the directory from the ready line. Submit <code>name@example.com</code> again. The email sentence should be gone. If you already used five IP slots, you will see the network sentence until that window ends or you also delete the <code>ip:</code> file.</p>
+</li>
+<li>
+<p>On Apache, not on <code>php -S</code>, confirm the counter folder is not public. Production, staging, or a local Apache such as XAMPP can all serve <code>.htaccess</code>. PHP's built-in server cannot.</p>
+</li>
+</ol>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a>curl -I https://nano.nau.edu/data/rate-limits/
+</span></code></pre></div></td></tr></table></div>
+<p>You should see HTTP 403, from <code>Require all denied</code> in <code>/data/.htaccess</code>. HTTP 200 means that file is not in effect on the server you queried. A syntax error in it returns HTTP 500 for <code>/data/</code> only, not a pass.</p>
+<hr />
+<p>🔔 <strong>Documentation Update Reminder:</strong> Please make sure to update any How-To procedures or relevant documentation every time you make a change to the website and deploy it. This keeps our operational manual healthy and helpful for the entire team!</p>
+<p><em>Last reviewed: September 21, 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-update-csrf-protection/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CSRF Tokens">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                CSRF Tokens
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-troubleshoot-blocked-submissions/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshoot Blocked Submissions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Troubleshoot Blocked Submissions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Northern Arizona University.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
