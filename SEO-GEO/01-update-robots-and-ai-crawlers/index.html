@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../update-footer/">
+        <link rel="prev" href="../../Security/06-update-security-headers/">
       
       
-        <link rel="next" href="../update-site-wide-metadata/">
+        <link rel="next" href="../02-update-sitemap/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Update Global Navigation Menu - NAU Nano Website Docs</title>
+        <title>robots.txt and AI Crawlers - NAU Nano Website Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#update-global-navigation-menu" class="md-skip">
+        <a href="#update-robotstxt-and-ai-crawler-access" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Update Global Navigation Menu
+              robots.txt and AI Crawlers
             
           </span>
         </div>
@@ -472,11 +472,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../SEO-GEO/01-update-robots-and-ai-crawlers/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -535,13 +537,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../clone-program-page/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../General/clone-program-page/" class="md-tabs__link">
           
   
   
@@ -2429,8 +2429,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2450,19 +2452,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -2480,7 +2485,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2495,10 +2500,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../SEO-GEO/01-update-robots-and-ai-crawlers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    robots.txt and AI Crawlers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2514,6 +2546,142 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visual-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-read-the-file-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Read the File Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-allow-a-new-crawler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Allow a New Crawler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-block-a-crawler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Block a Crawler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-hide-a-private-file-from-crawlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Hide a Private File from Crawlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-keep-the-sitemap-line-last" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Keep the Sitemap Line Last
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-best-practices-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical best practices and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-verify-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Let's Verify Your Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2526,7 +2694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SEO-GEO/02-update-sitemap/" class="md-nav__link">
+      <a href="../02-update-sitemap/" class="md-nav__link">
         
   
   
@@ -2554,7 +2722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SEO-GEO/03-update-equipment-structured-data/" class="md-nav__link">
+      <a href="../03-update-equipment-structured-data/" class="md-nav__link">
         
   
   
@@ -2582,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SEO-GEO/04-update-equipment-breadcrumbs/" class="md-nav__link">
+      <a href="../04-update-equipment-breadcrumbs/" class="md-nav__link">
         
   
   
@@ -2610,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SEO-GEO/05-update-llms-txt/" class="md-nav__link">
+      <a href="../05-update-llms-txt/" class="md-nav__link">
         
   
   
@@ -2638,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SEO-GEO/06-update-analytics-tag/" class="md-nav__link">
+      <a href="../06-update-analytics-tag/" class="md-nav__link">
         
   
   
@@ -2831,10 +2999,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -2852,22 +3018,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
         
           
-          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="">
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
             
   
   
@@ -2885,7 +3048,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_16">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2903,7 +3066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clone-program-page/" class="md-nav__link">
+      <a href="../../General/clone-program-page/" class="md-nav__link">
         
   
   
@@ -2931,7 +3094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../add-a-new-page/" class="md-nav__link">
+      <a href="../../General/add-a-new-page/" class="md-nav__link">
         
   
   
@@ -2959,7 +3122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../update-footer/" class="md-nav__link">
+      <a href="../../General/update-footer/" class="md-nav__link">
         
   
   
@@ -2984,37 +3147,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Update Global Navigation Menu
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../General/update-global-navigation/" class="md-nav__link">
         
   
   
@@ -3030,131 +3166,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#visual-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Visual Reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#target-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Target Files
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Instructions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Instructions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#part-1-locate-the-navigation-menu-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Part 1: Locate the Navigation Menu Structure
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-2-add-or-edit-standard-top-level-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Part 2: Add or Edit Standard Top-Level Links
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-3-add-or-edit-mega-menu-dropdown-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Part 3: Add or Edit Mega-Menu Dropdown Links
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-4-enable-disabled-soon-placeholder-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Part 4: Enable Disabled “Soon” Placeholder Links
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-impact-layout-solutions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Impact &amp; Layout Solutions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-verify-your-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Let's Verify Your Changes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3167,7 +3178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../update-site-wide-metadata/" class="md-nav__link">
+      <a href="../../General/update-site-wide-metadata/" class="md-nav__link">
         
   
   
@@ -3561,10 +3572,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#part-1-locate-the-navigation-menu-structure" class="md-nav__link">
+  <a href="#part-1-read-the-file-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 1: Locate the Navigation Menu Structure
+        Part 1: Read the File Layout
       
     </span>
   </a>
@@ -3572,10 +3583,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-2-add-or-edit-standard-top-level-links" class="md-nav__link">
+  <a href="#part-2-allow-a-new-crawler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 2: Add or Edit Standard Top-Level Links
+        Part 2: Allow a New Crawler
       
     </span>
   </a>
@@ -3583,10 +3594,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-3-add-or-edit-mega-menu-dropdown-links" class="md-nav__link">
+  <a href="#part-3-block-a-crawler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 3: Add or Edit Mega-Menu Dropdown Links
+        Part 3: Block a Crawler
       
     </span>
   </a>
@@ -3594,10 +3605,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-4-enable-disabled-soon-placeholder-links" class="md-nav__link">
+  <a href="#part-4-hide-a-private-file-from-crawlers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 4: Enable Disabled “Soon” Placeholder Links
+        Part 4: Hide a Private File from Crawlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-keep-the-sitemap-line-last" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Keep the Sitemap Line Last
       
     </span>
   </a>
@@ -3610,10 +3632,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-impact-layout-solutions" class="md-nav__link">
+  <a href="#technical-best-practices-and-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Design Impact &amp; Layout Solutions
+        Technical best practices and validation
       
     </span>
   </a>
@@ -3648,18 +3670,77 @@
 
 
 
-<h1 id="update-global-navigation-menu">Update Global Navigation Menu<a class="headerlink" href="#update-global-navigation-menu" title="Permanent link">&para;</a></h1>
-<p><strong>Summary:</strong> Add, remove, or modify links, dropdown grids, and mega-menu items in the site-wide top navigation header bar.</p>
-<p><strong>When to change:</strong> When a new prominent page is introduced, or the site hierarchy is reorganized to improve user navigation.</p>
-<p><strong>Difficulty:</strong> <span class="difficulty-stars" style="color:#E6A800">★★★★</span></p>
-<p><strong>Estimated Time:</strong> 15 minutes</p>
+<h1 id="update-robotstxt-and-ai-crawler-access">Update robots.txt and AI Crawler Access<a class="headerlink" href="#update-robotstxt-and-ai-crawler-access" title="Permanent link">&para;</a></h1>
+<p><strong>Summary:</strong> Add, move, or remove <code>User-agent</code>, <code>Disallow</code>, <code>Allow</code>, and <code>Sitemap</code> lines in <code>/robots.txt</code> so named search and AI crawlers keep sharing one rule set.</p>
+<p><strong>When to change:</strong> When the lab decides to allow or block a search or AI crawler, a new private file should stay out of crawl lists, or the sitemap URL changes.</p>
+<p><strong>Difficulty:</strong> <span class="difficulty-stars" style="color:#E6A800">★★★</span></p>
+<p><strong>Estimated Time:</strong> 10 minutes</p>
 <hr />
 <h2 id="visual-reference">Visual Reference<a class="headerlink" href="#visual-reference" title="Permanent link">&para;</a></h2>
-<p align="center">
-  <img src="/md_file_images/Global_nav.png" alt="Global navigation bar with brand, menu items, and Contact button" /><br/>
-  <em>Figure 1: Site-wide top navigation — Home icon, MPaCT Lab, Degree Programs, Workforce, News, About, and Contact CTA</em>
-</p>
-
+<p><strong>Real Code Snippet (<code>/robots.txt</code> — shared User-agent group, lines 7–37)</strong></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a># OpenAI — ChatGPT search, live fetch, and model training
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>User-agent: OAI-SearchBot
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>User-agent: ChatGPT-User
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>User-agent: GPTBot
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a># Anthropic — Claude search, live fetch, and model training
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>User-agent: Claude-SearchBot
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>User-agent: Claude-User
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>User-agent: ClaudeBot
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a># Perplexity — search index and live fetch
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>User-agent: PerplexityBot
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>User-agent: Perplexity-User
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a># Google Gemini grounding / training (does not affect Search or AI Overviews)
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>User-agent: Google-Extended
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a># Apple search and Apple Intelligence training
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>User-agent: Applebot
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>User-agent: Applebot-Extended
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a># Microsoft Bing / Copilot
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>User-agent: bingbot
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a># Meta, Amazon, and Common Crawl training
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>User-agent: meta-externalagent
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>User-agent: Amazonbot
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>User-agent: CCBot
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a># Everyone else
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>User-agent: *
+</span></code></pre></div></td></tr></table></div>
+<p><em>All 16 <code>User-agent</code> lines share the one rule set that follows them (lines 39–69): the <code>Disallow</code> list, the <code>Allow</code> list and <code>Sitemap: https://nano.nau.edu/sitemap.php</code>.</em></p>
 <hr />
 <h2 id="target-files">Target Files<a class="headerlink" href="#target-files" title="Permanent link">&para;</a></h2>
 <table>
@@ -3671,68 +3752,113 @@
 </thead>
 <tbody>
 <tr>
-<td><code>/includes/header.html</code></td>
-<td>Navigation menu markup loaded into every page.</td>
-</tr>
-<tr>
-<td><code>/JS/layout.js</code></td>
-<td>Fetches the header, injects it into <code>#site-header</code>, highlights active links from <code>data-path</code>, and wires mobile menu + dropdown behavior.</td>
-</tr>
-<tr>
-<td><code>/CSS/style.css</code></td>
-<td>Nav bar, mega-menu, and mobile drawer styles (edit only if you are changing appearance, not link targets).</td>
+<td><code>/robots.txt</code></td>
+<td>The only file this task edits. It names the crawlers, lists paths they should skip or keep, and advertises the sitemap.</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
 <p>[!NOTE]
-<strong>Client-side include architecture:</strong> Each page includes <code>&lt;div id="site-header"&gt;&lt;/div&gt;</code> and loads <code>JS/layout.js</code> (root pages use <code>JS/layout.js</code>; pages in subfolders such as <code>/About_Equipment/</code> use <code>../JS/layout.js</code>). On load, <code>layout.js</code> runs <code>loadPart('site-header', '/includes/header.html', …)</code> and then <code>highlightActiveLink</code>, <code>initMobileMenu</code>, and <code>initAllDropdowns</code>. Editing <code>/includes/header.html</code> once updates navigation on every page that uses this layout. See <a href="../add-a-new-page/">add-a-new-page.md</a> when adding a new page to the site.</p>
+<strong>One shared rule set:</strong> Consecutive <code>User-agent</code> lines form one group, and a crawler obeys only the group that names it most specifically (<a href="https://www.rfc-editor.org/rfc/rfc9309">RFC 9309</a>). That is why the 15 named agents sit in the same group as <code>User-agent: *</code>. The file's own header comment (lines 1–5) says this: a named group replaces <code>*</code> for that agent, so those agents share this one rule set rather than inheriting it. A blank line or a <code>#</code> comment does not start a new group. The first <code>Allow</code> or <code>Disallow</code> ends the agent list and begins that group's rules. The next <code>User-agent</code> line after a rule starts another group. If you leave the same token in two groups, RFC 9309 combines those rules instead of picking one, so a block you thought was separate can stay open. That miss is silent.</p>
+<p>[!WARNING]
+<strong>robots.txt is public, and crawlers may ignore it.</strong> A <code>Disallow</code> line does not stop a request. Crawlers that ignore the file still fetch the path, and the site returns it with HTTP 200, so the miss is silent. The line also advertises the path, because anyone can open <code>https://nano.nau.edu/robots.txt</code>. To refuse a request, block the path in <code>/.htaccess</code> as described in <a href="../../Security/06-update-security-headers/">Update Security Headers and Blocked Paths</a>. PHP's built-in server (<code>php -S</code>) does not read <code>.htaccess</code>, so a blocked path can be confirmed only on Apache (production, staging, or a local Apache such as XAMPP).</p>
+<p>[!WARNING]
+<strong>Three endpoints are missing from the Disallow list.</strong> Today <code>/robots.txt</code> does not disallow <code>/IntelScholarshipSubmission.php</code>, <code>/csrf-token.php</code>, or <code>/turnstile-config.php</code>. Keep documenting the file as it is; adding those lines is a later edit, shown in <a href="#part-4-hide-a-private-file-from-crawlers">Part 4</a>, not a change already present in the file. Crawlers that follow the shared group may fetch all three, and nothing in the file reports that gap. Do not close the gap by denying those URLs in <code>/.htaccess</code>. The scholarship form on <code>/CHIPS_Scholars_Program.html</code> posts to <code>/IntelScholarshipSubmission.php</code>, and every form page loads <code>/csrf-token.php</code> and <code>/turnstile-config.php</code>. An Apache deny breaks those requests. The visitor sees a failed security check or a failed submit, and <code>robots.txt</code> will not say why.</p>
 <p>[!IMPORTANT]
-<strong>Verify against your local codebase:</strong> Class names, dropdown IDs, <code>href</code> targets, and hash anchors can change. Before editing, confirm selectors and filenames in your active copy of <code>/includes/header.html</code>, and confirm any <code>href="#…"</code> fragment matches a real <code>id</code> on the destination page.</p>
+<strong>Verify against your local codebase:</strong> Before you edit, confirm <code>/robots.txt</code> still has the 16 <code>User-agent</code> lines (lines 7–37), the <code>Disallow</code> and <code>Allow</code> lines (lines 39–67), and <code>Sitemap: https://nano.nau.edu/sitemap.php</code> on line 69. A mistyped product token matches no group. That crawler then follows <code>User-agent: *</code> with no error on the site.</p>
+<p>[!TIP]
+<strong>Jump to the change you need:</strong> <a href="#part-2-allow-a-new-crawler">Allow a crawler</a>, <a href="#part-3-block-a-crawler">block a crawler</a>, <a href="#part-4-hide-a-private-file-from-crawlers">hide a private file</a>, or <a href="#part-5-keep-the-sitemap-line-last">keep the sitemap line last</a>.</p>
 </blockquote>
 <hr />
 <h2 id="step-by-step-instructions">Step-by-Step Instructions<a class="headerlink" href="#step-by-step-instructions" title="Permanent link">&para;</a></h2>
-<h3 id="part-1-locate-the-navigation-menu-structure">Part 1: Locate the Navigation Menu Structure<a class="headerlink" href="#part-1-locate-the-navigation-menu-structure" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Open <code>/includes/header.html</code> in your code editor.</li>
-<li>Search for the navigation container: <code>&lt;nav class="nav-menu"&gt;</code>. All top-level items live inside this element.</li>
-</ol>
-<p><strong>Real Code Snippet (navigation container)</strong>
-   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-menu"</span><span class="p">&gt;</span>
-</span></code></pre></div></td></tr></table></div></p>
-<ol>
-<li>Inside <code>&lt;nav class="nav-menu"&gt;</code>, each entry is a <code>&lt;div class="nav-item"&gt;</code>. There are three patterns in the live file:</li>
-<li><strong>Icon-only Home</strong> — <code>nav-link nav-link--icon</code> (no text label).</li>
-<li><strong>Mega-menu dropdowns</strong> — <code>nav-item nav-item--has-dropdown</code> with a <code>&lt;button class="nav-dropdown-btn"&gt;</code> and a <code>.nav-mega-panel</code> grid (MPaCT Lab, Degree Programs, Workforce).</li>
-<li><strong>Plain links &amp; CTA</strong> — direct <code>&lt;a class="nav-link"&gt;</code> or the gold Contact button (<code>btn btn-sm btn-gold</code>).</li>
-</ol>
+<p>Titles, descriptions, and social tags are a different edit. Those live in each HTML file, covered in <a href="../../General/update-site-wide-metadata/">Update Site-Wide Metadata or SEO</a>. This page changes only <code>/robots.txt</code>, in the site root.</p>
 <hr />
-<h3 id="part-2-add-or-edit-standard-top-level-links">Part 2: Add or Edit Standard Top-Level Links<a class="headerlink" href="#part-2-add-or-edit-standard-top-level-links" title="Permanent link">&para;</a></h3>
-<p>Use this pattern for simple bar links such as <strong>News</strong> and <strong>About</strong> (not dropdown parents).</p>
+<h3 id="part-1-read-the-file-layout">Part 1: Read the File Layout<a class="headerlink" href="#part-1-read-the-file-layout" title="Permanent link">&para;</a></h3>
+<p>The file is one shared group (the agent lines), then a <code>Disallow</code> list, an <code>Allow</code> list, and one <code>Sitemap</code> line. Please keep that order. A rule placed between agent lines splits the group, and the crawlers above that rule silently lose the shared <code>Disallow</code> list.</p>
 <ol>
-<li>Copy an existing <code>nav-item</code> block and paste it inside <code>&lt;nav class="nav-menu"&gt;</code> in the order you want.</li>
-<li>Update <code>href</code>, visible link text, and <code>data-path</code>.</li>
+<li>To get started, please open <code>/robots.txt</code> in your code editor. Leave the filename in lowercase at the site root. A different name is a different URL. If the live URL returns HTTP 404, crawlers may treat the file as missing and crawl every path. That failure is silent: the public pages still load.</li>
+<li>Read the header comment before you move any line. It is the reason the named agents are not in groups of their own.</li>
 </ol>
-<p><strong>Real Code Snippet (News link in header.html)</strong>
-   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<p><strong>Real Code Snippet (<code>/robots.txt</code> — header comment, lines 1–5)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-item"</span><span class="p">&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/News.html"</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-link"</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="na">data-path</span><span class="o">=</span><span class="s">"News.html"</span><span class="p">&gt;</span>News<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></code></pre></div></td></tr></table></div></p>
-<p><strong>Example Snippet (new top-level link blueprint)</strong>
-   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-item"</span><span class="p">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/[YourPage].html"</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-link"</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>        <span class="na">data-path</span><span class="o">=</span><span class="s">"[YourPage].html"</span><span class="p">&gt;</span>[Link Label]<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a># robots.txt for https://nano.nau.edu
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>#
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a># AI agents are named so search, live fetch, and training are allowed on
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a># purpose. A named group replaces User-agent: * for that agent, so they
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a># share this one rule set rather than inheriting it.
 </span></code></pre></div></td></tr></table></div></p>
 <ol>
-<li><strong>Active highlighting:</strong> <code>data-path</code> must match the current page’s HTML filename exactly (e.g. <code>News.html</code>). In <code>layout.js</code>, <code>highlightActiveLink()</code> compares <code>link.dataset.path</code> to <code>window.location.pathname.split('/').pop()</code> (query strings and hash fragments are not part of <code>data-path</code>). The gold <strong>Contact</strong> button has no <code>data-path</code> and is not auto-highlighted.</li>
+<li>The Visual Reference is the whole agent group: 15 named product tokens plus <code>User-agent: *</code> on line 37. Comments and blank lines between those tokens do not end the group. The blank line on line 38 does not end it either. The rules that start on line 39 still belong to all 16 tokens.</li>
+<li>The rule set below that blank line is the <code>Disallow</code> list, the <code>Allow</code> list, and the sitemap line. Please leave existing <code>Disallow</code> lines in place unless you mean for that path to be crawled. Deleting one does not warn you; a well-behaved crawler simply starts requesting that path.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/robots.txt</code> — Disallow list, Allow list, and Sitemap line, lines 39–69)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a># Block PHP form processors — no indexable content
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>Disallow: /FormSubmission.php
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>Disallow: /EquipmentReservation.php
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>Disallow: /ServiceRequestSubmission.php
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a># Block third-party library source
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>Disallow: /PHPMailer/
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a># Block version control directory
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>Disallow: /.git/
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a># Block internal developer documentation
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>Disallow: /README.md
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>Disallow: /CSS_GUIDE.md
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>Disallow: /JS_GUIDE.md
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a># Block internal data files
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>Disallow: /equipment.json
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>Disallow: /rates.json
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a># Allow all public content, including assets needed for rendering
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a>Allow: /*.html
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a>Allow: /CSS/
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a>Allow: /JS/
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a>Allow: /Images/
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a>Allow: /About_Equipment/
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a>Allow: /Manuals_and_Specs/
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a>Allow: /knowledge-base/
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a>Allow: /llms.txt
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a>Sitemap: https://nano.nau.edu/sitemap.php
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Match the edit you came to make to one row below. Parts 2–5 each change one row.</li>
 </ol>
 <table>
 <thead>
@@ -3746,209 +3872,166 @@
 <tbody>
 <tr>
 <td>①</td>
-<td>Target URL (<code>href</code>)</td>
-<td>Destination path. Use a leading slash for site-root pages.</td>
-<td><code>href="/News.html"</code></td>
+<td><code>User-agent</code></td>
+<td>Product token for one crawler. Consecutive lines share every rule that follows them. <code>*</code> is only the fallback for a token this file does not name.</td>
+<td><code>User-agent: [CrawlerName]</code> inside the shared group, or alone above it with <code>Disallow: /</code></td>
 </tr>
 <tr>
 <td>②</td>
-<td>Active path (<code>data-path</code>)</td>
-<td>Filename used for active-state matching.</td>
-<td><code>data-path="News.html"</code></td>
+<td><code>Disallow</code></td>
+<td>Path prefix a well-behaved crawler should skip. It does not block a browser, and it publishes the path.</td>
+<td><code>Disallow: /[NewHandler].php</code></td>
 </tr>
 <tr>
 <td>③</td>
-<td>Link class</td>
-<td>Standard text links use <code>nav-link</code>.</td>
-<td><code>class="nav-link"</code></td>
+<td><code>Allow</code></td>
+<td>Path prefix that stays crawlable. A longer <code>Allow</code> overrides a shorter <code>Disallow</code>. In a path, <code>*</code> means any characters, which is why <code>/*.html</code> is not a literal asterisk.</td>
+<td><code>Allow: /llms.txt</code></td>
 </tr>
 <tr>
 <td>④</td>
-<td>Visible label</td>
-<td>Text shown in the bar.</td>
-<td><code>News</code></td>
+<td><code>Sitemap</code></td>
+<td>Absolute sitemap URL. It is not a crawl rule, and it does not end the group. Keep this file's one Sitemap line as the last line.</td>
+<td><code>Sitemap: https://nano.nau.edu/sitemap.php</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h3 id="part-3-add-or-edit-mega-menu-dropdown-links">Part 3: Add or Edit Mega-Menu Dropdown Links<a class="headerlink" href="#part-3-add-or-edit-mega-menu-dropdown-links" title="Permanent link">&para;</a></h3>
-<p>Dropdown items live inside <code>.nav-dropdown-grid</code> (MPaCT Lab uses the full grid; Degree Programs and Workforce use <code>.nav-dropdown-grid--single</code>).</p>
+<h3 id="part-2-allow-a-new-crawler">Part 2: Allow a New Crawler<a class="headerlink" href="#part-2-allow-a-new-crawler" title="Permanent link">&para;</a></h3>
+<p>Allowing a crawler means adding its <code>User-agent</code> line to the shared group, above any <code>Allow</code> or <code>Disallow</code>. A line placed after the rules, with nothing under it, starts a new group at the end of the file. That group allows every path for that token, including the form handlers, and it does not inherit the shared <code>Disallow</code> list. The site still looks normal.</p>
 <ol>
-<li>Open the parent section you need (<code>id="mpactDropdownItem"</code>, <code>id="degreeDropdownItem"</code>, or <code>id="wfdDropdownItem"</code>).</li>
-<li>Inside the matching <code>.nav-dropdown-grid</code>, insert or edit a <code>.nav-dropdown-link</code> anchor.</li>
+<li>Copy the product token from the vendor's robots.txt documentation. Use the token only, not the full HTTP <code>User-Agent</code> string. Matching is case-insensitive, but please copy the token as published so the next diff stays obvious. A token the vendor does not use matches nobody, so that bot follows <code>User-agent: *</code> and you get no error. That is harmless for an allow, because <code>*</code> is this same group, and it is a silent failure for a block (Part 3).</li>
+<li>Above the <code># Everyone else</code> comment (line 36), add a comment and one <code>User-agent</code> line. The comment should name the company and what the bot does: search, live fetch, or training. Use the same shape as the OpenAI, Anthropic, and Perplexity comments in the Visual Reference. Do not put <code>Allow</code> or <code>Disallow</code> under the new line. A rule there ends the group. Every token above that rule stops seeing the shared <code>Disallow</code> list and may fetch the form processors. Nothing on the site reports the split.</li>
 </ol>
-<p><strong>Real Code Snippet (Equipment Catalog card in MPaCT dropdown)</strong>
-   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/Equipment.html"</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-link"</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="na">data-path</span><span class="o">=</span><span class="s">"Equipment.html"</span> <span class="na">role</span><span class="o">=</span><span class="s">"menuitem"</span><span class="p">&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-icon"</span><span class="p">&gt;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>        <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">"22"</span> <span class="na">height</span><span class="o">=</span><span class="s">"22"</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">"0 0 24 24"</span> <span class="na">fill</span><span class="o">=</span><span class="s">"none"</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>            <span class="na">stroke</span><span class="o">=</span><span class="s">"currentColor"</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">"2"</span> <span class="na">stroke-linecap</span><span class="o">=</span><span class="s">"round"</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>            <span class="na">stroke-linejoin</span><span class="o">=</span><span class="s">"round"</span><span class="p">&gt;</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>            <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"</span><span class="p">&gt;&lt;/</span><span class="nt">path</span><span class="p">&gt;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>        <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-text"</span><span class="p">&gt;</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Equipment Catalog<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>        <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>35+ instruments<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<p><strong>Example Snippet (new crawler inside the shared group)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a># [Company] — [search, live fetch, or training]  # company, and what this bot does
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>User-agent: [CrawlerName]  # vendor product token; leave all rules below User-agent: *
 </span></code></pre></div></td></tr></table></div></p>
-<p><strong>Example Snippet (new mega-menu card blueprint)</strong>
-   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/[TargetPage].html"</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-link"</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="na">data-path</span><span class="o">=</span><span class="s">"[TargetPage].html"</span> <span class="na">role</span><span class="o">=</span><span class="s">"menuitem"</span><span class="p">&gt;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-icon"</span><span class="p">&gt;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="cm">&lt;!-- Copy an existing &lt;svg&gt; from a sibling card, or add a new icon --&gt;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-text"</span><span class="p">&gt;</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>[Primary Label]<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>        <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>[Short subtitle]<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span></code></pre></div></td></tr></table></div></p>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>What to Change</th>
-<th>Description</th>
-<th>Options / Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>①</td>
-<td>Target URL (<code>href</code>)</td>
-<td>Page path or hash link. Use a leading slash for root pages.</td>
-<td><code>href="/services.html"</code> or <code>href="/CareerPathways.html#degree-programs"</code></td>
-</tr>
-<tr>
-<td>②</td>
-<td>Active path (<code>data-path</code>)</td>
-<td>HTML filename only (no <code>#</code> fragment, no <code>?query</code>).</td>
-<td><code>data-path="CareerPathways.html"</code></td>
-</tr>
-<tr>
-<td>③</td>
-<td>ARIA role (<code>role</code>)</td>
-<td>Marks the control as a menu item for assistive tech.</td>
-<td><code>role="menuitem"</code></td>
-</tr>
-<tr>
-<td>④</td>
-<td>Primary label</td>
-<td>Bold card title.</td>
-<td><code>&lt;strong&gt;Services&lt;/strong&gt;</code></td>
-</tr>
-<tr>
-<td>⑤</td>
-<td>Subtitle</td>
-<td>Supporting line in smaller type.</td>
-<td><code>&lt;small&gt;3D Printing &amp;amp; Support&lt;/small&gt;</code></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>[!TIP]
-<strong>Anchor links in dropdowns:</strong> Degree Programs and Workforce menus use hash links (e.g. <code>/CareerPathways.html#degree-programs</code>, <code>/WorkForceDevelopment.html#training</code>). Put only the filename in <code>data-path</code>; put the fragment in <code>href</code>. On <code>/CareerPathways.html</code>, hash routing is handled by that page’s own script (<code>#degree-programs</code>, <code>#professional-development</code>, and aliases documented there).</p>
-<p>[!WARNING]
-<strong>Hash targets must exist on the destination page:</strong> Before adding or changing a <code>#fragment</code>, open the target HTML and confirm a matching <code>id</code> (or page-specific hash handler). For example, the live <strong>Labs</strong> item uses <code>href="/degree-programs.html#labs"</code> but <code>/degree-programs.html</code> has no <code>id="labs"</code> at review time—update the page <code>id</code> or change the <code>href</code> so the link scrolls correctly.</p>
-</blockquote>
+<ol>
+<li>Leave <code>User-agent: *</code> as the last agent line in the group (it is line 37 today) so unnamed crawlers still receive the same rules.</li>
+</ol>
 <hr />
-<h3 id="part-4-enable-disabled-soon-placeholder-links">Part 4: Enable Disabled “Soon” Placeholder Links<a class="headerlink" href="#part-4-enable-disabled-soon-placeholder-links" title="Permanent link">&para;</a></h3>
-<p>Some mega-menu cells are non-clickable placeholders (<code>nav-dropdown-link--disabled</code>). The live MPaCT menu includes <strong>Safety &amp; Training</strong> and <strong>Billing Rates</strong> in this state.</p>
+<h3 id="part-3-block-a-crawler">Part 3: Block a Crawler<a class="headerlink" href="#part-3-block-a-crawler" title="Permanent link">&para;</a></h3>
+<p>Leaving a crawler in the shared group keeps it allowed, except for the shared <code>Disallow</code> paths. Blocking it means moving its line into a group that contains only <code>Disallow: /</code>.</p>
 <ol>
-<li>Locate the disabled block inside the relevant <code>.nav-dropdown-grid</code>.</li>
+<li>Find the token in the shared group and cut it. Do not copy it. If the comment above it names only that crawler, move the comment too. If the comment covers several tokens (the OpenAI, Anthropic, and Perplexity blocks), leave the comment and move only the one line. A second copy left in the shared group is combined with the block group under RFC 9309. The longer <code>Allow</code> lines (lines 60–67) then reopen <code>/*.html</code>, <code>/CSS/</code>, <code>/JS/</code>, <code>/Images/</code>, <code>/About_Equipment/</code>, <code>/Manuals_and_Specs/</code>, <code>/knowledge-base/</code>, and <code>/llms.txt</code>. The file looks blocked, and those URLs stay crawlable. That failure is silent.</li>
+<li>Paste the token into its own group after the header comment (after line 5) and before line 7. The only rule in that group is <code>Disallow: /</code>. Paths are prefixes, so <code>/</code> matches every path. <code>/robots.txt</code> itself stays implicitly allowed.</li>
 </ol>
-<p><strong>Real Code Snippet (disabled Safety &amp; Training placeholder)</strong>
-   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-link nav-dropdown-link--disabled"</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="na">role</span><span class="o">=</span><span class="s">"menuitem"</span> <span class="na">aria-disabled</span><span class="o">=</span><span class="s">"true"</span><span class="p">&gt;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-icon"</span><span class="p">&gt;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="cm">&lt;!-- svg omitted for brevity --&gt;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-text"</span><span class="p">&gt;</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Safety <span class="ni">&amp;amp;</span> Training <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-soon-badge"</span><span class="p">&gt;</span>Soon<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>        <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Certifications <span class="ni">&amp;amp;</span> SOPs<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<p><strong>Example Snippet (crawler moved into its own block group)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a># [Company] — blocked ([search, live fetch, or training])  # place this group after line 5, before the shared group
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>User-agent: [CrawlerName]  # remove this same line from the shared group
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>Disallow: /  # only rule for this token; do not add the shared Allow lines here
 </span></code></pre></div></td></tr></table></div></p>
 <ol>
-<li>To publish the link, convert the outer <code>&lt;div&gt;</code> to an <code>&lt;a&gt;</code>, remove the disabled modifier and <code>aria-disabled</code>, add <code>href</code> and <code>data-path</code>, and remove the <code>nav-soon-badge</code> span.</li>
+<li>Please treat <code>Google-Extended</code> as a special case of the same move, not as a different kind of file edit. It is a control token that Google's crawlers read. It is not a separate bot: Google's crawler list says it has no HTTP user-agent string of its own, and crawling is still done with Google's existing user agents. Blocking it does not affect Google Search (inclusion or ranking). The comment on line 21 says the same for Search and for AI Overviews.</li>
 </ol>
-<p><strong>Example Snippet (enabled link after conversion)</strong> — <code>/Safety_Training.html</code> exists in the repo; the nav item is still disabled in <code>/includes/header.html</code> until you apply this change.
-   <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/Safety_Training.html"</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-link"</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="na">data-path</span><span class="o">=</span><span class="s">"Safety_Training.html"</span> <span class="na">role</span><span class="o">=</span><span class="s">"menuitem"</span><span class="p">&gt;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-icon"</span><span class="p">&gt;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>        <span class="cm">&lt;!-- reuse the existing svg from the disabled block --&gt;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-dropdown-text"</span><span class="p">&gt;</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Safety <span class="ni">&amp;amp;</span> Training<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>        <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Certifications <span class="ni">&amp;amp;</span> SOPs<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<p><strong>Real Code Snippet (<code>/robots.txt</code> — Google-Extended comment and token, lines 21–22)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a># Google Gemini grounding / training (does not affect Search or AI Overviews)
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>User-agent: Google-Extended
 </span></code></pre></div></td></tr></table></div></p>
+<p><code>Googlebot</code> is not named in this file, so Google Search follows <code>User-agent: *</code>. Rules for <code>Googlebot</code> cover Google Search, including its search features. Please do not add <code>User-agent: Googlebot</code> with <code>Disallow: /</code> unless the lab means to stop Google Search from crawling the site. Visitors would still see every page. Search would stop crawling, with no error in the browser. Vendor detail: <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers">Google's common crawlers</a>.
+4. To allow that crawler again, delete its separate group and put its <code>User-agent</code> line back in the shared group, using Part 2. A <code>User-agent</code> line with no rules allows every path for that token. That is not a block, and the site will not tell you the difference.</p>
 <hr />
-<h2 id="design-impact-layout-solutions">Design Impact &amp; Layout Solutions<a class="headerlink" href="#design-impact-layout-solutions" title="Permanent link">&para;</a></h2>
+<h3 id="part-4-hide-a-private-file-from-crawlers">Part 4: Hide a Private File from Crawlers<a class="headerlink" href="#part-4-hide-a-private-file-from-crawlers" title="Permanent link">&para;</a></h3>
+<p>Use this when a new form handler, or one of the three endpoints named in the warning above, should be left off crawl lists. The handler itself is wired in <a href="../../Security/01-add-security-checks-to-a-form/">Add Security Checks to a New Form</a>. This part only adds the <code>Disallow</code> line.</p>
+<ol>
+<li>Add the line in the shared group's <code>Disallow</code> list, with the other form processors. Do not add it after the <code>Sitemap</code> line, and do not add it between <code>User-agent</code> lines.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/robots.txt</code> — form-processor Disallow lines, lines 39–42)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a># Block PHP form processors — no indexable content
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>Disallow: /FormSubmission.php
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>Disallow: /EquipmentReservation.php
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>Disallow: /ServiceRequestSubmission.php
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Insert new <code>Disallow</code> lines in that block. A new handler uses your real filename. The three lines under it are optional and are not in the file today: <code>/IntelScholarshipSubmission.php</code> (the scholarship form handler), <code>/csrf-token.php</code> (the CSRF token script), and <code>/turnstile-config.php</code> (the public Turnstile site-key script). <code>Disallow</code> only asks a well-behaved crawler to skip them. Browsers can still load them, which the forms need. Denying any of the three in <code>/.htaccess</code> breaks submission or the security scripts, and the failure shows up in the browser, not in this file.</li>
+</ol>
+<p><strong>Example Snippet (Disallow lines for a new handler and the three current gaps)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>Disallow: /[NewHandler].php  # new form handler; keep it with the other processors
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>Disallow: /IntelScholarshipSubmission.php  # not listed today; crawl hint only
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>Disallow: /csrf-token.php  # not listed today; do not deny this URL in Apache
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>Disallow: /turnstile-config.php  # not listed today; do not deny this URL in Apache
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Copy the path exactly, including capitals. Path matching is case-sensitive, so <code>Disallow: /formsubmission.php</code> does not match <code>/FormSubmission.php</code>, and the crawler may fetch the real file with no warning. A <code>Disallow</code> path is a prefix: <code>/[NewHandler].php</code> also matches a longer path that starts with that text. Directory rules in this file keep the trailing slash, as in <code>Disallow: /PHPMailer/</code>. Dropping the slash also matches a different file that merely begins with the same letters, such as a future page you did not mean to hide.</li>
+<li>A private file that must not be downloaded at all still needs <code>/.htaccess</code>, because this file only asks. Follow <a href="../../Security/06-update-security-headers/">Update Security Headers and Blocked Paths</a> for that block. Remember that listing the path here tells the world the name.</li>
+</ol>
+<hr />
+<h3 id="part-5-keep-the-sitemap-line-last">Part 5: Keep the Sitemap Line Last<a class="headerlink" href="#part-5-keep-the-sitemap-line-last" title="Permanent link">&para;</a></h3>
+<p>The page list itself is built by <code>/sitemap.php</code>. Change that list in <a href="../02-update-sitemap/">Add or Unlist a Page in the Sitemap</a>. This part only protects the one line that points crawlers at it.</p>
+<ol>
+<li>Leave this block at the bottom of the file. Line 69 must stay the last line.</li>
+</ol>
+<p><strong>Real Code Snippet (<code>/robots.txt</code> — knowledge-base and llms.txt Allow lines, then Sitemap, lines 66–69)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>Allow: /knowledge-base/
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>Allow: /llms.txt
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>Sitemap: https://nano.nau.edu/sitemap.php
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Please do not add rules below <code>Sitemap</code>. A Sitemap line does not end the group, so a rule under it still applies, but the next editor will look for rules up with lines 40–67 and can miss the stray one. The missed rule fails silently until somebody compares the live file with this guide.</li>
+<li>If the sitemap address changes, change line 69 to the same absolute URL and keep it last. A stale line does not redirect crawlers to the new address. They keep requesting the old URL, and the site does not report the mismatch. Do not point this line at <code>sitemap.xml</code> or <code>sitemap_mpact.xml</code>. On Apache, <code>/.htaccess</code> rewrites those names to <code>sitemap.php</code>. <code>php -S</code> does not read <code>.htaccess</code>, so those two names 404 on the built-in server even when <code>sitemap.php</code> is fine. The line in this file is the PHP URL on purpose.</li>
+<li><code>Allow: /llms.txt</code> (line 67) keeps the root index crawlable when a shorter <code>Disallow</code> would otherwise cover it, because the longer match wins. <code>/knowledge-base/llms.txt</code> is already covered by <code>Allow: /knowledge-base/</code> (line 66). When either copy of the index changes, follow <a href="../05-update-llms-txt/">Update llms.txt</a>. This file does not store the index text. It only keeps those two paths allowed.</li>
+</ol>
+<hr />
+<h2 id="technical-best-practices-and-validation">Technical best practices and validation<a class="headerlink" href="#technical-best-practices-and-validation" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>The design discrepancy risk:</strong> Too many top-level items wrap the menu onto a second line, breaking header alignment or overlapping page content.</li>
-<li><strong>Visual impact:</strong> Double-row headers look cluttered and unprofessional.</li>
-<li><strong>Recommended solutions:</strong><ul>
-<li><strong>Avoid crowding the bar:</strong> The live header already has seven top-level slots (Home icon, MPaCT Lab, Degree Programs, Workforce, News, About, Contact). Prefer nesting new destinations inside an existing mega-menu instead of adding another bar item.</li>
-<li><strong>Use dropdowns:</strong> Group subtopics under MPaCT Lab, Degree Programs, or Workforce.</li>
-<li><strong>Active state consistency:</strong> Keep <code>data-path</code> aligned with real filenames. <code>layout.js</code> also forces the Degree Programs trigger active on <code>degree-programs.html</code> (and <code>degree-programs-grid.html</code> if present) and the Workforce trigger active on <code>WorkForceDevelopment.html</code>, even when the matching dropdown card is not the exact link clicked.</li>
+<li><strong>Do not split the agent list.</strong> The group runs from the first <code>User-agent</code> line until the first <code>Allow</code> or <code>Disallow</code>. A rule inserted between tokens ends the group early. Tokens above that rule never see the form-processor <code>Disallow</code> lines. The public site does not change, so the mistake is silent.</li>
 </ul>
-</li>
+<p><strong>Example Snippet (a rule that silently splits the group)</strong>
+   <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>User-agent: [CrawlerName]
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>Disallow: /private.html  # ends the group; this crawler never sees the shared Disallow list
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a>User-agent: *  # a new group starts here, not a continuation
+</span></code></pre></div></td></tr></table></div></p>
+<ul>
+<li><strong>Move a block. Do not copy the token.</strong> One group per token is unambiguous. Two groups that name the same token have their rules combined (RFC 9309). Combined with <code>Disallow: /</code>, the longer <code>Allow</code> lines reopen the public paths.</li>
+<li><strong>Never put <code>Disallow: /</code> on the shared group.</strong> That one line asks all 15 named agents, and every unnamed crawler using <code>*</code>, to skip the whole site. <code>Googlebot</code> is not named, so Google Search uses <code>*</code>. Visitors still see the site. Crawling stops, with no on-page error.</li>
+<li><strong>Longest path wins.</strong> When an <code>Allow</code> and a <code>Disallow</code> both match, the longer path is the one that counts. If they are the same length, <code>Allow</code> should win. In a path, <code>*</code> means any run of characters. Please do not "fix" <code>Allow: /*.html</code> into <code>Allow: /.html</code>.</li>
+<li><strong>Paths are case-sensitive prefixes.</strong> <code>User-agent</code> matching is case-insensitive. Path matching is not. Directory rules keep the trailing slash already used in the file.</li>
+<li><strong>The file is a request, and it is cached.</strong> It is not access control. Crawlers may reuse a copy for up to 24 hours, and longer if the URL becomes unreachable. HTTP 404 on <code>/robots.txt</code> lets crawlers fetch every path. HTTP 500 (and other unreachable results) makes them assume a full disallow. Either failure is invisible in a browser tab pointed at an HTML page. After deploy, confirm HTTP 200.</li>
+<li><strong>Disallow does not remove a URL from an index.</strong> A crawler that already listed a URL can keep showing the address without a snippet. This file cannot delete that listing. To stop a download, use <code>/.htaccess</code> (see the warning above). To stop indexing of a page that remains crawlable, add <code>noindex</code> as described in <a href="../02-update-sitemap/">Add or Unlist a Page in the Sitemap</a>.</li>
+<li><strong>Keep the rendering assets allowed.</strong> Do not add <code>Disallow</code> lines for <code>/CSS/</code>, <code>/JS/</code>, <code>/Images/</code>, or <code>/*.html</code>. The <code>Allow</code> list exists so a later, broader <code>Disallow</code> does not strip the files a crawler needs to render a page. Blocking them does not break the live site for visitors. Search can store a page that looks empty.</li>
+<li><strong>One Sitemap line, and it stays last.</strong> Keep <code>Sitemap: https://nano.nau.edu/sitemap.php</code>. This line only publishes the URL. It does not build the page list.</li>
 </ul>
 <hr />
 <h2 id="lets-verify-your-changes">Let's Verify Your Changes<a class="headerlink" href="#lets-verify-your-changes" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Preview the site over HTTP (Live Server or your deploy host). <code>fetch()</code> in <code>layout.js</code> does not work on <code>file://</code>.</li>
-<li>Confirm new or edited links appear in the top bar and navigate to the correct page.</li>
-<li>Load the target page and confirm the correct item shows the active state.</li>
-<li><strong>Mobile check:</strong> Narrow the viewport, open the hamburger menu, and confirm new items appear and are tappable in the mobile drawer.</li>
+<li>In the editor, search for any token you added or moved. It should appear once. If you blocked a crawler, that token's only rule is <code>Disallow: /</code>, and it is no longer in the shared group. Every other token still shares the original <code>Disallow</code> and <code>Allow</code> lists. The last line of the file should still be <code>Sitemap: https://nano.nau.edu/sitemap.php</code>.</li>
+<li>From the website root (the folder that contains <code>robots.txt</code>), start PHP's built-in server, then request the file. <code>php -S</code> serves <code>robots.txt</code> as a static file. It does not read <code>.htaccess</code>, so this check does not prove that a private path is denied. Stop the server with Ctrl+C when you are done. If port 8080 is taken, pick another free port and use it in both commands.</li>
 </ol>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">php</span> <span class="n">-S</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8080</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">curl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-sS</span> <span class="n">-i</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8080</span><span class="p">/</span><span class="n">robots</span><span class="p">.</span><span class="n">txt</span>
+</span></code></pre></div></td></tr></table></div>
+<p>In PowerShell, <code>curl</code> is an alias for <code>Invoke-WebRequest</code>. Please use <code>curl.exe</code> so you see the raw status line and body. Expect HTTP 200 and a body that matches the file you edited, including your new line and the Sitemap line. A 404 means the server was started in the wrong folder. Crawlers treat a missing file as "allow all," so do not read a 404 as a successful block.
+3. After the file is deployed, run the same request against the public site. Expect HTTP 200 and the same body. A change can take up to a day to replace a crawler's cached copy.</p>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">curl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-sS</span> <span class="n">-i</span> <span class="n">https</span><span class="p">://</span><span class="n">nano</span><span class="p">.</span><span class="n">nau</span><span class="p">.</span><span class="n">edu</span><span class="p">/</span><span class="n">robots</span><span class="p">.</span><span class="n">txt</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li>In Google Search Console, open <strong>Settings</strong> and then the <strong>robots.txt</strong> report. Confirm Google fetched <code>https://nano.nau.edu/robots.txt</code> without an error. The older robots.txt Tester, which accepted any URL in a box of its own, has been removed. To test one URL, use the inspection bar at the top, enter the full URL, and run <strong>Test live URL</strong>. Read <strong>Crawl allowed?</strong>. <code>https://nano.nau.edu/FormSubmission.php</code> should not be allowed to be crawled. <code>https://nano.nau.edu/index.html</code> should be allowed. If you just deployed a block, the report can still show the previous file until Google refetches it. Use the report's recrawl action for <code>robots.txt</code>, then test the URL again. The report is described in <a href="https://support.google.com/webmasters/answer/6062598">Google's robots.txt report help</a>.</li>
+<li>Confirm the sitemap URL loads. Expect HTTP 200 and a body that starts with <code>&lt;?xml</code>. <code>/sitemap.php</code> sends <code>Content-Type: application/xml; charset=UTF-8</code>. An HTML error page means the generator failed, even if <code>robots.txt</code> is fine.</li>
+</ol>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">curl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-sS</span> <span class="n">-i</span> <span class="n">https</span><span class="p">://</span><span class="n">nano</span><span class="p">.</span><span class="n">nau</span><span class="p">.</span><span class="n">edu</span><span class="p">/</span><span class="n">sitemap</span><span class="p">.</span><span class="n">php</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Locally, the same <code>php -S</code> window will run <code>sitemap.php</code>. A 404 for <code>http://127.0.0.1:8080/sitemap.xml</code> on that server is expected: the rewrite from <code>sitemap.xml</code> and <code>sitemap_mpact.xml</code> lives in <code>/.htaccess</code>, which <code>php -S</code> does not read. Check <code>sitemap.php</code> itself, or check the rewritten names on Apache.</p>
 <hr />
 <p>🔔 <strong>Documentation Update Reminder:</strong> Please make sure to update any How-To procedures or relevant documentation every time you make a change to the website and deploy it. This keeps our operational manual healthy and helpful for the entire team!</p>
-<p><em>Last reviewed: May 27, 2026</em></p>
+<p><em>Last reviewed: September 21, 2026</em></p>
 
 
 
@@ -3986,7 +4069,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../update-footer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Site Footer">
+          <a href="../../Security/06-update-security-headers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Security Headers">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3996,20 +4079,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Site Footer
+                Security Headers
               </div>
             </div>
           </a>
         
         
           
-          <a href="../update-site-wide-metadata/" class="md-footer__link md-footer__link--next" aria-label="Next: Update Site-Wide Metadata or SEO">
+          <a href="../02-update-sitemap/" class="md-footer__link md-footer__link--next" aria-label="Next: Sitemap">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Update Site-Wide Metadata or SEO
+                Sitemap
               </div>
             </div>
             <div class="md-footer__button md-icon">
