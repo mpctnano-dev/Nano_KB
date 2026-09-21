@@ -1,0 +1,9 @@
+title: Security
+nav:
+  - Add Security Checks to a Form: 01-add-security-checks-to-a-form.md
+  - Turnstile (CAPTCHA): 02-update-turnstile-settings.md
+  - CSRF Tokens: 03-update-csrf-protection.md
+  - Rate Limits: 04-update-rate-limits.md
+  - Troubleshoot Blocked Submissions: 05-troubleshoot-blocked-submissions.md
+  - Security Headers: 06-update-security-headers.md
+  - ...

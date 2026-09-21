@@ -10,6 +10,7 @@ nav:
   - Contact: Contact
   - News: News
   - Service Request: Service-Request
+  - Security: Security
   - Shared Components: _shared-hero-stats-panel.md
   - Reference: reference
   - ...
